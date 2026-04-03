@@ -7,6 +7,7 @@ import Footer from '@/components/layout/Footer';
 import Typewriter from '@/components/ui/Typewriter';
 import CaseStudyCard from '@/components/ui/CaseStudyCard';
 import CustomCursor from '@/components/ui/CustomCursor';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 import { motion } from 'framer-motion';
 
 const Index = () => {
@@ -70,11 +71,7 @@ const Index = () => {
         {/* Hero Section */}
         <section className="h-screen flex items-center px-6 md:px-12">
           <div className="max-w-[1200px] mx-auto w-full">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-            >
+            <ScrollReveal>
               <div className="text-[12px] uppercase tracking-[0.2em] text-[var(--color-text-muted)] mb-6">
                 CONTENT DESIGN PORTFOLIO — 2025
               </div>
@@ -95,29 +92,31 @@ const Index = () => {
                 <a href="#work" className="btn-primary">See my work →</a>
                 <a href="#" className="btn-secondary">Download Resume</a>
               </div>
-            </motion.div>
+            </ScrollReveal>
           </div>
         </section>
 
         {/* Work Grid */}
         <section id="work" className="py-24 px-6 md:px-12 bg-white">
           <div className="max-w-[1200px] mx-auto">
-            <div className="text-[12px] uppercase tracking-[0.2em] text-[var(--color-text-muted)] mb-12">
-              SELECTED WORK
-            </div>
+            <ScrollReveal className="mb-12">
+              <div className="text-[12px] uppercase tracking-[0.2em] text-[var(--color-text-muted)]">
+                SELECTED WORK
+              </div>
+            </ScrollReveal>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <ScrollReveal stagger className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {caseStudies.map(study => (
                 <CaseStudyCard key={study.id} {...study} />
               ))}
-            </div>
+            </ScrollReveal>
           </div>
         </section>
 
         {/* About Teaser */}
         <section className="py-24 px-6 md:px-12">
           <div className="max-w-[1200px] mx-auto">
-            <div className="max-w-2xl">
+            <ScrollReveal className="max-w-2xl">
               <h2 className="text-4xl font-bold mb-8">Beyond the pixels.</h2>
               <p className="text-xl text-[var(--color-text-muted)] mb-8">
                 I believe that words are the most powerful design tool we have. When we get the language right, the interface almost disappears.
@@ -125,7 +124,7 @@ const Index = () => {
               <Link to="/about" className="text-[var(--color-accent)] font-medium hover:underline">
                 More about me →
               </Link>
-            </div>
+            </ScrollReveal>
           </div>
         </section>
       </main>

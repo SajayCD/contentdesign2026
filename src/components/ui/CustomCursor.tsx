@@ -9,33 +9,26 @@ const CustomCursor = () => {
   useEffect(() => {
     const updatePosition = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
-    };
-
-    const updateHoverState = () => {
-      const hoveredElement = document.querySelectorAll('a, button, .hover-trigger');
-      hoveredElement.forEach(el => {
-        el.addEventListener('mouseenter', () => setIsHovering(true));
-        el.addEventListener('mouseleave', () => setIsHovering(false));
-      });
+      
+      // Check if hovering over interactive elements
+      const target = e.target as HTMLElement;
+      const isInteractive = target.closest('a, button, .hover-trigger');
+      setIsHovering(!!isInteractive);
     };
 
     window.addEventListener('mousemove', updatePosition);
-    updateHoverState();
-
-    return () => {
-      window.removeEventListener('mousemove', updatePosition);
-    };
+    return () => window.removeEventListener('mousemove', updatePosition);
   }, []);
 
   return (
     <div
       id="custom-cursor"
-      className="fixed pointer-events-none z-[9999] transition-colors duration-200"
+      className="fixed pointer-events-none z-[9999] transition-colors duration-200 select-none"
       style={{
         left: `${position.x}px`,
         top: `${position.y}px`,
         transform: 'translate(-2px, -12px)',
-        color: isHovering ? 'var(--color-accent)' : 'var(--color-text)',
+        color: isHovering ? '#4F46E5' : '#1C1C1E',
         fontFamily: 'var(--font-display)',
         fontSize: '24px',
         fontWeight: 500
