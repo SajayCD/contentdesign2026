@@ -38,6 +38,10 @@ const Recruiter = () => {
                   <span className="text-[var(--color-accent)]">●</span>
                   <span>Proven track record: 1,160% growth in SIPs at Angel One through content strategy.</span>
                 </li>
+                <li className="flex items-start gap-3">
+                  <span className="text-[var(--color-accent)]">●</span>
+                  <span>MSc Communication & Media, UCD Dublin (In Progress)</span>
+                </li>
               </ul>
             </div>
 

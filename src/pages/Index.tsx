@@ -76,9 +76,13 @@ const Index = () => {
                 CONTENT DESIGN PORTFOLIO — 2025
               </div>
               
-              <h1 className="text-[clamp(56px,8vw,88px)] font-bold mb-4 leading-[1.1]">
+              <h1 className="text-[clamp(56px,8vw,88px)] font-bold mb-1 leading-[1.1]">
                 Sajay
               </h1>
+
+              <div className="text-[12px] font-medium uppercase tracking-[0.08em] text-[var(--color-text-muted)] mb-8">
+                MSc Communication & Media, UCD Dublin (In Progress)
+              </div>
               
               <div className="text-[clamp(24px,4vw,48px)] font-medium mb-8 min-h-[1.2em]">
                 <Typewriter text="I make complex products feel human." />
