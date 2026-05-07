@@ -21,7 +21,11 @@ const CaseStudyDetail = () => {
       
       <main className="flex-grow pt-32">
         {isMutualFunds && (
-          <article>
+          <motion.article
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
             {/* Header */}
             <header className="px-6 md:px-12 mb-16">
               <div className="max-w-[1200px] mx-auto">
@@ -102,11 +106,15 @@ const CaseStudyDetail = () => {
                 </div>
               </div>
             </section>
-          </article>
+          </motion.article>
         )}
 
         {isScalingOrg && (
-          <article>
+          <motion.article
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
             {/* Header */}
             <header className="px-6 md:px-12 mb-16">
               <div className="max-w-[1200px] mx-auto">
@@ -283,7 +291,7 @@ const CaseStudyDetail = () => {
                 </Link>
               </div>
             </section>
-          </article>
+          </motion.article>
         )}
 
         {!isMutualFunds && !isScalingOrg && (
