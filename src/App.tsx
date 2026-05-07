@@ -4,6 +4,7 @@ import Index from "./pages/Index";
 import About from "./pages/About";
 import Recruiter from "./pages/Recruiter";
 import CaseStudyDetail from "./pages/CaseStudyDetail";
+import ScalingPart1 from "./pages/ScalingPart1";
 import NotFound from "./pages/NotFound";
 
 const PageWrapper = ({ children }: { children: React.ReactNode }) => (
@@ -27,6 +28,7 @@ const AnimatedRoutes = () => {
         <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
         <Route path="/recruiter" element={<PageWrapper><Recruiter /></PageWrapper>} />
         <Route path="/work/:slug" element={<PageWrapper><CaseStudyDetail /></PageWrapper>} />
+        <Route path="/scaling-part-1" element={<PageWrapper><ScalingPart1 /></PageWrapper>} />
         <Route path="*" element={<PageWrapper><NotFound /></PageWrapper>} />
       </Routes>
     </AnimatePresence>
