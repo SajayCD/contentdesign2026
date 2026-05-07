@@ -132,7 +132,8 @@ const CaseStudyDetail = () => {
                 <h1 className="text-[clamp(36px,5vw,56px)] font-bold mb-6 max-w-4xl">
                   Scaling a Content Design Org: A Blueprint
                 </h1>
-              </header>
+              </div>
+            </header>
 
             {/* Intro Section */}
             <section className="px-6 md:px-12 mb-24">
