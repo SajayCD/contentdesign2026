@@ -6,6 +6,7 @@ import Recruiter from "./pages/Recruiter";
 import CaseStudyDetail from "./pages/CaseStudyDetail";
 import ScalingPart1 from "./pages/ScalingPart1";
 import NotFound from "./pages/NotFound";
+import ScrollToTop from "./components/layout/ScrollToTop";
 
 const PageWrapper = ({ children }: { children: React.ReactNode }) => (
   <motion.div
@@ -37,6 +38,7 @@ const AnimatedRoutes = () => {
 
 const App = () => (
   <BrowserRouter>
+    <ScrollToTop />
     <AnimatedRoutes />
   </BrowserRouter>
 );
