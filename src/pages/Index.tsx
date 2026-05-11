@@ -49,6 +49,58 @@ const Index = () => {
       number: '05',
       title: 'Content Design Acceptance Testing (CDAT)',
       impact: '936 hours saved/year',
+      tags: ['Process', 'QA'],<dyad-write path="src/pages/Index.tsx" description="Refining the Selected Work header by removing the Portfolio label and adjusting the font size.">
+"use client";
+
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Navbar from '@/components/layout/Navbar';
+import Footer from '@/components/layout/Footer';
+import Typewriter from '@/components/ui/Typewriter';
+import CaseStudyCard from '@/components/ui/CaseStudyCard';
+import CustomCursor from '@/components/ui/CustomCursor';
+import ScrollReveal from '@/components/ui/ScrollReveal';
+import { motion } from 'framer-motion';
+
+const Index = () => {
+  const caseStudies = [
+    {
+      id: '1',
+      number: '01',
+      title: 'From 50k to 500k+: The Mutual Funds Revamp',
+      impact: '1,160% growth in 12 months',
+      tags: ['Content Design', 'FinTech'],
+      slug: 'mutual-funds'
+    },
+    {
+      id: '2',
+      number: '02',
+      title: 'Scaling a Content Design Org: A Blueprint',
+      impact: 'From 1 to 5 writers',
+      tags: ['Leadership', 'Strategy'],
+      slug: 'content-design-org'
+    },
+    {
+      id: '3',
+      number: '03',
+      title: 'Content in Design System',
+      impact: 'Voice & Tone at scale',
+      tags: ['Systems', 'Standards'],
+      slug: 'design-system'
+    },
+    {
+      id: '4',
+      number: '04',
+      title: 'Design Audits: A Hedge Against Design Debt',
+      impact: '900+ dev hours saved annually',
+      tags: ['Process', 'Governance'],
+      slug: 'design-audits'
+    },
+    {
+      id: '5',
+      number: '05',
+      title: 'Content Design Acceptance Testing (CDAT)',
+      impact: '936 hours saved/year',
       tags: ['Process', 'QA'],
       slug: 'cdat'
     },
@@ -103,14 +155,8 @@ const Index = () => {
         {/* Work Grid */}
         <section id="work" className="py-32 px-6 md:px-12 bg-white">
           <div className="max-w-[1200px] mx-auto">
-            <ScrollReveal className="mb-20">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="h-[1px] w-12 bg-[var(--color-accent)]"></div>
-                <div className="text-[12px] uppercase tracking-[0.3em] text-[var(--color-accent)] font-bold">
-                  Portfolio
-                </div>
-              </div>
-              <h2 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none">
+            <ScrollReveal className="mb-16">
+              <h2 className="text-4xl md:text-6xl font-bold tracking-tighter leading-none">
                 Selected Work
               </h2>
             </ScrollReveal>
