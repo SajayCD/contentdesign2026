@@ -3,13 +3,12 @@
 import React from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import CustomCursor from '@/components/ui/CustomCursor';
 import { motion } from 'framer-motion';
+import TrackChangesTooltip from '@/components/ui/TrackChangesTooltip';
 
 const About = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <CustomCursor />
       <Navbar />
       
       <main className="flex-grow pt-32 px-6 md:px-12 pb-24">
@@ -23,7 +22,7 @@ const About = () => {
             
             <div className="prose prose-lg max-w-none text-[var(--color-text-muted)] space-y-6">
               <p>
-                I'm Sajay, a Senior Content Designer based in Bengaluru. I specialize in taking complex, high-stakes products and making them feel intuitive, human, and trustworthy.
+                I'm Sajay, a <TrackChangesTooltip text="also known as: the person who stopped that error message from ruining your day">Senior Content Designer</TrackChangesTooltip> based in Bengaluru. I specialize in taking complex, high-stakes products and making them feel intuitive, human, and trustworthy.
               </p>
               <p>
                 With over 8 years of experience, I've helped shape products used by millions. My approach is rooted in the belief that content is design, and that the right words can solve problems that pixels alone cannot.

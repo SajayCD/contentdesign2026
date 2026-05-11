@@ -2,13 +2,10 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import CustomCursor from '@/components/ui/CustomCursor';
 
 const NotFound = () => {
   return (
     <div className="min-h-screen bg-[#1C1C1E] text-[#F9F8F5] flex items-center justify-center p-6 overflow-hidden">
-      <CustomCursor />
-      
       <div className="max-w-[500px] w-full border-4 border-[#F9F8F5] p-8 relative aspect-[3/4] flex flex-col">
         <div className="text-4xl font-bold tracking-tighter mb-2" style={{ fontFamily: 'var(--font-display)' }}>
           NOT FOUND QUARTERLY

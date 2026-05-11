@@ -4,7 +4,6 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import CustomCursor from '@/components/ui/CustomCursor';
 import MutualFunds from '@/components/case-studies/MutualFunds';
 import ScalingOrg from '@/components/case-studies/ScalingOrg';
 import CDAT from '@/components/case-studies/CDAT';
@@ -42,7 +41,6 @@ const CaseStudyDetail = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <CustomCursor />
       <Navbar />
       
       <main className="flex-grow pt-32">

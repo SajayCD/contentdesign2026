@@ -6,9 +6,9 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Typewriter from '@/components/ui/Typewriter';
 import CaseStudyCard from '@/components/ui/CaseStudyCard';
-import CustomCursor from '@/components/ui/CustomCursor';
 import ScrollReveal from '@/components/ui/ScrollReveal';
-import { motion } from 'framer-motion';
+import TrackChangesTooltip from '@/components/ui/TrackChangesTooltip';
+import Highlighter from '@/components/ui/Highlighter';
 
 const Index = () => {
   const caseStudies = [
@@ -64,7 +64,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <CustomCursor />
       <Navbar />
       
       <main className="flex-grow">
@@ -77,7 +76,9 @@ const Index = () => {
               </div>
               
               <h1 className="text-[clamp(56px,8vw,88px)] font-bold mb-1 leading-[1.1]">
-                Sajay
+                <TrackChangesTooltip text="strong word choice ✓">
+                  Sajay
+                </TrackChangesTooltip>
               </h1>
 
               <div className="text-[12px] font-medium uppercase tracking-[0.08em] text-[var(--color-text-muted)] mb-8">
@@ -85,11 +86,13 @@ const Index = () => {
               </div>
               
               <div className="text-[clamp(24px,4vw,48px)] font-medium mb-8 min-h-[1.2em]">
-                <Typewriter text="I make complex products feel human." />
+                <TrackChangesTooltip text="suggested edit: keep exactly as is">
+                  <Typewriter text="I make complex products feel human." />
+                </TrackChangesTooltip>
               </div>
               
               <p className="text-xl text-[var(--color-text-muted)] mb-12 max-w-2xl">
-                8 years. 1 billion+ orders placed on products I helped shape.
+                8 years. <TrackChangesTooltip text="yes, this is real"><Highlighter>1 billion+</Highlighter></TrackChangesTooltip> orders placed on products I helped shape.
               </p>
               
               <div className="flex flex-wrap gap-4">

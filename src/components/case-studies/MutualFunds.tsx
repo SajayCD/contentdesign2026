@@ -4,6 +4,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
+import Highlighter from '@/components/ui/Highlighter';
 
 const MutualFunds = () => {
   return (
@@ -31,7 +32,7 @@ const MutualFunds = () => {
           </h1>
           
           <p className="text-2xl text-[var(--color-text-muted)] max-w-3xl">
-            How content design drove a 1,160% increase in monthly SIPs — and built better investors along the way.
+            How content design drove a <Highlighter>1,160%</Highlighter> increase in monthly SIPs — and built better investors along the way.
           </p>
         </div>
       </header>
@@ -40,19 +41,27 @@ const MutualFunds = () => {
       <section className="bg-white border-y border-[var(--color-border)] py-12 px-6 md:px-12 mb-24">
         <div className="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
-            <div className="text-4xl md:text-5xl font-bold text-[var(--color-accent)] mb-2" style={{ fontFamily: 'var(--font-display)' }}>630k</div>
+            <div className="text-4xl md:text-5xl font-bold text-[var(--color-accent)] mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+              <Highlighter>630k</Highlighter>
+            </div>
             <div className="text-[11px] uppercase tracking-widest text-[var(--color-text-muted)]">Peak monthly SIPs</div>
           </div>
           <div>
-            <div className="text-4xl md:text-5xl font-bold text-[var(--color-accent)] mb-2" style={{ fontFamily: 'var(--font-display)' }}>72%</div>
+            <div className="text-4xl md:text-5xl font-bold text-[var(--color-accent)] mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+              <Highlighter>72%</Highlighter>
+            </div>
             <div className="text-[11px] uppercase tracking-widest text-[var(--color-text-muted)]">Mandate ratio</div>
           </div>
           <div>
-            <div className="text-4xl md:text-5xl font-bold text-[var(--color-accent)] mb-2" style={{ fontFamily: 'var(--font-display)' }}>12mo</div>
+            <div className="text-4xl md:text-5xl font-bold text-[var(--color-accent)] mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+              <Highlighter>12mo</Highlighter>
+            </div>
             <div className="text-[11px] uppercase tracking-widest text-[var(--color-text-muted)]">Time to 10x</div>
           </div>
           <div>
-            <div className="text-4xl md:text-5xl font-bold text-[var(--color-accent)] mb-2" style={{ fontFamily: 'var(--font-display)' }}>-60%</div>
+            <div className="text-4xl md:text-5xl font-bold text-[var(--color-accent)] mb-2" style={{ fontFamily: 'var(--font-display)' }}>
+              <Highlighter>-60%</Highlighter>
+            </div>
             <div className="text-[11px] uppercase tracking-widest text-[var(--color-text-muted)]">Support ratio drop</div>
           </div>
         </div>
@@ -87,7 +96,7 @@ const MutualFunds = () => {
 
             <h2 className="text-3xl font-bold mb-6">Impact</h2>
             <p className="mb-8">
-              The results were transformative. Beyond the 1,160% growth in SIPs, we saw a massive drop in support tickets related to investment confusion. We didn't just sell more products; we built more confident investors.
+              The results were transformative. Beyond the <Highlighter>1,160%</Highlighter> growth in SIPs, we saw a massive drop in support tickets related to investment confusion. We didn't just sell more products; we built more confident investors.
             </p>
           </div>
         </div>

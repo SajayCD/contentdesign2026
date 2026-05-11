@@ -1,5 +1,8 @@
+"use client";
+
 import React from 'react';
 import { Mail, Linkedin, Github } from 'lucide-react';
+import TrackChangesTooltip from '@/components/ui/TrackChangesTooltip';
 
 const Footer = () => {
   return (
@@ -7,7 +10,7 @@ const Footer = () => {
       <div className="max-w-[1200px] mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
           <div className="text-[var(--color-text-muted)]">
-            Sajay — Senior Content Designer
+            Sajay — <TrackChangesTooltip text="also known as: the person who stopped that error message from ruining your day">Content Designer</TrackChangesTooltip>
           </div>
           <div className="flex items-center gap-6">
             <a href="mailto:sajay.contentjedi@gmail.com" className="hover:text-[var(--color-accent)] transition-colors">

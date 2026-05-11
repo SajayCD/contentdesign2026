@@ -4,14 +4,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import CustomCursor from '@/components/ui/CustomCursor';
 import { motion } from 'framer-motion';
 import { FileText, Linkedin, Globe, Music } from 'lucide-react';
+import TrackChangesTooltip from '@/components/ui/TrackChangesTooltip';
+import Highlighter from '@/components/ui/Highlighter';
 
 const Recruiter = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <CustomCursor />
       <Navbar />
       
       <main className="flex-grow pt-32 px-6 md:px-12 pb-24">
@@ -28,7 +28,7 @@ const Recruiter = () => {
               <ul className="space-y-4 text-lg">
                 <li className="flex items-start gap-3">
                   <span className="text-[var(--color-accent)]">●</span>
-                  <span>Senior Content Designer with 8+ years of experience in high-growth tech.</span>
+                  <span><TrackChangesTooltip text="also known as: the person who stopped that error message from ruining your day">Senior Content Designer</TrackChangesTooltip> with <Highlighter>8+ years</Highlighter> of experience in high-growth tech.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[var(--color-accent)]">●</span>
@@ -36,7 +36,7 @@ const Recruiter = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[var(--color-accent)]">●</span>
-                  <span>Proven track record: 1,160% growth in SIPs at Angel One through content strategy.</span>
+                  <span>Proven track record: <Highlighter>1,160%</Highlighter> growth in SIPs at Angel One through content strategy.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[var(--color-accent)]">●</span>

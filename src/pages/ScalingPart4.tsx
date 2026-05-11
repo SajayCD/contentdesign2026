@@ -6,6 +6,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import CustomCursor from '@/components/ui/CustomCursor';
 import { motion } from 'framer-motion';
+import Highlighter from '@/components/ui/Highlighter';
 
 const ScalingPart4 = () => {
   const tips = [
@@ -53,7 +54,6 @@ const ScalingPart4 = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <CustomCursor />
       <Navbar />
       
       <main className="flex-grow pt-32 pb-24 px-6 md:px-12">
@@ -82,7 +82,7 @@ const ScalingPart4 = () => {
 
             <div className="prose prose-lg max-w-none">
               <p className="mb-12">
-                I have interviewed candidates at all levels and at different stages of the interview process, overseeing the hiring of 6 UX writers in our team. Over 100+ interviews, these are my insights and tips to remember if you're just starting. Based on your experience conducting interviews, some might be redundant to you; please feel free to skip them.
+                I have interviewed candidates at all levels and at different stages of the interview process, overseeing the hiring of <Highlighter>6 UX writers</Highlighter> in our team. Over <Highlighter>100+ interviews</Highlighter>, these are my insights and tips to remember if you're just starting. Based on your experience conducting interviews, some might be redundant to you; please feel free to skip them.
               </p>
 
               <div className="space-y-16 mb-24">

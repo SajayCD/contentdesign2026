@@ -4,6 +4,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import Highlighter from '@/components/ui/Highlighter';
+import TrackChangesTooltip from '@/components/ui/TrackChangesTooltip';
 
 const ScalingOrg = () => {
   return (
@@ -26,7 +28,7 @@ const ScalingOrg = () => {
           </div>
           
           <h1 className="text-[clamp(36px,5vw,56px)] font-bold mb-6 max-w-4xl">
-            Scaling a Content Design Org: A Blueprint
+            Scaling a <TrackChangesTooltip text="also known as: the person who stopped that error message from ruining your day">Content Design</TrackChangesTooltip> Org: A Blueprint
           </h1>
         </div>
       </header>
@@ -36,13 +38,13 @@ const ScalingOrg = () => {
         <div className="max-w-[720px] mx-auto">
           <div className="prose prose-lg max-w-none">
             <p className="mb-8">
-              UX Writing is having its heyday in the whole product development space. Specifically in India, where I have worked for most of my professional career, UX writing is today where UX design was a decade ago. The most competent product teams realise and give importance to Content Design; but many teams are still playing catch up - teams that do not yet have the clarity, the right people to convince them, or the right people at the top guiding organisational decisions.
+              UX Writing is having its heyday in the whole product development space. Specifically in India, where I have worked for most of my professional career, UX writing is today where UX design was a decade ago. The most competent product teams realise and give importance to <TrackChangesTooltip text="also known as: the person who stopped that error message from ruining your day">Content Design</TrackChangesTooltip>; but many teams are still playing catch up - teams that do not yet have the clarity, the right people to convince them, or the right people at the top guiding organisational decisions.
             </p>
             <p className="mb-12">
               In the coming (and current) years, I imagine many teams building out solid content design organizations and experiencing the growing pains that come with this process.
             </p>
             <p className="mb-8">
-              A little about me: I serve a stellar team of four content designers at Angel One. I lead UX Content strategy and maturity for a suite of 8 financial products serving 20 Million+ Indian investors. In 2023, 1 billion+ orders were placed on the experiences I helped create. We have solid processes, expectations, and team and organisational awareness for every step of the content lifecycle, including:
+              A little about me: I serve a stellar team of four content designers at Angel One. I lead UX Content strategy and maturity for a suite of 8 financial products serving <Highlighter>20 Million+</Highlighter> Indian investors. In 2023, <TrackChangesTooltip text="yes, this is real"><Highlighter>1 billion+</Highlighter></TrackChangesTooltip> orders were placed on the experiences I helped create. We have solid processes, expectations, and team and organisational awareness for every step of the content lifecycle, including:
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-16">

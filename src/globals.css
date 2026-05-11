@@ -20,10 +20,6 @@
     --radius-tag: 100px;
   }
 
-  * {
-    cursor: none !important;
-  }
-
   body {
     background-color: var(--color-bg);
     color: var(--color-text);
