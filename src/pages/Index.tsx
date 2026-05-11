@@ -101,12 +101,18 @@ const Index = () => {
         </section>
 
         {/* Work Grid */}
-        <section id="work" className="py-24 px-6 md:px-12 bg-white">
+        <section id="work" className="py-32 px-6 md:px-12 bg-white">
           <div className="max-w-[1200px] mx-auto">
-            <ScrollReveal className="mb-12">
-              <div className="text-[12px] uppercase tracking-[0.2em] text-[var(--color-text-muted)]">
-                SELECTED WORK
+            <ScrollReveal className="mb-20">
+              <div className="flex items-center gap-4 mb-6">
+                <div className="h-[1px] w-12 bg-[var(--color-accent)]"></div>
+                <div className="text-[12px] uppercase tracking-[0.3em] text-[var(--color-accent)] font-bold">
+                  Portfolio
+                </div>
               </div>
+              <h2 className="text-6xl md:text-8xl font-bold tracking-tighter leading-none">
+                Selected Work
+              </h2>
             </ScrollReveal>
             
             <ScrollReveal stagger className="grid grid-cols-1 md:grid-cols-2 gap-8">
