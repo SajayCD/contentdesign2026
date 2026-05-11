@@ -4,14 +4,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import CustomCursor from '@/components/ui/CustomCursor';
 import { motion } from 'framer-motion';
 import { ArrowLeft, ArrowRight, BookOpen } from 'lucide-react';
 
 const ScalingPart1 = () => {
   return (
     <div className="min-h-screen flex flex-col">
-      <CustomCursor />
       <Navbar />
       
       <main className="flex-grow pt-32 pb-24 px-6 md:px-12">
@@ -153,7 +151,7 @@ const ScalingPart1 = () => {
                 <h3 className="text-2xl font-bold mb-4">Never Split The Difference</h3>
                 <p className="text-[var(--color-text-muted)] mb-8">by Chris Voss</p>
                 <p className="mb-8">
-                  One of the best books I have read about this kind of negotiation (a part of everyday life) is Never Split The Difference by Chris Voss. Chris Voss is much better at explaining this topic than I am and I highly suggest reading his book. My cliff notes from the book (but seriously, go ahead and read it for yourself):
+                  One of the best books I have read about this kind of negotiation (a part of everyday life) is Never Split The Difference by Chris Voss. Chris Voss is much better at explaining this topic than I am and I suggest reading his book. My cliff notes from the book (but seriously, go ahead and read it for yourself):
                 </p>
                 <ul className="space-y-3 list-none p-0">
                   {[

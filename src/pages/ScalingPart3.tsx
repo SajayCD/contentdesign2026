@@ -4,7 +4,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
-import CustomCursor from '@/components/ui/CustomCursor';
 import { motion } from 'framer-motion';
 
 const ScalingPart3 = () => {
@@ -16,7 +15,6 @@ const ScalingPart3 = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <CustomCursor />
       <Navbar />
       
       <main className="flex-grow pt-32 pb-24 px-6 md:px-12">
