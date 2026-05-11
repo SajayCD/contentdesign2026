@@ -22,13 +22,16 @@ const About = () => {
             
             <div className="prose prose-lg max-w-none text-[var(--color-text-muted)] space-y-6">
               <p>
-                I'm Sajay, a <TrackChangesTooltip text="also known as: the person who stopped that error message from ruining your day">Senior Content Designer</TrackChangesTooltip> based in Bengaluru. I specialize in taking complex, high-stakes products and making them feel intuitive, human, and trustworthy.
+                I'm Sajay, a <TrackChangesTooltip text="also: the person who stopped that error message from ruining your day">Content Designer</TrackChangesTooltip> based in Bengaluru. I specialize in taking complex, high-stakes products and making them feel intuitive, human, and trustworthy.
               </p>
               <p>
                 With over 8 years of experience, I've helped shape products used by millions. My approach is rooted in the belief that content is design, and that the right words can solve problems that pixels alone cannot.
               </p>
               <p>
                 I've spent a significant part of my career in FinTech, where the challenge is often translating "bank-speak" into something that actually makes sense to a person trying to secure their financial future.
+              </p>
+              <p>
+                8 years. <TrackChangesTooltip text="yes, this is real">1 billion+ orders</TrackChangesTooltip> placed on products I helped shape.
               </p>
             </div>
 

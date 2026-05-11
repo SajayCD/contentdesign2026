@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, AlertCircle } from 'lucide-react';
 import Highlighter from '@/components/ui/Highlighter';
+import TrackChangesTooltip from '@/components/ui/TrackChangesTooltip';
 
 const CDAT = () => {
   return (
@@ -37,25 +38,25 @@ const CDAT = () => {
         <div className="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
             <div className="text-4xl md:text-5xl font-bold text-[var(--color-accent)] mb-2" style={{ fontFamily: 'var(--font-display)' }}>
-              <Highlighter>936</Highlighter>
+              936
             </div>
             <div className="text-[11px] uppercase tracking-widest text-[var(--color-text-muted)]">Hours saved per year</div>
           </div>
           <div>
             <div className="text-4xl md:text-5xl font-bold text-[var(--color-accent)] mb-2" style={{ fontFamily: 'var(--font-display)' }}>
-              <Highlighter>39</Highlighter>
+              39
             </div>
             <div className="text-[11px] uppercase tracking-widest text-[var(--color-text-muted)]">Hours saved per sprint</div>
           </div>
           <div>
             <div className="text-4xl md:text-5xl font-bold text-[var(--color-accent)] mb-2" style={{ fontFamily: 'var(--font-display)' }}>
-              <Highlighter>80</Highlighter>
+              80
             </div>
             <div className="text-[11px] uppercase tracking-widest text-[var(--color-text-muted)]">Hours saved per month (approx.)</div>
           </div>
           <div>
             <div className="text-4xl md:text-5xl font-bold text-[var(--color-accent)] mb-2" style={{ fontFamily: 'var(--font-display)' }}>
-              <Highlighter>0</Highlighter>
+              0
             </div>
             <div className="text-[11px] uppercase tracking-widest text-[var(--color-text-muted)]">Content debt from new builds (goal)</div>
           </div>
@@ -72,7 +73,7 @@ const CDAT = () => {
 
             <h2 className="text-3xl font-bold mb-6">Impact</h2>
             <p className="mb-12">
-              We ended up saving over <Highlighter>900 hours</Highlighter> every year (~<Highlighter>80 hours</Highlighter> a month) of design and development bandwidth by implementing this process and preventing issues pre-emptively.
+              We ended up saving over <TrackChangesTooltip text="that's 39 full working days back to the team"><Highlighter>936 hours saved per year</Highlighter></TrackChangesTooltip> (~<Highlighter>80 hours</Highlighter> a month) of design and development bandwidth by implementing this process and preventing issues pre-emptively.
             </p>
 
             <h2 className="text-3xl font-bold mb-6">Problem Statement</h2>

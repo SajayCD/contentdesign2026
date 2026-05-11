@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import Highlighter from '@/components/ui/Highlighter';
+import TrackChangesTooltip from '@/components/ui/TrackChangesTooltip';
 
 const MutualFunds = () => {
   return (
@@ -42,25 +43,25 @@ const MutualFunds = () => {
         <div className="max-w-[1200px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
           <div>
             <div className="text-4xl md:text-5xl font-bold text-[var(--color-accent)] mb-2" style={{ fontFamily: 'var(--font-display)' }}>
-              <Highlighter>630k</Highlighter>
+              630k
             </div>
             <div className="text-[11px] uppercase tracking-widest text-[var(--color-text-muted)]">Peak monthly SIPs</div>
           </div>
           <div>
             <div className="text-4xl md:text-5xl font-bold text-[var(--color-accent)] mb-2" style={{ fontFamily: 'var(--font-display)' }}>
-              <Highlighter>72%</Highlighter>
+              72%
             </div>
             <div className="text-[11px] uppercase tracking-widest text-[var(--color-text-muted)]">Mandate ratio</div>
           </div>
           <div>
             <div className="text-4xl md:text-5xl font-bold text-[var(--color-accent)] mb-2" style={{ fontFamily: 'var(--font-display)' }}>
-              <Highlighter>12mo</Highlighter>
+              12mo
             </div>
             <div className="text-[11px] uppercase tracking-widest text-[var(--color-text-muted)]">Time to 10x</div>
           </div>
           <div>
             <div className="text-4xl md:text-5xl font-bold text-[var(--color-accent)] mb-2" style={{ fontFamily: 'var(--font-display)' }}>
-              <Highlighter>-60%</Highlighter>
+              -60%
             </div>
             <div className="text-[11px] uppercase tracking-widest text-[var(--color-text-muted)]">Support ratio drop</div>
           </div>
@@ -82,7 +83,7 @@ const MutualFunds = () => {
             </p>
 
             <blockquote className="pull-quote">
-              "When this project started, we were at 50,000 new SIPs monthly. We hit 150,000 — our 3x goal — within just 3 months."
+              "When this project started, we were at 50,000 new SIPs monthly. We hit <TrackChangesTooltip text="up from 50,000. words did some of this."><Highlighter>630,000 SIPs</Highlighter></TrackChangesTooltip> — our 3x goal — within just 3 months."
             </blockquote>
 
             <h2 className="text-3xl font-bold mb-6">Approach & Solutions</h2>

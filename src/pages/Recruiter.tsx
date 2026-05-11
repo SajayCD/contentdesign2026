@@ -28,7 +28,7 @@ const Recruiter = () => {
               <ul className="space-y-4 text-lg">
                 <li className="flex items-start gap-3">
                   <span className="text-[var(--color-accent)]">●</span>
-                  <span><TrackChangesTooltip text="also known as: the person who stopped that error message from ruining your day">Senior Content Designer</TrackChangesTooltip> with <Highlighter>8+ years</Highlighter> of experience in high-growth tech.</span>
+                  <span><TrackChangesTooltip text="also: the person who stopped that error message from ruining your day">Senior Content Designer</TrackChangesTooltip> with <Highlighter>8+ years</Highlighter> of experience in high-growth tech.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[var(--color-accent)]">●</span>
