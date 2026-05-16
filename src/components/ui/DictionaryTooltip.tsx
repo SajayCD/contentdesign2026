@@ -39,10 +39,10 @@ const DictionaryTooltip = ({ children, className = "" }: DictionaryTooltipProps)
                 con·tent de·sign·er
               </div>
               <div className="text-[12px] text-[#6B6B6B] italic" style={{ fontFamily: 'var(--font-body)' }}>
-                /ˈkɒntɛnt dɪˈzaɪnər/
+                Also called "UX Writer"
               </div>
               <div className="text-[11px] font-semibold uppercase tracking-wider text-[#4F46E5]" style={{ fontFamily: 'var(--font-body)' }}>
-                noun
+                NOUN
               </div>
               <p className="text-[13px] text-[#1C1C1E] leading-[1.6] mt-2" style={{ fontFamily: 'var(--font-body)' }}>
                 a design professional who crafts the words that guide users through digital products.

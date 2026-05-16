@@ -41,7 +41,7 @@ const TrackChangesTooltip = ({
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 4 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute bottom-[calc(100%+12px)] left-0 z-[100] bg-white border-[1.5px] border-[#34A853] rounded-lg shadow-[0_4px_16px_rgba(0,0,0,0.12)] p-3 min-w-[200px] max-w-[280px] pointer-events-none hidden md:block"
+            className="absolute bottom-[calc(100%+12px)] left-0 z-[100] bg-white border-t-[3px] border-t-[#34A853] rounded-[10px] shadow-[0_8px_24px_rgba(0,0,0,0.1)] p-[12px_16px] min-w-[200px] max-w-[280px] pointer-events-none hidden md:block"
           >
             <div className="flex items-center gap-1.5 mb-1">
               <div className="w-[18px] h-[18px] rounded-full bg-[#34A853] flex items-center justify-center text-[9px] text-white font-bold shrink-0" style={{ fontFamily: 'var(--font-body)' }}>

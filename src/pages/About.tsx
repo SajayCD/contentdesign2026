@@ -13,11 +13,12 @@ const About = () => {
       
       <main className="flex-grow pt-32 px-6 md:px-12 pb-24">
         <div className="max-w-[1200px] mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_400px] gap-16 items-start mb-24">
+          <div className="flex flex-col md:flex-row gap-16 items-start mb-24">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6 }}
+              className="md:w-[60%]"
             >
               <h1 className="text-5xl font-bold mb-12">Hi there, fellow human beings (and their cats 🐱).</h1>
               
@@ -35,13 +36,13 @@ const About = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex justify-center md:justify-end"
+              className="md:w-[40%] flex justify-center md:justify-end"
             >
-              <div className="w-[240px] h-[240px] md:w-[320px] md:h-[320px] rounded-full overflow-hidden">
+              <div className="w-[240px] h-[240px] md:w-[300px] md:h-[300px] rounded-full overflow-hidden">
                 <img 
                   src="/sajay-photo.jpg" 
                   alt="Sajay Jai Singh" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-[center_top]"
                 />
               </div>
             </motion.div>
@@ -58,29 +59,42 @@ const About = () => {
             <div className="flex flex-wrap gap-6">
               {/* DJ Decks */}
               <div className="w-[120px] bg-[#F9F8F5] rounded-xl p-5 flex flex-col items-center text-center">
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="mb-3">
-                  <circle cx="12" cy="24" r="8" stroke="#4F46E5" strokeWidth="2"/>
-                  <circle cx="36" cy="24" r="8" stroke="#4F46E5" strokeWidth="2"/>
-                  <rect x="20" y="16" width="8" height="16" stroke="#4F46E5" strokeWidth="2"/>
+                <svg viewBox="0 0 64 64" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg" className="mb-3">
+                  <circle cx="14" cy="36" r="12" stroke="#4F46E5" strokeWidth="2"/>
+                  <circle cx="14" cy="36" r="5" stroke="#4F46E5" strokeWidth="1.5"/>
+                  <circle cx="14" cy="36" r="1.5" fill="#4F46E5"/>
+                  <circle cx="50" cy="36" r="12" stroke="#4F46E5" strokeWidth="2"/>
+                  <circle cx="50" cy="36" r="5" stroke="#4F46E5" strokeWidth="1.5"/>
+                  <circle cx="50" cy="36" r="1.5" fill="#4F46E5"/>
+                  <rect x="26" y="28" width="12" height="16" rx="2" stroke="#4F46E5" strokeWidth="1.5"/>
+                  <line x1="29" y1="31" x2="29" y2="40" stroke="#4F46E5" strokeWidth="1.5" strokeLinecap="round"/>
+                  <line x1="32" y1="31" x2="32" y2="40" stroke="#4F46E5" strokeWidth="1.5" strokeLinecap="round"/>
+                  <line x1="35" y1="31" x2="35" y2="40" stroke="#4F46E5" strokeWidth="1.5" strokeLinecap="round"/>
+                  <line x1="27" y1="24" x2="37" y2="24" stroke="#4F46E5" strokeWidth="1.5" strokeLinecap="round"/>
+                  <circle cx="30" cy="24" r="2" fill="#4F46E5"/>
                 </svg>
                 <span className="text-[14px] font-medium text-[var(--color-text)]" style={{ fontFamily: 'var(--font-body)' }}>DJ as Sajavibe</span>
               </div>
               
               {/* Mountain */}
               <div className="w-[120px] bg-[#F9F8F5] rounded-xl p-5 flex flex-col items-center text-center">
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="mb-3">
-                  <path d="M24 8L8 40H40L24 8Z" stroke="#4F46E5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M18 20L24 24L30 20" stroke="#4F46E5" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                <svg viewBox="0 0 64 64" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg" className="mb-3">
+                  <path d="M4 52 L32 10 L60 52 Z" stroke="#4F46E5" strokeWidth="2" strokeLinejoin="round"/>
+                  <path d="M24 28 L32 10 L40 28 Z" stroke="#4F46E5" strokeWidth="1.5" strokeLinejoin="round" fill="white"/>
+                  <path d="M2 52 L18 32 L34 52" stroke="#4F46E5" strokeWidth="1.5" strokeLinejoin="round" opacity="0.4"/>
+                  <path d="M32 52 Q38 44 36 36" stroke="#4F46E5" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="3 3"/>
                 </svg>
                 <span className="text-[14px] font-medium text-[var(--color-text)]" style={{ fontFamily: 'var(--font-body)' }}>Mountain Climbing</span>
               </div>
 
               {/* Barbell */}
               <div className="w-[120px] bg-[#F9F8F5] rounded-xl p-5 flex flex-col items-center text-center">
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className="mb-3">
-                  <path d="M8 24H40" stroke="#4F46E5" strokeWidth="2" strokeLinecap="round"/>
-                  <circle cx="6" cy="24" r="4" stroke="#4F46E5" strokeWidth="2"/>
-                  <circle cx="42" cy="24" r="4" stroke="#4F46E5" strokeWidth="2"/>
+                <svg viewBox="0 0 64 64" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg" className="mb-3">
+                  <line x1="16" y1="32" x2="48" y2="32" stroke="#4F46E5" strokeWidth="2.5" strokeLinecap="round"/>
+                  <rect x="4" y="22" width="7" height="20" rx="2" stroke="#4F46E5" strokeWidth="2"/>
+                  <rect x="11" y="25" width="5" height="14" rx="1.5" stroke="#4F46E5" strokeWidth="1.5"/>
+                  <rect x="48" y="25" width="5" height="14" rx="1.5" stroke="#4F46E5" strokeWidth="1.5"/>
+                  <rect x="53" y="22" width="7" height="20" rx="2" stroke="#4F46E5" strokeWidth="2"/>
                 </svg>
                 <span className="text-[14px] font-medium text-[var(--color-text)]" style={{ fontFamily: 'var(--font-body)' }}>Lifting Weights</span>
               </div>

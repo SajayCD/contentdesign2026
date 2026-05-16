@@ -36,10 +36,10 @@ const Navbar = () => {
           {/* Homepage specific logo behavior */}
           {isHome && (
             <span 
-              className={`absolute left-0 text-[13px] font-medium uppercase tracking-[0.08em] text-[#6B6B6B] transition-opacity duration-300 ${isScrolled ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+              className={`absolute left-0 text-[11px] font-medium uppercase tracking-[0.08em] text-[#6B6B6B] transition-opacity duration-300 whitespace-nowrap ${isScrolled ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
               style={{ fontFamily: 'var(--font-body)' }}
             >
-              Content Design Portfolio
+              CONTENT DESIGN PORTFOLIO
             </span>
           )}
           

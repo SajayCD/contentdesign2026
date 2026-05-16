@@ -70,10 +70,6 @@ const Index = () => {
         <section className="h-screen flex items-center px-6 md:px-12">
           <div className="max-w-[1200px] mx-auto w-full">
             <ScrollReveal>
-              <div className="text-[12px] uppercase tracking-[0.2em] text-[var(--color-text-muted)] mb-6">
-                CONTENT DESIGN PORTFOLIO — 2025
-              </div>
-              
               <h1 className="text-[clamp(56px,8vw,88px)] font-bold mb-8 leading-[1.1]">
                 Sajay Jai Singh
               </h1>
@@ -82,9 +78,14 @@ const Index = () => {
                 <Typewriter text="I make complex products feel human." />
               </div>
               
-              <p className="text-xl text-[var(--color-text-muted)] mb-12 max-w-2xl">
-                <DictionaryTooltip>Content Designer</DictionaryTooltip>. 1 billion+ orders placed on the experiences I helped shape.
-              </p>
+              <div className="space-y-2 mb-12">
+                <p className="text-xl text-[var(--color-text-muted)] max-w-2xl">
+                  <DictionaryTooltip>Content Designer</DictionaryTooltip> · MSc Communication & Media, UCD Dublin (In Progress)
+                </p>
+                <p className="text-xl text-[var(--color-text-muted)] max-w-2xl">
+                  1 billion+ orders placed on the experiences I helped shape.
+                </p>
+              </div>
               
               <div className="flex flex-wrap gap-4">
                 <a href="#work" className="btn-primary">See my work →</a>
