@@ -34,10 +34,9 @@ const Typewriter = ({ text, speed = 50 }: TypewriterProps) => {
           <motion.span
             initial={{ opacity: 1 }}
             animate={{ opacity: [1, 0, 1] }}
-            exit={{ opacity: 0 }}
+            exit={{ opacity: 0, transition: { duration: 0.5 } }}
             transition={{ 
-              opacity: { repeat: Infinity, duration: 0.8 },
-              exit: { duration: 0.5 }
+              opacity: { repeat: Infinity, duration: 0.8 }
             }}
             className="inline-block w-[2px] h-[1em] bg-[var(--color-accent)] ml-1"
           />
