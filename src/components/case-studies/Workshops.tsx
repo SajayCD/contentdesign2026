@@ -1,9 +1,10 @@
 "use client";
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Presentation } from 'lucide-react';
+import { Presentation } from 'lucide-react';
+import CaseStudyHeader from './CaseStudyHeader';
+import CaseStudyFooter from './CaseStudyFooter';
 
 const Workshops = () => {
   return (
@@ -15,9 +16,7 @@ const Workshops = () => {
       {/* Header */}
       <header className="px-6 md:px-12 mb-16">
         <div className="max-w-[1200px] mx-auto">
-          <Link to="/" className="inline-flex items-center gap-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-accent)] mb-12 transition-colors">
-            <ArrowLeft size={16} /> Back to all work
-          </Link>
+          <CaseStudyHeader />
           
           <div className="flex flex-wrap gap-2 mb-8">
             <span className="tag">Advocacy</span>
@@ -96,22 +95,11 @@ const Workshops = () => {
                 </div>
               </div>
             </div>
-
-            {/* Navigation */}
-            <div className="flex flex-col sm:flex-row justify-between items-center gap-8 pt-12 border-t border-[var(--color-border)]">
-              <Link to="/" className="inline-flex items-center gap-2 text-sm font-bold hover:text-[var(--color-accent)] transition-colors">
-                <ArrowLeft size={16} /> ← All Work
-              </Link>
-              <Link to="/work/content-design-org" className="group inline-flex items-center gap-4 text-right">
-                <div>
-                  <div className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] mb-1">Next Case Study</div>
-                  <div className="text-xl font-bold group-hover:text-[var(--color-accent)] transition-colors">Scaling a Content Design Org →</div>
-                </div>
-              </Link>
-            </div>
           </div>
         </div>
       </section>
+
+      <CaseStudyFooter nextTitle="From 50k to 500k+: The Mutual Funds Revamp" nextSlug="mutual-funds" />
     </motion.article>
   );
 };

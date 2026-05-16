@@ -1,11 +1,11 @@
 "use client";
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, AlertCircle } from 'lucide-react';
+import { AlertCircle } from 'lucide-react';
+import CaseStudyHeader from './CaseStudyHeader';
+import CaseStudyFooter from './CaseStudyFooter';
 import Highlighter from '@/components/ui/Highlighter';
-import TrackChangesTooltip from '@/components/ui/TrackChangesTooltip';
 
 const CDAT = () => {
   return (
@@ -17,9 +17,7 @@ const CDAT = () => {
       {/* Header */}
       <header className="px-6 md:px-12 mb-16">
         <div className="max-w-[1200px] mx-auto">
-          <Link to="/" className="inline-flex items-center gap-2 text-sm text-[var(--color-text-muted)] hover:text-[var(--color-accent)] mb-12 transition-colors">
-            <ArrowLeft size={16} /> Back to all work
-          </Link>
+          <CaseStudyHeader />
           
           <div className="flex flex-wrap gap-2 mb-8">
             <span className="tag">Process</span>
@@ -73,7 +71,7 @@ const CDAT = () => {
 
             <h2 className="text-3xl font-bold mb-6">Impact</h2>
             <p className="mb-12">
-              We ended up saving over <TrackChangesTooltip text="that's 39 full working days back to the team"><Highlighter>936 hours saved per year</Highlighter></TrackChangesTooltip> (~<Highlighter>80 hours</Highlighter> a month) of design and development bandwidth by implementing this process and preventing issues pre-emptively.
+              We ended up saving over <Highlighter>936 hours saved per year</Highlighter> (~<Highlighter>80 hours</Highlighter> a month) of design and development bandwidth by implementing this process and preventing issues pre-emptively.
             </p>
 
             <h2 className="text-3xl font-bold mb-6">Problem Statement</h2>
@@ -183,22 +181,11 @@ const CDAT = () => {
                 </div>
               ))}
             </div>
-
-            {/* Navigation */}
-            <div className="flex flex-col sm:flex-row justify-between items-center gap-8 pt-12 border-t border-[var(--color-border)]">
-              <Link to="/" className="inline-flex items-center gap-2 text-sm font-bold hover:text-[var(--color-accent)] transition-colors">
-                <ArrowLeft size={16} /> ← All Work
-              </Link>
-              <Link to="/work/design-audits" className="group inline-flex items-center gap-4 text-right">
-                <div>
-                  <div className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] mb-1">Next Case Study</div>
-                  <div className="text-xl font-bold group-hover:text-[var(--color-accent)] transition-colors">Design Audits →</div>
-                </div>
-              </Link>
-            </div>
           </div>
         </div>
       </section>
+
+      <CaseStudyFooter nextTitle="Workshops & Talks" nextSlug="workshops" />
     </motion.article>
   );
 };
