@@ -1,45 +1,48 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface TypewriterProps {
   text: string;
-  delay?: number;
   speed?: number;
 }
 
-const Typewriter = ({ text, delay = 600, speed = 60 }: TypewriterProps) => {
-  const [displayedText, setDisplayedText] = useState("");
+const Typewriter = ({ text, speed = 50 }: TypewriterProps) => {
+  const [displayedText, setDisplayedText] = useState('');
   const [isComplete, setIsComplete] = useState(false);
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      let i = 0;
-      const interval = setInterval(() => {
-        setDisplayedText(text.slice(0, i + 1));
-        i++;
-        if (i === text.length) {
-          clearInterval(interval);
-          setIsComplete(true);
-        }
-      }, speed);
-    }, delay);
+    let i = 0;
+    const timer = setInterval(() => {
+      setDisplayedText(text.slice(0, i + 1));
+      i++;
+      if (i === text.length) {
+        clearInterval(timer);
+        setTimeout(() => setIsComplete(true), 500);
+      }
+    }, speed);
 
-    return () => clearTimeout(timeout);
-  }, [text, delay, speed]);
+    return () => clearInterval(timer);
+  }, [text, speed]);
 
   return (
-    <span className="relative inline-block">
+    <span className="inline-flex items-center">
       {displayedText}
-      <span 
-        className="inline-block w-[2px] h-[0.9em] ml-1 align-middle bg-[#4F46E5] animate-[blink_1s_step-end_infinite]"
-      ></span>
-      <style>{`
-        @keyframes blink {
-          from, to { opacity: 1; }
-          50% { opacity: 0; }
-        }
-      `}</style>
+      <AnimatePresence>
+        {!isComplete && (
+          <motion.span
+            initial={{ opacity: 1 }}
+            animate={{ opacity: [1, 0, 1] }}
+            exit={{ opacity: 0 }}
+            transition={{ 
+              opacity: { repeat: Infinity, duration: 0.8 },
+              exit: { duration: 0.5 }
+            }}
+            className="inline-block w-[2px] h-[1em] bg-[var(--color-accent)] ml-1"
+          />
+        )}
+      </AnimatePresence>
     </span>
   );
 };

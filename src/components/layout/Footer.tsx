@@ -1,8 +1,8 @@
 "use client";
 
 import React from 'react';
-import { Mail, Linkedin, Github } from 'lucide-react';
-import TrackChangesTooltip from '@/components/ui/TrackChangesTooltip';
+import { Linkedin, PenTool, Music } from 'lucide-react';
+import DictionaryTooltip from '@/components/ui/DictionaryTooltip';
 
 const Footer = () => {
   return (
@@ -10,17 +10,35 @@ const Footer = () => {
       <div className="max-w-[1200px] mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
           <div className="text-[var(--color-text-muted)]">
-            Sajay — <TrackChangesTooltip text="also known as: the person who stopped that error message from ruining your day">Content Designer</TrackChangesTooltip>
+            Sajay Jai Singh — <DictionaryTooltip>Content Designer</DictionaryTooltip>
           </div>
           <div className="flex items-center gap-6">
-            <a href="mailto:sajay.contentjedi@gmail.com" className="hover:text-[var(--color-accent)] transition-colors">
-              <Mail size={20} />
-            </a>
-            <a href="#" className="hover:text-[var(--color-accent)] transition-colors">
+            <a 
+              href="https://www.linkedin.com/in/sajaysingh/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-[var(--color-accent)] transition-colors"
+              title="LinkedIn"
+            >
               <Linkedin size={20} />
             </a>
-            <a href="#" className="hover:text-[var(--color-accent)] transition-colors">
-              <Github size={20} />
+            <a 
+              href="https://sajaysingh.medium.com/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-[var(--color-accent)] transition-colors"
+              title="Blog"
+            >
+              <PenTool size={20} />
+            </a>
+            <a 
+              href="https://www.instagram.com/sajavibe/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="hover:text-[var(--color-accent)] transition-colors"
+              title="Music"
+            >
+              <Music size={20} />
             </a>
           </div>
         </div>

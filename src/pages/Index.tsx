@@ -7,6 +7,7 @@ import Footer from '@/components/layout/Footer';
 import Typewriter from '@/components/ui/Typewriter';
 import CaseStudyCard from '@/components/ui/CaseStudyCard';
 import ScrollReveal from '@/components/ui/ScrollReveal';
+import DictionaryTooltip from '@/components/ui/DictionaryTooltip';
 
 const Index = () => {
   const caseStudies = [
@@ -73,25 +74,21 @@ const Index = () => {
                 CONTENT DESIGN PORTFOLIO — 2025
               </div>
               
-              <h1 className="text-[clamp(56px,8vw,88px)] font-bold mb-1 leading-[1.1]">
-                Sajay
+              <h1 className="text-[clamp(56px,8vw,88px)] font-bold mb-8 leading-[1.1]">
+                Sajay Jai Singh
               </h1>
-
-              <div className="text-[12px] font-medium uppercase tracking-[0.08em] text-[var(--color-text-muted)] mb-8">
-                MSc Communication & Media, UCD Dublin (In Progress)
-              </div>
               
               <div className="text-[clamp(24px,4vw,48px)] font-medium mb-8 min-h-[1.2em]">
                 <Typewriter text="I make complex products feel human." />
               </div>
               
               <p className="text-xl text-[var(--color-text-muted)] mb-12 max-w-2xl">
-                8 years. 1 billion+ orders placed on products I helped shape.
+                <DictionaryTooltip>Content Designer</DictionaryTooltip>. 1 billion+ orders placed on the experiences I helped shape.
               </p>
               
               <div className="flex flex-wrap gap-4">
                 <a href="#work" className="btn-primary">See my work →</a>
-                <a href="#" className="btn-secondary">Download Resume</a>
+                <Link to="/resume" className="btn-secondary">View Resume</Link>
               </div>
             </ScrollReveal>
           </div>
@@ -101,12 +98,12 @@ const Index = () => {
         <section id="work" className="py-32 px-6 md:px-12 bg-white">
           <div className="max-w-[1200px] mx-auto">
             <ScrollReveal className="mb-16">
-              <h2 className="text-4xl md:text-6xl font-bold tracking-tighter leading-none">
+              <h2 className="text-[clamp(24px,3vw,36px)] font-bold tracking-tighter leading-none">
                 Selected Work
               </h2>
             </ScrollReveal>
             
-            <ScrollReveal stagger className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <ScrollReveal stagger className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
               {caseStudies.map(study => (
                 <CaseStudyCard key={study.id} {...study} />
               ))}

@@ -6,7 +6,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { motion } from 'framer-motion';
 import { FileText, Linkedin, Globe, Music } from 'lucide-react';
-import TrackChangesTooltip from '@/components/ui/TrackChangesTooltip';
+import DictionaryTooltip from '@/components/ui/DictionaryTooltip';
 import Highlighter from '@/components/ui/Highlighter';
 
 const Recruiter = () => {
@@ -24,11 +24,11 @@ const Recruiter = () => {
             <h1 className="text-5xl font-bold mb-8">Hi there, future colleague. You look nice today.</h1>
             
             <div className="bg-white border border-[var(--color-border)] rounded-2xl p-8 mb-12">
-              <h2 className="text-xl font-bold mb-6 uppercase tracking-wider text-[var(--color-text-muted)]">Overview</h2>
+              <h2 className="text-xl font-bold mb-6 uppercase tracking-wider text-[var(--color-text-muted)]">SAJAY IS</h2>
               <ul className="space-y-4 text-lg">
                 <li className="flex items-start gap-3">
                   <span className="text-[var(--color-accent)]">●</span>
-                  <span><TrackChangesTooltip text="also: the person who stopped that error message from ruining your day">Senior Content Designer</TrackChangesTooltip> with <Highlighter>8+ years</Highlighter> of experience in high-growth tech.</span>
+                  <span><DictionaryTooltip>Senior Content Designer</DictionaryTooltip> with <Highlighter>5+ years</Highlighter> of experience in high-growth tech.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[var(--color-accent)]">●</span>
@@ -40,33 +40,36 @@ const Recruiter = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[var(--color-accent)]">●</span>
-                  <span>MSc Communication & Media, UCD Dublin (In Progress)</span>
+                  <span>Based out of (sometimes) sunny Dublin, Ireland 🌦️</span>
                 </li>
               </ul>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-12">
-              <a href="#" className="btn-secondary justify-center py-6">
-                <FileText size={20} /> Resume (PDF)
-              </a>
-              <a href="#" className="btn-secondary justify-center py-6">
+              <Link to="/resume" className="btn-secondary justify-center py-6">
+                <FileText size={20} /> View Resume
+              </Link>
+              <a href="https://www.linkedin.com/in/sajaysingh/" target="_blank" rel="noopener noreferrer" className="btn-secondary justify-center py-6">
                 <Linkedin size={20} /> LinkedIn
               </a>
-              <a href="#" className="btn-secondary justify-center py-6">
+              <a href="https://sajaysingh.medium.com/" target="_blank" rel="noopener noreferrer" className="btn-secondary justify-center py-6">
                 <Globe size={20} /> Blog
               </a>
-              <a href="#" className="btn-secondary justify-center py-6">
+              <a href="https://www.instagram.com/sajavibe/" target="_blank" rel="noopener noreferrer" className="btn-secondary justify-center py-6">
                 <Music size={20} /> Music Page
               </a>
             </div>
 
             <div className="bg-[var(--color-tag-bg)] rounded-2xl p-8">
               <h2 className="text-xl font-bold mb-4">Get in touch</h2>
-              <p className="text-lg mb-6">I'm currently open to new opportunities in Bengaluru or remote.</p>
-              <div className="space-y-2">
-                <p className="font-medium">sajay.contentjedi@gmail.com</p>
-                <p className="text-[var(--color-text-muted)]">+91 [Phone Number] (WhatsApp available)</p>
-              </div>
+              <p className="text-lg mb-6">I am currently open to new opportunities. Reach out at</p>
+              <a 
+                href="mailto:sajay.contentjedi@gmail.com" 
+                className="text-2xl font-medium text-[#4F46E5] hover:underline"
+                style={{ fontFamily: 'var(--font-display)' }}
+              >
+                sajay.contentjedi@gmail.com
+              </a>
             </div>
 
             <div className="mt-12 text-center">

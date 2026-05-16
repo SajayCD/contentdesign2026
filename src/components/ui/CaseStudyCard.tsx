@@ -16,7 +16,7 @@ const CaseStudyCard = ({ number, title, impact, tags, slug }: CaseStudyCardProps
   return (
     <Link 
       to={`/work/${slug}`}
-      className="group block p-8 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[var(--radius-card)] hover:border-[var(--color-accent)] transition-all duration-300"
+      className="group flex flex-col p-8 bg-[var(--color-surface)] border border-[var(--color-border)] rounded-[var(--radius-card)] hover:border-[var(--color-accent)] transition-all duration-300 h-full"
     >
       <div className="flex justify-between items-start mb-12">
         <span className="text-sm font-bold text-[var(--color-accent)] opacity-40">{number}</span>
@@ -31,8 +31,12 @@ const CaseStudyCard = ({ number, title, impact, tags, slug }: CaseStudyCardProps
         {title}
       </h3>
       
-      <div className="text-sm font-medium text-[var(--color-text-muted)]">
+      <div className="text-sm font-medium text-[var(--color-text-muted)] mb-8">
         Impact: <Highlighter>{impact}</Highlighter>
+      </div>
+
+      <div className="mt-auto text-[var(--color-accent)] font-medium text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform">
+        Read case study →
       </div>
     </Link>
   );

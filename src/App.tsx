@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Recruiter from "./pages/Recruiter";
+import Resume from "./pages/Resume";
 import CaseStudyDetail from "./pages/CaseStudyDetail";
 import ScalingPart1 from "./pages/ScalingPart1";
 import ScalingPart2 from "./pages/ScalingPart2";
@@ -31,6 +32,7 @@ const AnimatedRoutes = () => {
         <Route path="/" element={<PageWrapper><Index /></PageWrapper>} />
         <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
         <Route path="/recruiter" element={<PageWrapper><Recruiter /></PageWrapper>} />
+        <Route path="/resume" element={<PageWrapper><Resume /></PageWrapper>} />
         <Route path="/work/:slug" element={<PageWrapper><CaseStudyDetail /></PageWrapper>} />
         <Route path="/scaling-part-1" element={<PageWrapper><ScalingPart1 /></PageWrapper>} />
         <Route path="/scaling-part-2" element={<PageWrapper><ScalingPart2 /></PageWrapper>} />

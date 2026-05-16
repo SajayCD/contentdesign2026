@@ -8,6 +8,7 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
+  const isHome = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,9 +20,9 @@ const Navbar = () => {
 
   const navLinks = [
     { name: 'Work', path: '/' },
-    { name: 'Writing', path: '#' },
     { name: 'About', path: '/about' },
     { name: 'Recruiter?', path: '/recruiter' },
+    { name: 'Resume', path: '/resume' },
   ];
 
   return (
@@ -31,13 +32,25 @@ const Navbar = () => {
       }`}
     >
       <div className="max-w-[1200px] mx-auto flex justify-between items-center">
-        <Link 
-          to="/" 
-          className="text-2xl font-bold tracking-tight"
-          style={{ fontFamily: 'var(--font-display)' }}
-        >
-          Sajay
-        </Link>
+        <div className="relative h-8 flex items-center">
+          {/* Homepage specific logo behavior */}
+          {isHome && (
+            <span 
+              className={`absolute left-0 text-[13px] font-medium uppercase tracking-[0.08em] text-[#6B6B6B] transition-opacity duration-300 ${isScrolled ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+              style={{ fontFamily: 'var(--font-body)' }}
+            >
+              Content Design Portfolio
+            </span>
+          )}
+          
+          <Link 
+            to="/" 
+            className={`text-2xl font-bold tracking-tight transition-opacity duration-300 ${isHome && !isScrolled ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+            style={{ fontFamily: 'var(--font-display)' }}
+          >
+            Sajay
+          </Link>
+        </div>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
@@ -46,18 +59,12 @@ const Navbar = () => {
               key={link.name}
               to={link.path}
               className={`text-sm font-medium transition-colors hover:text-[var(--color-accent)] ${
-                location.pathname === link.path ? 'text-[var(--color-accent)] border-b border-[var(--color-accent)]' : 'text-[var(--color-text)]'
+                location.pathname === link.path ? 'text-[var(--color-accent)]' : 'text-[var(--color-text)]'
               }`}
             >
               {link.name}
             </Link>
           ))}
-          <a 
-            href="#" 
-            className="text-sm font-medium flex items-center gap-1 hover:text-[var(--color-accent)]"
-          >
-            ↓ Resume
-          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -83,9 +90,6 @@ const Navbar = () => {
               {link.name}
             </Link>
           ))}
-          <a href="#" className="text-3xl font-bold" style={{ fontFamily: 'var(--font-display)' }}>
-            Resume
-          </a>
           <button 
             className="absolute top-6 right-6"
             onClick={() => setIsMenuOpen(false)}
