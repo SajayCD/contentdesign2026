@@ -32,7 +32,7 @@ const About = () => {
                 </p>
               </div>
 
-              {/* Personal Links moved here */}
+              {/* Personal Links */}
               <div className="flex flex-wrap gap-4 mt-12">
                 <a href="https://sajaysingh.medium.com/" target="_blank" rel="noopener noreferrer" className="btn-secondary gap-2">
                   <Globe size={18} /> Read my Blog

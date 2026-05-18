@@ -27,7 +27,7 @@ const Recruiter = () => {
               <ul className="space-y-4 text-lg">
                 <li className="flex items-start gap-3">
                   <span className="text-[var(--color-accent)]">●</span>
-                  <span>A <DictionaryTooltip>Senior Content Designer</DictionaryTooltip> making complex products feel human.</span>
+                  <span>A Senior Content Designer with 5+ years of experience in high-growth tech.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[var(--color-accent)]">●</span>
@@ -35,11 +35,11 @@ const Recruiter = () => {
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[var(--color-accent)]">●</span>
-                  <span>With a proven track record of driving business growth through content strategy.</span>
+                  <span>With a proven track record: 1,160% growth in SIPs at Angel One through content strategy.</span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="text-[var(--color-accent)]">●</span>
-                  <span>Based out of (sometimes) sunny Dublin, Ireland.</span>
+                  <span>Based out of (sometimes) sunny Dublin, Ireland 🌦️.</span>
                 </li>
               </ul>
             </div>
@@ -82,6 +82,3 @@ const Recruiter = () => {
       <Footer />
     </div>
   );
-};
-
-export default Recruiter;
