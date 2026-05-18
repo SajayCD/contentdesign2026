@@ -26,7 +26,7 @@ const Recruiter = () => {
             {/* I AM Section */}
             <div className="mb-12">
               <h2 className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)] font-bold mb-8">I AM</h2>
-              <div className="space-y-6">
+              <div className="bg-white border border-[#E4E3DF] rounded-[12px] px-[28px] py-[24px] space-y-6">
                 {[
                   "A Senior Content Designer with 5+ years of experience in high-growth tech.",
                   "Specialised in FinTech, Design Systems, and scaling content organisations.",
@@ -34,7 +34,7 @@ const Recruiter = () => {
                   "Based out of (sometimes) sunny Dublin, Ireland 🌦️"
                 ].map((text, i) => (
                   <div key={i} className="flex items-start gap-4 text-lg leading-relaxed">
-                    <span className="text-[var(--color-accent)] mt-1">→</span>
+                    <div className="w-2 h-2 rounded-full bg-[#4F46E5] shrink-0 mt-[10px]" />
                     <span>{text}</span>
                   </div>
                 ))}
