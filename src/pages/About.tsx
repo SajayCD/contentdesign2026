@@ -5,7 +5,9 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { motion } from 'framer-motion';
 import TrackChangesTooltip from '@/components/ui/TrackChangesTooltip';
-import { Globe, Music } from 'lucide-react';
+import { Globe, Music, FileText, Linkedin, PenTool, Headphones } from 'lucide-react';
+import HobbyCard from '@/components/about/HobbyCard';
+import SocialLinkCard from '@/components/about/SocialLinkCard';
 
 const About = () => {
   return (
@@ -49,11 +51,11 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="md:w-[40%] flex justify-center md:justify-end"
             >
-              <div className="w-[240px] h-[240px] md:w-[300px] md:h-[300px] rounded-full overflow-hidden border-4 border-white shadow-xl">
+              <div className="w-[240px] h-[240px] md:w-[300px] md:h-[300px] rounded-full overflow-hidden shadow-none border-none outline-none">
                 <img 
                   src="/sajay-photo.jpg" 
                   alt="Sajay Jai Singh" 
-                  className="w-full h-full object-cover object-[center_top]"
+                  className="w-full h-full object-cover object-[center_top] border-none outline-none"
                 />
               </div>
             </motion.div>
@@ -66,37 +68,54 @@ const About = () => {
             viewport={{ once: true }}
             className="mb-24"
           >
-            <h2 className="text-3xl font-bold mb-12" style={{ fontFamily: 'var(--font-display)' }}>Sidequests & Hobbies</h2>
+            <h2 className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)] font-bold mb-12">Sidequests & Hobbies</h2>
             <div className="flex flex-wrap gap-6">
-              <div className="w-[120px] bg-[#F9F8F5] rounded-xl p-5 flex flex-col items-center text-center">
-                <svg viewBox="0 0 64 64" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg" className="mb-3">
-                  <circle cx="14" cy="36" r="12" stroke="#4F46E5" strokeWidth="2"/>
-                  <circle cx="14" cy="36" r="5" stroke="#4F46E5" strokeWidth="1.5"/>
-                  <circle cx="14" cy="36" r="1.5" fill="#4F46E5"/>
-                  <circle cx="50" cy="36" r="12" stroke="#4F46E5" strokeWidth="2"/>
-                  <circle cx="50" cy="36" r="5" stroke="#4F46E5" strokeWidth="1.5"/>
-                  <circle cx="50" cy="36" r="1.5" fill="#4F46E5"/>
-                  <rect x="26" y="28" width="12" height="16" rx="2" stroke="#4F46E5" strokeWidth="1.5"/>
-                </svg>
-                <span className="text-[14px] font-medium text-[var(--color-text)]" style={{ fontFamily: 'var(--font-body)' }}>DJ as Sajavibe</span>
-              </div>
+              <HobbyCard 
+                icon={
+                  <svg viewBox="0 0 64 64" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="14" cy="36" r="12" stroke="#4F46E5" strokeWidth="2"/>
+                    <circle cx="14" cy="36" r="5" stroke="#4F46E5" strokeWidth="1.5"/>
+                    <circle cx="14" cy="36" r="1.5" fill="#4F46E5"/>
+                    <circle cx="50" cy="36" r="12" stroke="#4F46E5" strokeWidth="2"/>
+                    <circle cx="50" cy="36" r="5" stroke="#4F46E5" strokeWidth="1.5"/>
+                    <circle cx="50" cy="36" r="1.5" fill="#4F46E5"/>
+                    <rect x="26" y="28" width="12" height="16" rx="2" stroke="#4F46E5" strokeWidth="1.5"/>
+                  </svg>
+                }
+                label="DJ as Sajavibe"
+                backText="Sajavibe — on Spotify and Instagram"
+                backSymbol="♪"
+              />
               
-              <div className="w-[120px] bg-[#F9F8F5] rounded-xl p-5 flex flex-col items-center text-center">
-                <svg viewBox="0 0 64 64" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg" className="mb-3">
-                  <path d="M4 52 L32 10 L60 52 Z" stroke="#4F46E5" strokeWidth="2" strokeLinejoin="round"/>
-                  <path d="M24 28 L32 10 L40 28 Z" stroke="#4F46E5" strokeWidth="1.5" strokeLinejoin="round" fill="white"/>
-                </svg>
-                <span className="text-[14px] font-medium text-[var(--color-text)]" style={{ fontFamily: 'var(--font-body)' }}>Mountain Climbing</span>
-              </div>
+              <HobbyCard 
+                icon={
+                  <svg viewBox="0 0 64 64" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 54 L32 10 L58 54 Z" stroke="#4F46E5" strokeWidth="2" strokeLinejoin="round"/>
+                    <path d="M23 30 L32 10 L41 30 Z" fill="#F9F8F5" stroke="#4F46E5" strokeWidth="1.5" strokeLinejoin="round"/>
+                    <circle cx="50" cy="20" r="4" stroke="#4F46E5" strokeWidth="1.5"/>
+                    <line x1="50" y1="12" x2="50" y2="10" stroke="#4F46E5" strokeWidth="1.5" strokeLinecap="round"/>
+                    <line x1="56" y1="15" x2="58" y2="13" stroke="#4F46E5" strokeWidth="1.5" strokeLinecap="round"/>
+                    <line x1="58" y1="20" x2="60" y2="20" stroke="#4F46E5" strokeWidth="1.5" strokeLinecap="round"/>
+                    <line x1="56" y1="25" x2="58" y2="27" stroke="#4F46E5" strokeWidth="1.5" strokeLinecap="round"/>
+                  </svg>
+                }
+                label="Mountain Climbing"
+                backText="Last climb: Glendalough, Co. Wicklow"
+                backSymbol="★"
+              />
 
-              <div className="w-[120px] bg-[#F9F8F5] rounded-xl p-5 flex flex-col items-center text-center">
-                <svg viewBox="0 0 64 64" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg" className="mb-3">
-                  <line x1="16" y1="32" x2="48" y2="32" stroke="#4F46E5" strokeWidth="2.5" strokeLinecap="round"/>
-                  <rect x="4" y="22" width="7" height="20" rx="2" stroke="#4F46E5" strokeWidth="2"/>
-                  <rect x="53" y="22" width="7" height="20" rx="2" stroke="#4F46E5" strokeWidth="2"/>
-                </svg>
-                <span className="text-[14px] font-medium text-[var(--color-text)]" style={{ fontFamily: 'var(--font-body)' }}>Lifting Weights</span>
-              </div>
+              <HobbyCard 
+                icon={
+                  <svg viewBox="0 0 64 64" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="16" y1="32" x2="48" y2="32" stroke="#4F46E5" strokeWidth="2.5" strokeLinecap="round"/>
+                    <rect x="4" y="22" width="7" height="20" rx="2" stroke="#4F46E5" strokeWidth="2"/>
+                    <rect x="53" y="22" width="7" height="20" rx="2" stroke="#4F46E5" strokeWidth="2"/>
+                  </svg>
+                }
+                label="Lifting Weights"
+                backText="The gym is my second office"
+                backSymbol="↑"
+              />
             </div>
           </motion.section>
 
@@ -104,8 +123,9 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
+            className="mb-24"
           >
-            <h2 className="text-2xl font-bold mb-8">Currently researching:</h2>
+            <h2 className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)] font-bold mb-8">Currently researching:</h2>
             <ul className="space-y-4">
               {[
                 '[PLACEHOLDER — Sajay will add his thesis summary here]',
@@ -114,11 +134,26 @@ const About = () => {
               ].map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <span className="text-[var(--color-accent)] mt-1">↳</span>
-                  <span>{item}</span>
+                  <span className="text-lg">{item}</span>
                 </li>
               ))}
             </ul>
           </motion.div>
+
+          {/* Find me elsewhere Section */}
+          <motion.section
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)] font-bold mb-8">Find me elsewhere</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              <SocialLinkCard icon={FileText} label="Resume" href="/resume" />
+              <SocialLinkCard icon={Linkedin} label="LinkedIn" href="https://www.linkedin.com/in/sajaysingh/" isExternal />
+              <SocialLinkCard icon={PenTool} label="Blog" href="https://sajaysingh.medium.com/" isExternal />
+              <SocialLinkCard icon={Headphones} label="Music" href="https://www.instagram.com/sajavibe/" isExternal />
+            </div>
+          </motion.section>
         </div>
       </main>
 

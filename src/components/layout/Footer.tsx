@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { Linkedin, PenTool, Music } from 'lucide-react';
+import { Linkedin, Mail } from 'lucide-react';
 import DictionaryTooltip from '@/components/ui/DictionaryTooltip';
 
 const Footer = () => {
@@ -14,6 +14,13 @@ const Footer = () => {
           </div>
           <div className="flex items-center gap-6">
             <a 
+              href="mailto:sajay.contentjedi@gmail.com" 
+              className="hover:text-[var(--color-accent)] transition-colors"
+              title="Email"
+            >
+              <Mail size={20} />
+            </a>
+            <a 
               href="https://www.linkedin.com/in/sajaysingh/" 
               target="_blank" 
               rel="noopener noreferrer" 
@@ -21,24 +28,6 @@ const Footer = () => {
               title="LinkedIn"
             >
               <Linkedin size={20} />
-            </a>
-            <a 
-              href="https://sajaysingh.medium.com/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="hover:text-[var(--color-accent)] transition-colors"
-              title="Blog"
-            >
-              <PenTool size={20} />
-            </a>
-            <a 
-              href="https://www.instagram.com/sajavibe/" 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="hover:text-[var(--color-accent)] transition-colors"
-              title="Music"
-            >
-              <Music size={20} />
             </a>
           </div>
         </div>
