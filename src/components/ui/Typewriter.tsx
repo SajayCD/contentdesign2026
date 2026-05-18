@@ -6,43 +6,40 @@ import { motion, AnimatePresence } from 'framer-motion';
 interface TypewriterProps {
   text: string;
   speed?: number;
+  delay?: number;
 }
 
-const Typewriter = ({ text, speed = 50 }: TypewriterProps) => {
-  const [displayedText, setDisplayedText] = useState('');
+const Typewriter = ({ text, speed = 50, delay = 500 }: TypewriterProps) => {
+  const [displayedText, setDisplayedText] = useState("");
   const [isComplete, setIsComplete] = useState(false);
 
   useEffect(() => {
-    let i = 0;
-    const timer = setInterval(() => {
-      setDisplayedText(text.slice(0, i + 1));
-      i++;
-      if (i === text.length) {
-        clearInterval(timer);
-        setTimeout(() => setIsComplete(true), 500);
-      }
-    }, speed);
+    let timeout: NodeJS.Timeout;
+    
+    if (displayedText.length < text.length) {
+      timeout = setTimeout(() => {
+        setDisplayedText(text.slice(0, displayedText.length + 1));
+      }, speed);
+    } else {
+      setIsComplete(true);
+    }
 
-    return () => clearInterval(timer);
-  }, [text, speed]);
+    return () => clearTimeout(timeout);
+  }, [displayedText, text, speed]);
 
   return (
-    <span className="inline-flex items-center">
-      {displayedText}
-      <AnimatePresence>
-        {!isComplete && (
-          <motion.span
-            initial={{ opacity: 1 }}
-            animate={{ opacity: [1, 0, 1] }}
-            exit={{ opacity: 0, transition: { duration: 0.5 } }}
-            transition={{ 
-              opacity: { repeat: Infinity, duration: 0.8 }
-            }}
-            className="inline-block w-[2px] h-[1em] bg-[var(--color-accent)] ml-1"
-          />
-        )}
-      </AnimatePresence>
-    </span>
+    <div className="inline-flex items-center">
+      <span>{displayedText}</span>
+      <motion.span
+        animate={{ opacity: [1, 0, 1] }}
+        transition={{ 
+          duration: 0.8, 
+          repeat: Infinity,
+          ease: "linear"
+        }}
+        className="inline-block w-[3px] h-[0.9em] bg-[var(--color-accent)] ml-1 translate-y-[0.1em]"
+      />
+    </div>
   );
 };
 

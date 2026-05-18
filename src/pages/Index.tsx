@@ -55,7 +55,7 @@ const Index = () => {
       id: '6',
       number: '06',
       title: 'Workshops & Talks',
-      impact: 'Evangelism across 500+ designers',
+      impact: '50+ team members',
       tags: ['Advocacy', 'Education'],
       slug: 'workshops'
     }
@@ -75,12 +75,12 @@ const Index = () => {
               </h1>
               
               <div className="text-[clamp(24px,4vw,48px)] font-medium mb-8 min-h-[1.2em]">
-                <Typewriter text="I make complex products feel human." />
+                <Typewriter text="Helping software speak and sound human." />
               </div>
               
               <div className="space-y-2 mb-12">
                 <p className="text-xl text-[var(--color-text-muted)] max-w-2xl">
-                  <DictionaryTooltip>Content Designer</DictionaryTooltip> · MSc Communication & Media, UCD Dublin (In Progress)
+                  <DictionaryTooltip>Content Designer</DictionaryTooltip> · Msc Media and Communications, University College Dublin
                 </p>
                 <p className="text-xl text-[var(--color-text-muted)] max-w-2xl">
                   1 billion+ orders placed on the experiences I helped shape.
