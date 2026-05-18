@@ -15,7 +15,7 @@ const ExperienceCard = ({ company, date, roles, defaultExpanded = false }: any) 
     <div className="border-b border-[var(--color-border)] last:border-0">
       <button 
         onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full py-6 flex justify-between items-center text-left group"
+        className="w-full py-4 flex justify-between items-center text-left group"
       >
         <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-4">
           <h3 className="text-xl font-bold group-hover:text-[var(--color-accent)] transition-colors">{company}</h3>
@@ -39,7 +39,7 @@ const ExperienceCard = ({ company, date, roles, defaultExpanded = false }: any) 
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
-            <div className="pb-8 space-y-8">
+            <div className="pb-4 space-y-8">
               {roles.map((role: any, roleIdx: number) => (
                 <div key={roleIdx} className="space-y-4">
                   <div className="flex flex-wrap items-center gap-3">
@@ -181,7 +181,7 @@ const Resume = () => {
       <main className="flex-grow pt-32 px-6 md:px-12 pb-24">
         <div className="max-w-[900px] mx-auto">
           {/* Hero */}
-          <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-24">
+          <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-8">
             <div>
               <h1 className="text-6xl font-bold mb-4 flex gap-[0.3em]" style={{ fontFamily: 'var(--font-display)' }}>
                 {nameWords.map((word, i) => (
@@ -202,9 +202,6 @@ const Resume = () => {
                 ))}
               </h1>
               <div className="space-y-2">
-                <p className="text-xl text-[var(--color-text-muted)]">
-                  Helping software speak and sound human.
-                </p>
                 <p className="text-base text-[#6B6B6B] max-w-xl">
                   Computer science engineer. Sociology master's student. Both sides of the human-machine equation.
                 </p>
@@ -218,7 +215,7 @@ const Resume = () => {
             </a>
           </div>
 
-          <div className="space-y-24">
+          <div className="space-y-8">
             {/* Experience */}
             <section>
               <h2 className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)] font-bold mb-8">Experience</h2>
@@ -274,15 +271,17 @@ const Resume = () => {
             <section>
               <h2 className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)] font-bold mb-8">Education</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-white border border-[var(--color-border)] p-8 rounded-2xl relative">
-                  <Badge variant="secondary" className="absolute top-4 right-4 bg-indigo-50 text-[var(--color-accent)] border-indigo-100">
-                    EQF Level 8
-                  </Badge>
-                  <h3 className="text-xl font-bold mb-2">MSc Communication and Media</h3>
+                <div className="bg-white border border-[var(--color-border)] px-8 py-4 rounded-2xl">
+                  <h3 className="text-xl font-bold mb-2">
+                    MSc Communication and Media
+                    <span className="inline-block text-[11px] font-semibold text-[#4F46E5] bg-[#EEF2FF] px-2 py-0.5 rounded-full ml-2 align-middle">
+                      EQF Level 8
+                    </span>
+                  </h3>
                   <p className="text-[var(--color-text-muted)] mb-1">University College Dublin, Ireland</p>
                   <p className="text-sm font-medium text-[var(--color-accent)]">Sep 2025 – Present</p>
                 </div>
-                <div className="bg-white border border-[var(--color-border)] p-8 rounded-2xl">
+                <div className="bg-white border border-[var(--color-border)] px-8 py-4 rounded-2xl">
                   <h3 className="text-xl font-bold mb-2">Bachelor of Engineering in Computer Engineering</h3>
                   <p className="text-[var(--color-text-muted)] mb-1">Thapar University, Patiala, India</p>
                   <p className="text-sm font-medium text-[var(--color-accent)]">Jul 2013 – Jun 2017</p>
@@ -337,7 +336,7 @@ const Resume = () => {
             </section>
           </div>
 
-          <div className="mt-32 pt-12 border-t border-[var(--color-border)]">
+          <div className="mt-8 pt-12 border-t border-[var(--color-border)]">
             <Link to="/" className="text-[var(--color-text-muted)] hover:text-[var(--color-accent)] transition-colors font-medium">
               ← Back to portfolio
             </Link>
