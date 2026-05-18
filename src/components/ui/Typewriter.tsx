@@ -1,43 +1,43 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 interface TypewriterProps {
   text: string;
   speed?: number;
-  delay?: number;
 }
 
-const Typewriter = ({ text, speed = 50, delay = 500 }: TypewriterProps) => {
+const Typewriter = ({ text, speed = 50 }: TypewriterProps) => {
   const [displayedText, setDisplayedText] = useState("");
   const [isComplete, setIsComplete] = useState(false);
 
   useEffect(() => {
-    let timeout: NodeJS.Timeout;
-    
-    if (displayedText.length < text.length) {
-      timeout = setTimeout(() => {
-        setDisplayedText(text.slice(0, displayedText.length + 1));
-      }, speed);
-    } else {
-      setIsComplete(true);
-    }
+    let i = 0;
+    const timer = setInterval(() => {
+      if (i < text.length) {
+        setDisplayedText(text.substring(0, i + 1));
+        i++;
+      } else {
+        setIsComplete(true);
+        clearInterval(timer);
+      }
+    }, speed);
 
-    return () => clearTimeout(timeout);
-  }, [displayedText, text, speed]);
+    return () => clearInterval(timer);
+  }, [text, speed]);
 
   return (
     <div className="inline-flex items-center">
       <span>{displayedText}</span>
       <motion.span
-        animate={{ opacity: [1, 0, 1] }}
+        animate={{ opacity: [1, 0] }}
         transition={{ 
           duration: 0.8, 
-          repeat: Infinity,
-          ease: "linear"
+          repeat: Infinity, 
+          ease: "linear" 
         }}
-        className="inline-block w-[3px] h-[0.9em] bg-[var(--color-accent)] ml-1 translate-y-[0.1em]"
+        className="inline-block w-[3px] h-[1em] bg-[var(--color-accent)] ml-1"
       />
     </div>
   );

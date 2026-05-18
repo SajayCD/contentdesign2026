@@ -5,36 +5,72 @@ import { motion } from 'framer-motion';
 import CaseStudyHeader from './CaseStudyHeader';
 import CaseStudyFooter from './CaseStudyFooter';
 import Highlighter from '@/components/ui/Highlighter';
-import { TrendingUp, Target, Clock, MessageSquare } from 'lucide-react';
 
-const MutualFunds = () => {
-  const impactData = [
-    {
-      label: "Growth",
-      value: "500k+",
-      description: "New monthly SIPs, up from 50k at project start.",
-      icon: <TrendingUp className="text-[var(--color-accent)]" size={24} />
-    },
-    {
-      label: "Mandate Ratio",
-      value: "72%",
-      description: "A 300% improvement in active payment mandates.",
-      icon: <Target className="text-[var(--color-accent)]" size={24} />
-    },
-    {
-      label: "Efficiency",
-      value: "12mo",
-      description: "Time taken to achieve 10x growth in orders.",
-      icon: <Clock className="text-[var(--color-accent)]" size={24} />
-    },
-    {
-      label: "Support",
-      value: "-60%",
-      description: "Drop in contact ratio due to better user education.",
-      icon: <MessageSquare className="text-[var(--color-accent)]" size={24} />
-    }
+const GrowthTimeline = () => {
+  const nodes = [
+    { value: "50k", label: "Starting point", date: "Pre-project", isPeak: false },
+    { value: "150k", label: "3x goal hit", date: "Month 3", isPeak: false },
+    { value: "500k+", label: "12-month milestone", date: "Month 12", isPeak: false },
+    { value: "630k", label: "Peak", date: "July 2024", isPeak: true },
   ];
 
+  return (
+    <div className="mb-24">
+      <h3 className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)] font-bold mb-12 text-center">Growth Journey</h3>
+      
+      {/* Desktop Timeline */}
+      <div className="hidden md:block relative px-12">
+        <div className="absolute top-[44px] left-12 right-12 h-[1px] bg-[#E4E3DF]"></div>
+        <div className="flex justify-between relative">
+          {nodes.map((node, i) => (
+            <div key={i} className="flex flex-col items-center text-center w-32">
+              <div 
+                className="text-lg font-bold mb-4" 
+                style={{ fontFamily: 'var(--font-display)', color: node.isPeak ? '#4F46E5' : '#4F46E5' }}
+              >
+                {node.value}
+              </div>
+              <div className={`w-6 h-6 rounded-full border-[1.5px] border-[#4F46E5] mb-4 z-10 ${node.isPeak ? 'bg-[#4F46E5]' : 'bg-white'}`}>
+                {node.isPeak && <div className="w-full h-full flex items-center justify-center text-white text-[10px]">✓</div>}
+              </div>
+              <div className="text-[12px] text-[#6B6B6B] mb-1">{node.label}</div>
+              <div className="text-[11px] font-medium uppercase tracking-wider text-[#4F46E5]">{node.date}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Mobile Timeline */}
+      <div className="md:hidden space-y-8 pl-8 relative">
+        <div className="absolute left-[11px] top-0 bottom-0 w-[1px] bg-[#E4E3DF]"></div>
+        {nodes.map((node, i) => (
+          <div key={i} className="relative">
+            <div className={`absolute -left-[29px] top-1 w-6 h-6 rounded-full border-[1.5px] border-[#4F46E5] z-10 ${node.isPeak ? 'bg-[#4F46E5]' : 'bg-white'}`}></div>
+            <div className="text-lg font-bold text-[#4F46E5]" style={{ fontFamily: 'var(--font-display)' }}>{node.value}</div>
+            <div className="text-[12px] text-[#6B6B6B]">{node.label}</div>
+            <div className="text-[11px] font-medium uppercase tracking-wider text-[#4F46E5]">{node.date}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const StyledPullQuote = ({ children }: { children: React.ReactNode }) => (
+  <div className="bg-[#F9F8F5] border-l-[3px] border-[#4F46E5] p-5 md:p-6 rounded-r-lg mb-8 relative overflow-hidden">
+    <span 
+      className="absolute top-2 left-4 text-4xl text-[#4F46E5] opacity-30 select-none"
+      style={{ fontFamily: 'var(--font-display)' }}
+    >
+      "
+    </span>
+    <div className="relative z-10 italic text-lg md:text-xl leading-relaxed pl-4">
+      {children}
+    </div>
+  </div>
+);
+
+const MutualFunds = () => {
   return (
     <motion.article
       initial={{ opacity: 0, y: 20 }}
@@ -106,8 +142,24 @@ const MutualFunds = () => {
               <br />2. Number of guaranteed recurring payments (with the help of bank mandates)
             </p>
 
-            <div className="bg-[var(--color-tag-bg)] aspect-video rounded-xl flex items-center justify-center mb-12 border border-[var(--color-border)]">
+            <div className="bg-[var(--color-tag-bg)] aspect-video rounded-xl flex items-center justify-center mb-24 border border-[var(--color-border)]">
               <span className="text-[var(--color-text-muted)] font-medium uppercase tracking-widest text-xs">A (very) simple Mutual Fund order flow</span>
+            </div>
+
+            <h2 className="text-3xl font-bold mb-12">Impact</h2>
+            
+            <GrowthTimeline />
+
+            <div className="space-y-6 mb-24">
+              <StyledPullQuote>
+                The revamp led to a <Highlighter>1,160% growth</Highlighter> in monthly SIP registrations within the first year of launch.
+              </StyledPullQuote>
+              <StyledPullQuote>
+                By simplifying the mandate registration process, we saw the active mandate ratio jump from <Highlighter>18% to 72%</Highlighter>.
+              </StyledPullQuote>
+              <StyledPullQuote>
+                Better user education and clearer error states resulted in a <Highlighter>60% reduction</Highlighter> in support queries related to payment failures.
+              </StyledPullQuote>
             </div>
 
             <h2 className="text-3xl font-bold mb-8">Problem Statements</h2>
@@ -132,31 +184,6 @@ const MutualFunds = () => {
                 <h3 className="text-xl font-bold mb-4">Fears</h3>
                 <p className="mb-4 text-[var(--color-text-muted)]">What if my money is lost? What if my payment fails?</p>
               </div>
-            </div>
-
-            <h2 className="text-3xl font-bold mb-12">Impact</h2>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-24">
-              {impactData.map((item, i) => (
-                <div key={i} className="bg-white border border-[var(--color-border)] p-8 rounded-2xl shadow-sm flex flex-col gap-4">
-                  <div className="flex justify-between items-start">
-                    <div className="w-12 h-12 rounded-xl bg-[var(--color-tag-bg)] flex items-center justify-center">
-                      {item.icon}
-                    </div>
-                    <div className="text-3xl font-bold text-[var(--color-accent)]" style={{ fontFamily: 'var(--font-display)' }}>
-                      {item.value}
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="font-bold text-lg mb-1">{item.label}</h3>
-                    <p className="text-sm text-[var(--color-text-muted)] leading-relaxed">{item.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="bg-[var(--color-tag-bg)] aspect-video rounded-xl flex items-center justify-center mb-24 border border-[var(--color-border)]">
-              <span className="text-[var(--color-text-muted)] font-medium uppercase tracking-widest text-xs">SIP Growth Dashboard Screenshot</span>
             </div>
 
             <h2 className="text-3xl font-bold mb-8">A Few Humblebrags</h2>

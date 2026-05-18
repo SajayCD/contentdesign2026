@@ -55,7 +55,7 @@ const Index = () => {
       id: '6',
       number: '06',
       title: 'Workshops & Talks',
-      impact: '50+ team members',
+      impact: 'Evangelism across 50+ team members',
       tags: ['Advocacy', 'Education'],
       slug: 'workshops'
     }
@@ -80,7 +80,7 @@ const Index = () => {
               
               <div className="space-y-2 mb-12">
                 <p className="text-xl text-[var(--color-text-muted)] max-w-2xl">
-                  <DictionaryTooltip>Content Designer</DictionaryTooltip> · Msc Media and Communications, University College Dublin
+                  <DictionaryTooltip>Content Designer</DictionaryTooltip> · MSc Media and Communications, University College Dublin
                 </p>
                 <p className="text-xl text-[var(--color-text-muted)] max-w-2xl">
                   1 billion+ orders placed on the experiences I helped shape.
