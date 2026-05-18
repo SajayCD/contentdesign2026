@@ -82,3 +82,6 @@ const Recruiter = () => {
       <Footer />
     </div>
   );
+};
+
+export default Recruiter;
