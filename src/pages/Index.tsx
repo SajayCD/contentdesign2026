@@ -79,7 +79,7 @@ const Index = () => {
               </div>
               
               <div className="space-y-2 mb-12">
-                <p className="text-xl text-[var(--color-text-muted)] max-w-2xl">
+                <p className="text-xl text-[var(--color-text-muted)] max-w-2xl whitespace-nowrap">
                   <DictionaryTooltip>Content Designer</DictionaryTooltip> · MSc Media and Communications, University College Dublin
                 </p>
                 <p className="text-xl text-[var(--color-text-muted)] max-w-2xl">
