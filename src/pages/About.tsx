@@ -5,7 +5,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { motion } from 'framer-motion';
 import TrackChangesTooltip from '@/components/ui/TrackChangesTooltip';
-import { Globe, Music, FileText, Linkedin, PenTool, Headphones } from 'lucide-react';
+import { Globe, FileText, Linkedin, Headphones } from 'lucide-react';
 import HobbyCard from '@/components/about/HobbyCard';
 import SocialLinkCard from '@/components/about/SocialLinkCard';
 
@@ -23,25 +23,17 @@ const About = () => {
               transition={{ duration: 0.6 }}
               className="md:w-[60%]"
             >
-              <h1 className="text-5xl font-bold mb-12">Hi there, fellow human beings (and their cats 🐱).</h1>
+              <h1 className="text-5xl font-bold mb-12" style={{ fontFamily: 'var(--font-display)' }}>
+                Hi there, fellow human beings (and their cats 🐱).
+              </h1>
               
-              <div className="prose prose-lg max-w-none text-[var(--color-text-muted)] space-y-6">
+              <div className="prose prose-lg max-w-none text-[var(--color-text-muted)] space-y-6" style={{ fontFamily: 'var(--font-body)' }}>
                 <p>
                   I'm Sajay, a <TrackChangesTooltip text="also: the person who stopped that error message from ruining your day">Content Designer</TrackChangesTooltip> based in Bengaluru. I specialize in taking complex, high-stakes products and making them feel intuitive, human, and trustworthy.
                 </p>
                 <p>
                   With over 8 years of experience, I've helped shape products used by millions. My approach is rooted in the belief that content is design, and that the right words can solve problems that pixels alone cannot.
                 </p>
-              </div>
-
-              {/* Personal Links */}
-              <div className="flex flex-wrap gap-4 mt-12">
-                <a href="https://sajaysingh.medium.com/" target="_blank" rel="noopener noreferrer" className="btn-secondary gap-2">
-                  <Globe size={18} /> Read my Blog
-                </a>
-                <a href="https://www.instagram.com/sajavibe/" target="_blank" rel="noopener noreferrer" className="btn-secondary gap-2">
-                  <Music size={18} /> My Music Page
-                </a>
               </div>
             </motion.div>
 
@@ -51,11 +43,12 @@ const About = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="md:w-[40%] flex justify-center md:justify-end"
             >
-              <div className="w-[240px] h-[240px] md:w-[300px] md:h-[300px] rounded-full overflow-hidden shadow-none border-none outline-none">
+              <div className="w-[240px] h-[240px] md:w-[300px] md:h-[300px] rounded-full overflow-hidden shadow-none border-none outline-none ring-0 ring-offset-0">
                 <img 
                   src="/sajay-photo.jpg" 
                   alt="Sajay Jai Singh" 
-                  className="w-full h-full object-cover object-[center_top] border-none outline-none"
+                  className="w-full h-full object-cover object-[center_top] border-none outline-none shadow-none ring-0"
+                  style={{ border: 'none', outline: 'none', boxShadow: 'none' }}
                 />
               </div>
             </motion.div>
@@ -68,7 +61,7 @@ const About = () => {
             viewport={{ once: true }}
             className="mb-24"
           >
-            <h2 className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)] font-bold mb-12">Sidequests & Hobbies</h2>
+            <h2 className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)] font-bold mb-12" style={{ fontFamily: 'var(--font-display)' }}>Sidequests & Hobbies</h2>
             <div className="flex flex-wrap gap-6">
               <HobbyCard 
                 icon={
@@ -83,20 +76,17 @@ const About = () => {
                   </svg>
                 }
                 label="DJ as Sajavibe"
-                backText="Sajavibe — on Spotify and Instagram"
+                backText="Sajavibe on Instagram"
                 backSymbol="♪"
               />
               
               <HobbyCard 
                 icon={
-                  <svg viewBox="0 0 64 64" width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 54 L32 10 L58 54 Z" stroke="#4F46E5" strokeWidth="2" strokeLinejoin="round"/>
-                    <path d="M23 30 L32 10 L41 30 Z" fill="#F9F8F5" stroke="#4F46E5" strokeWidth="1.5" strokeLinejoin="round"/>
-                    <circle cx="50" cy="20" r="4" stroke="#4F46E5" strokeWidth="1.5"/>
-                    <line x1="50" y1="12" x2="50" y2="10" stroke="#4F46E5" strokeWidth="1.5" strokeLinecap="round"/>
-                    <line x1="56" y1="15" x2="58" y2="13" stroke="#4F46E5" strokeWidth="1.5" strokeLinecap="round"/>
-                    <line x1="58" y1="20" x2="60" y2="20" stroke="#4F46E5" strokeWidth="1.5" strokeLinecap="round"/>
-                    <line x1="56" y1="25" x2="58" y2="27" stroke="#4F46E5" strokeWidth="1.5" strokeLinecap="round"/>
+                  <svg viewBox="0 0 64 64" width="48" height="48" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 54 L32 10 L58 54 Z" fill="#EEF2FF" stroke="#4F46E5" strokeWidth="2" strokeLinejoin="round"/>
+                    <path d="M23 30 L32 10 L41 30 Z" fill="white" stroke="#4F46E5" strokeWidth="1.5" strokeLinejoin="round"/>
+                    <line x1="32" y1="10" x2="32" y2="4" stroke="#4F46E5" strokeWidth="1.5" strokeLinecap="round"/>
+                    <path d="M32 4 L38 7 L32 10 Z" fill="#4F46E5"/>
                   </svg>
                 }
                 label="Mountain Climbing"
@@ -113,7 +103,7 @@ const About = () => {
                   </svg>
                 }
                 label="Lifting Weights"
-                backText="The gym is my second office"
+                backText="My favourite lift is the bench press"
                 backSymbol="↑"
               />
             </div>
@@ -125,8 +115,8 @@ const About = () => {
             viewport={{ once: true }}
             className="mb-24"
           >
-            <h2 className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)] font-bold mb-8">Currently researching:</h2>
-            <ul className="space-y-4">
+            <h2 className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)] font-bold mb-8" style={{ fontFamily: 'var(--font-display)' }}>Currently researching:</h2>
+            <ul className="space-y-4" style={{ fontFamily: 'var(--font-body)' }}>
               {[
                 '[PLACEHOLDER — Sajay will add his thesis summary here]',
                 'Taste as a key differentiator in the era of Generative AI',
@@ -146,11 +136,11 @@ const About = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)] font-bold mb-8">Find me elsewhere</h2>
+            <h2 className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)] font-bold mb-8" style={{ fontFamily: 'var(--font-display)' }}>Find me elsewhere</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <SocialLinkCard icon={FileText} label="Resume" href="/resume" />
               <SocialLinkCard icon={Linkedin} label="LinkedIn" href="https://www.linkedin.com/in/sajaysingh/" isExternal />
-              <SocialLinkCard icon={PenTool} label="Blog" href="https://sajaysingh.medium.com/" isExternal />
+              <SocialLinkCard icon={Globe} label="Blog" href="https://sajaysingh.medium.com/" isExternal />
               <SocialLinkCard icon={Headphones} label="Music" href="https://www.instagram.com/sajavibe/" isExternal />
             </div>
           </motion.section>
