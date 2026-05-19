@@ -26,10 +26,10 @@ const Recruiter = () => {
             {/* I AM Section */}
             <div className="bg-white border border-[#E4E3DF] rounded-[12px] px-[28px] py-[24px] mb-12">
               <h2 
-                className="text-[12px] uppercase tracking-[0.08em] text-[#6B6B6B] mb-8"
+                className="text-sm uppercase tracking-[0.08em] text-[#6B6B6B] mb-8"
                 style={{ 
                   fontFamily: 'var(--font-body)', 
-                  fontWeight: '700' 
+                  fontWeight: '800' 
                 }}
               >
                 I AM
@@ -44,7 +44,7 @@ const Recruiter = () => {
                   <div key={i} className="flex items-start gap-4 text-lg leading-relaxed">
                     <div 
                       className="w-[10px] h-[10px] rounded-full bg-[#4F46E5] shrink-0" 
-                      style={{ marginTop: '9px' }}
+                      style={{ marginTop: '10px' }}
                     />
                     <span>{text}</span>
                   </div>
