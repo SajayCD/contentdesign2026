@@ -63,7 +63,6 @@ const ScalingOrg = () => {
               ))}
             </div>
 
-            <h2 className="text-3xl font-bold mb-6">Second Section</h2>
             <p className="mb-8">
               So, how did we go from something trivial to a sophisticated, well-managed, transparent process with checks and balances? This article will guide you through a step-by-step process, whether you have just started building out your content org or are somewhere along the way.
             </p>
@@ -92,7 +91,6 @@ const ScalingOrg = () => {
             </p>
 
             <div className="bg-indigo-50 border border-indigo-100 p-8 rounded-2xl mb-12">
-              <h2 className="text-2xl font-bold mb-6 text-indigo-900">Third Section</h2>
               <p className="mb-8 text-indigo-900">
                 Based on the state of these factors, every org is assigned a maturity level. To assess the content maturity level of your organisation, you can ask some direct questions. These questions fall under 4 pillars:
               </p>
@@ -114,7 +112,6 @@ const ScalingOrg = () => {
               <p className="text-xs text-indigo-400 text-center italic">Adapted for UX Content in a software product</p>
             </div>
 
-            <h2 className="text-3xl font-bold mb-6">Fourth Section</h2>
             <p className="mb-8">
               In case you need a reference, this is the maturity assessment we did for our organization. The confidential/sensitive details have been removed. Feel free to use this as a starting point, but remember that every product will have its own unique maturity assessment.
             </p>
