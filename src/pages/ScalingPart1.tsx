@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, BookOpen } from 'lucide-react';
+import { BookOpen } from 'lucide-react';
 
 const ScalingPart1 = () => {
   return (
@@ -49,7 +49,7 @@ const ScalingPart1 = () => {
 
               <h2 className="text-3xl font-bold mb-6 mt-16">How much work you do vs How much of your work is 'seen'</h2>
               <p className="mb-8">
-                As the first UX writers, we may often do more work than others see. It is important to remember that you set the standard for how people perceive your work—especially if you report to a senior designer or design head, who may not fully understand a content designer's daily tasks.
+                As the first UX writers, we may often do more work than others see. It is important to remember that you set the standard for how people perceive your work—specifically if you report to a senior designer or design head, who may not fully understand a content designer's daily tasks.
               </p>
               <p className="mb-8">
                 At any given time, you may be collaborating with multiple PMs and UX Designers and working on various flows. However, this only matters if higher management can "see" and "realize" that you are wearing multiple hats.
@@ -109,13 +109,13 @@ const ScalingPart1 = () => {
                   <div key={i}>
                     <div className="flex gap-4">
                       <span className="font-bold text-[var(--color-accent)] w-5 shrink-0">{i + 1}.</span>
-                      <p className="whitespace-pre-line">{step}</p>
+                      <p className="whitespace-pre-line m-0">{step}</p>
                     </div>
                     {i === 4 && (
-                      <div className="pl-14 mt-2 space-y-2">
-                        <p className="text-lg">→ Demonstrated to the product team that you are collaborative and receptive to their requirements, rather than dismissive.</p>
-                        <p className="text-lg">→ Shown your manager and upper management the clear necessity for more folks on your team, instead of telling them.</p>
-                        <p className="text-lg">→ Helped the product team in prioritizing their requirements more effectively.</p>
+                      <div className="pl-14 mt-4 space-y-3">
+                        <p className="m-0">→ Demonstrated to the product team that you are collaborative and receptive to their requirements, rather than dismissive.</p>
+                        <p className="m-0">→ Shown your manager and upper management the clear necessity for more folks on your team, instead of telling them.</p>
+                        <p className="m-0">→ Helped the product team in prioritizing their requirements more effectively.</p>
                       </div>
                     )}
                   </div>
