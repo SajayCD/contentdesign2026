@@ -59,7 +59,13 @@ const ScalingPart4 = () => {
         <div className="max-w-[720px] mx-auto">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-sm text-[var(--color-text-muted)] mb-12">
-            <Link to="/" className="hover:text-[var(--color-accent)] transition-colors">All Work</Link>
+            <Link 
+              to="/" 
+              className="group inline-flex items-center gap-[6px] hover:text-[var(--color-accent)] transition-all duration-200"
+            >
+              <span className="transition-transform duration-200 group-hover:-translate-x-1">←</span>
+              <span>All Work</span>
+            </Link>
             <span>→</span>
             <Link to="/work/content-design-org" className="hover:text-[var(--color-accent)] transition-colors">Scaling a Content Design Org</Link>
             <span>→</span>
