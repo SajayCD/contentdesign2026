@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ArrowRight } from 'lucide-react';
 import CaseStudyHeader from './CaseStudyHeader';
 import CaseStudyFooter from './CaseStudyFooter';
 
@@ -66,12 +67,19 @@ const DesignSystem = () => {
                 "Standard dictionary of finance terms",
                 "A safe list of acceptable synonyms to use"
               ].map((item, i) => (
-                <div key={i} className="flex items-center gap-6 p-4 bg-white border border-[var(--color-border)] rounded-xl shadow-sm">
-                  <div className="w-8 h-8 rounded-full bg-[var(--color-accent)] text-white flex items-center justify-center font-bold text-sm shrink-0">
-                    {i + 1}
+                <a 
+                  key={i} 
+                  href="#"
+                  className="flex items-center justify-between p-4 bg-white border border-[var(--color-border)] rounded-xl shadow-sm transition-all duration-200 ease-in-out hover:bg-[#FAFAFA] hover:border-l-2 hover:border-l-[var(--color-accent)] cursor-pointer group no-underline"
+                >
+                  <div className="flex items-center gap-6">
+                    <div className="w-8 h-8 rounded-full bg-[var(--color-accent)] text-white flex items-center justify-center font-bold text-sm shrink-0">
+                      {i + 1}
+                    </div>
+                    <span className="font-medium text-[var(--color-text)]">{item}</span>
                   </div>
-                  <span className="font-medium">{item}</span>
-                </div>
+                  <ArrowRight size={20} className="text-[var(--color-text-muted)] group-hover:text-[var(--color-accent)] group-hover:translate-x-1 transition-all duration-200" />
+                </a>
               ))}
             </div>
 
