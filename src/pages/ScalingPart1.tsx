@@ -98,64 +98,28 @@ const ScalingPart1 = () => {
                 The most important thing to PM#3 is getting their project live; they do not care too much if you're involved in other projects. All they know is that a UX writer is available to help with the content design of their flow.
               </p>
 
-              <div className="bg-[var(--color-tag-bg)] p-8 md:p-12 rounded-2xl mb-12 space-y-8">
-                {/* Item 1 */}
-                <div className="flex gap-6 items-start">
-                  <span className="font-bold text-[var(--color-accent)] text-lg shrink-0 mt-1">1.</span>
-                  <p className="text-lg m-0">Have a realistic conversation with your PM and manager about your bandwidth.</p>
-                </div>
-                
-                {/* Item 2 */}
-                <div className="flex gap-6 items-start">
-                  <span className="font-bold text-[var(--color-accent)] text-lg shrink-0 mt-1">2.</span>
-                  <p className="text-lg m-0">Show them your current workload and the time needed to deliver on existing projects.</p>
-                </div>
-
-                {/* Item 3 */}
-                <div className="flex gap-6 items-start">
-                  <span className="font-bold text-[var(--color-accent)] text-lg shrink-0 mt-1">3.</span>
-                  <div className="space-y-4">
-                    <p className="text-lg m-0">Present two options for managing the new project:</p>
-                    <div className="pl-4 space-y-3">
-                      <p className="text-lg m-0 flex gap-3">
-                        <span className="text-[var(--color-accent)]">→</span>
-                        <span>Delay the newest project until one of your in-progress projects is completed.</span>
-                      </p>
-                      <p className="text-lg m-0 flex gap-3">
-                        <span className="text-[var(--color-accent)]">→</span>
-                        <span>Drop something from your current projects to take on the new project.</span>
-                      </p>
+              <div className="bg-[var(--color-tag-bg)] p-8 rounded-2xl mb-12 space-y-6">
+                {[
+                  "Have a realistic conversation with your PM and manager about your bandwidth.",
+                  "Show them your current workload and the time needed to deliver on existing projects.",
+                  "Present two options for managing the new project:\n→ Delay the newest project until one of your in-progress projects is completed.\n→ Drop something from your current projects to take on the new project.",
+                  "Who decides the priority for these projects? It is the product team's job. So, the ball is now in the product team's court to determine the project-level priority.",
+                  "By implementing this strategy, you have:"
+                ].map((step, i) => (
+                  <div key={i}>
+                    <div className="flex gap-4">
+                      <span className="font-bold text-[var(--color-accent)] w-5 shrink-0">{i + 1}.</span>
+                      <p className="whitespace-pre-line m-0">{step}</p>
                     </div>
+                    {i === 4 && (
+                      <div className="pl-14 mt-4 space-y-3">
+                        <p className="m-0">→ Demonstrated to the product team that you are collaborative and receptive to their requirements, rather than dismissive.</p>
+                        <p className="m-0">→ Shown your manager and upper management the clear necessity for more folks on your team, instead of telling them.</p>
+                        <p className="m-0">→ Helped the product team in prioritizing their requirements more effectively.</p>
+                      </div>
+                    )}
                   </div>
-                </div>
-
-                {/* Item 4 */}
-                <div className="flex gap-6 items-start">
-                  <span className="font-bold text-[var(--color-accent)] text-lg shrink-0 mt-1">4.</span>
-                  <p className="text-lg m-0">Who decides the priority for these projects? It is the product team's job. So, the ball is now in the product team's court to determine the project-level priority.</p>
-                </div>
-
-                {/* Item 5 */}
-                <div className="flex gap-6 items-start">
-                  <span className="font-bold text-[var(--color-accent)] text-lg shrink-0 mt-1">5.</span>
-                  <div className="space-y-4">
-                    <p className="text-lg m-0">By implementing this strategy, you have:</p>
-                    <div className="pl-4 space-y-3">
-                      <p className="text-lg m-0 flex gap-3">
-                        <span className="text-[var(--color-accent)]">→</span>
-                        <span>Demonstrated to the product team that you are collaborative and receptive to their requirements, rather than dismissive.</span>
-                      </p>
-                      <p className="text-lg m-0 flex gap-3">
-                        <span className="text-[var(--color-accent)]">→</span>
-                        <span>Shown your manager and upper management the clear necessity for more folks on your team, instead of telling them.</span>
-                      </p>
-                      <p className="text-lg m-0 flex gap-3">
-                        <span className="text-[var(--color-accent)]">→</span>
-                        <span>Helped the product team in prioritizing their requirements more effectively.</span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
+                ))}
               </div>
 
               <p className="mb-8">
