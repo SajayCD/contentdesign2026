@@ -106,21 +106,18 @@ const ScalingPart1 = () => {
                   "Who decides the priority for these projects? It is the product team's job. So, the ball is now in the product team's court to determine the project-level priority.",
                   "By implementing this strategy, you have:"
                 ].map((step, i) => (
-                  <div key={i} className="flex gap-4">
-                    <span className="font-bold text-[var(--color-accent)]">{i + 1}.</span>
-                    <p className="whitespace-pre-line">{step}</p>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex flex-wrap gap-3 mb-16">
-                {[
-                  "→ Demonstrated to the product team that you are collaborative and receptive to their requirements, rather than dismissive.",
-                  "→ Shown your manager and upper management the clear necessity for more folks on your team, instead of telling them.",
-                  "→ Helped the product team in prioritizing their requirements more effectively."
-                ].map((outcome, i) => (
-                  <div key={i} className="bg-[var(--color-accent)] text-white px-6 py-3 rounded-full text-sm font-medium">
-                    {outcome}
+                  <div key={i}>
+                    <div className="flex gap-4">
+                      <span className="font-bold text-[var(--color-accent)] w-5 shrink-0">{i + 1}.</span>
+                      <p className="whitespace-pre-line">{step}</p>
+                    </div>
+                    {i === 4 && (
+                      <div className="pl-14 mt-2 space-y-2">
+                        <p className="text-lg">→ Demonstrated to the product team that you are collaborative and receptive to their requirements, rather than dismissive.</p>
+                        <p className="text-lg">→ Shown your manager and upper management the clear necessity for more folks on your team, instead of telling them.</p>
+                        <p className="text-lg">→ Helped the product team in prioritizing their requirements more effectively.</p>
+                      </div>
+                    )}
                   </div>
                 ))}
               </div>
