@@ -26,12 +26,15 @@ const Recruiter = () => {
             {/* I AM Section */}
             <div className="bg-white border border-[#E4E3DF] rounded-[12px] px-[28px] py-[24px] mb-12">
               <h2 
-                className="text-[12px] font-bold uppercase tracking-[0.08em] text-[#6B6B6B] mb-8"
-                style={{ fontFamily: 'var(--font-body)' }}
+                className="text-[12px] uppercase tracking-[0.08em] text-[#6B6B6B] mb-8"
+                style={{ 
+                  fontFamily: 'var(--font-body)', 
+                  fontWeight: '700' 
+                }}
               >
                 I AM
               </h2>
-              <div className="space-y-3">
+              <div className="flex flex-col" style={{ gap: '12px' }}>
                 {[
                   "A Senior Content Designer with 5+ years of experience in high-growth tech.",
                   "Specialised in FinTech, Design Systems, and scaling content organisations.",
@@ -39,7 +42,10 @@ const Recruiter = () => {
                   "Based out of (sometimes) sunny Dublin, Ireland 🌦️."
                 ].map((text, i) => (
                   <div key={i} className="flex items-start gap-4 text-lg leading-relaxed">
-                    <div className="w-[10px] h-[10px] rounded-full bg-[#4F46E5] shrink-0 mt-[5px]" />
+                    <div 
+                      className="w-[10px] h-[10px] rounded-full bg-[#4F46E5] shrink-0" 
+                      style={{ marginTop: '5px' }}
+                    />
                     <span>{text}</span>
                   </div>
                 ))}
