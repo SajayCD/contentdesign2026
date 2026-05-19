@@ -8,6 +8,12 @@ import CaseStudyFooter from './CaseStudyFooter';
 import Highlighter from '@/components/ui/Highlighter';
 
 const CDAT = () => {
+  const challenges = [
+    "In edge cases or one-time updates it was challenging to validate UX writing work in the test builds. Some cases had rare/one-time appearance, and some were dependent on external factors (e.g. third-party APIs).",
+    "Streamlining with Dev timelines to test tickets - a substantial number of tickets from some sprints are in Dev/not were at time not picked up, which created an increasing backlog.",
+    "Streamlining a single timeline to test tickets."
+  ];
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 20 }}
@@ -169,15 +175,14 @@ const CDAT = () => {
 
             <h2 className="text-3xl font-bold mb-8">Challenges</h2>
             
-            <div className="space-y-4 mb-24">
-              {[
-                "In edge cases or one-time updates it was challenging to validate UX writing work in the test builds. Some cases had rare/one-time appearance, and some were dependent on external factors (e.g. third-party APIs).",
-                "Streamlining with Dev timelines to test tickets - a substantial number of tickets from some sprints are in Dev/not were at time not picked up, which created an increasing backlog.",
-                "Streamlining a single timeline to test tickets."
-              ].map((challenge, i) => (
-                <div key={i} className="flex gap-4 p-6 bg-amber-50 border border-amber-100 rounded-2xl text-amber-900">
+            <div className="mb-24 bg-amber-50 border border-amber-100 rounded-xl overflow-hidden">
+              {challenges.map((challenge, i) => (
+                <div 
+                  key={i} 
+                  className={`flex gap-4 p-6 text-amber-900 ${i !== challenges.length - 1 ? 'border-b border-amber-200/30' : ''}`}
+                >
                   <AlertCircle className="shrink-0 mt-1" size={20} />
-                  <p className="font-medium">{challenge}</p>
+                  <p className="font-medium m-0 leading-relaxed">{challenge}</p>
                 </div>
               ))}
             </div>
