@@ -36,9 +36,12 @@ const NotFound = () => {
           </ul>
         </div>
 
-        <div className="mt-12">
+        <div className="mt-12 flex flex-col items-start gap-4">
           <Link to="/" className="inline-block border border-[#F9F8F5] px-6 py-3 hover:bg-[#F9F8F5] hover:text-[#1C1C1E] transition-all">
             ← Take me home
+          </Link>
+          <Link to="/work/content-design-org" className="inline-block text-xs uppercase tracking-[0.2em] opacity-50 hover:opacity-100 transition-all">
+            ← Back to the series
           </Link>
         </div>
 
