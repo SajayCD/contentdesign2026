@@ -10,43 +10,43 @@ import Highlighter from '@/components/ui/Highlighter';
 const ScalingPart4 = () => {
   const tips = [
     {
-      title: "PREPARE WELL",
+      title: "Prepare Well",
       text: "Interview preparation is not limited to candidates. You have limited time to decide on every candidate—prepare well to make the best use of it. Go through the candidates' resumes and portfolios. Notice the minor details. Prepare your questions ahead of time. Dress well (even if it is a video call) and show up on time."
     },
     {
-      title: "PROVIDE AN INTERVIEW STRUCTURE",
+      title: "Provide an Interview Structure",
       text: "Candidates may be interviewing at multiple places, and every company has a slightly varied process. Go with the assumption that the candidate does not know anything about the process you follow, and help set the context for them. I find it helpful to also set a time structure for the interview call - for example, if I have 55 mins, I will split it into sections of 20:20:15 for the 3 most important things I want to cover."
     },
     {
-      title: "BE A (REALLY) GOOD LISTENER",
+      title: "Be a (Really) Good Listener",
       text: "If there is one thing you want to take away from this list - learn how to become a great listener. To get to know someone the most you can in a short interview, you have to become the best listener in the room. Become comfortable with silence, ask open ended questions, and give people time to speak. Again, I would be amiss if I did not list Chris Voss's tips on how to become a good listener."
     },
     {
-      title: "MAKE PEOPLE COMFORTABLE, AND FORGIVE MINOR MISTAKES",
+      title: "Make People Comfortable, and Forgive Minor Mistakes",
       text: "There is a quote that goes, \"Give people enough time to talk, and they will always tell you about themselves.\" The more comfortable the person you're talking to is, the more you can learn about them. This is a serious, professional setting, and they probably feel the pressure. So smile, take it easy, take some pressure off them, and understand the person in front of you (physically or virtually) is human. We often mirror the behaviour of those around us, so if you're calm and relaxed, they're also likely to be comfortable."
     },
     {
-      title: "TAKE NOTES AND MAKE A LARGE CONTEXT ASSESSMENT",
+      title: "Take Notes and Make a Large Context Assessment",
       text: "Now that you have made your candidate comfortable, go into apex observation zone. Observe everything they do - how they respond to questions, how they take criticisms, how they present, how they talk about other people. It is important to make a judgement based on as much data as you have about them - decisions should never be based on single criteria (for example, a well-prepared answer about work on their favourite project). When interviewing multiple candidates, I have found that making notes about these observations, even the smallest ones, helps in the decision making process."
     },
     {
-      title: "DIG INTO CLAIMS, ESPECIALLY AMBITIOUS ONES",
+      title: "Dig into Claims, Especially Ambitious Ones",
       text: "When people talk about their work - there will be ambitious claims. I see them as a positive sign; these claims show competency and (at least) an intent to do good work. It is important to keep asking questions, get into the minute details, and ask them to elaborate as much as possible. The comfort and proficiency of their answers will tell you if they have actually done that work."
     },
     {
-      title: "ADAPTABILITY IS UNDERRATED",
+      title: "Adaptability is Underrated",
       text: "Great traits to look out for while a candidate talks about their work are flexibility and adaptability. This aligns with my perspective on values over responsibilities. Someone may be great at doing one job - but how well do they adapt when parameters out of their control change? This is sometimes also called \"thinking on your feet\"; however, I believe that phrase is a bit reductionist. It implies that there is a lack of time. This is seldom the case, but you need the people in your team to figure out the solutions themselves. Watch out for this skill while talking to people."
     },
     {
-      title: "DO NOT FEEL GUILTY",
+      title: "Do Not Feel Guilty",
       text: "As designers, we are highly empathetic people. I have sometimes noticed my colleagues hesitating to ask the difficult questions or make the candidate uncomfortable, even if they have a suspicion that needs further clarity. This is natural. We build products that ease people's lives and we want to keep others comfortable. However, it is important to understand that this is an 'evaluation' of their skills and not a social event. Finding the best-suited candidate for this role is your job, so do not hesitate to play the devil's advocate if needed. All of this works as long as you are respectful to the other person."
     },
     {
-      title: "ALWAYS KEEP TIME FOR THEIR QUESTIONS, PROVIDE AMPLE CONTEXT",
+      title: "Always Keep Time for Their Questions, Provide Ample Context",
       text: "This is a simple part of the process that adds a lot of value. The quality of questions candidates ask reflects how much they have thought about this role. And your answers to them reflect your entire design org. It's a great time to hear candid thoughts from them and make a good impression of your org."
     },
     {
-      title: "ASK CANDIDATES FOR FEEDBACK",
+      title: "Ask Candidates for Feedback",
       text: "Lastly, make sure to ask for feedback from every candidate on your hiring process. In most cases, there are gaps that will most likely be discovered only from a candidate's perspective. It is crucial to hear them out, even if they are not selected for the position. This will likely make your process much more candidate-friendly over time."
     }
   ];
@@ -91,7 +91,7 @@ const ScalingPart4 = () => {
                       {i + 1 < 10 ? `0${i + 1}` : i + 1}
                     </div>
                     <div>
-                      <h3 className="text-xl font-bold mb-4 uppercase tracking-tight">{tip.title}</h3>
+                      <h3 className="text-xl font-bold mb-4" style={{ fontFamily: 'var(--font-display)' }}>{tip.title}</h3>
                       <p className="text-lg leading-relaxed text-[var(--color-text-muted)]">{tip.text}</p>
                     </div>
                   </div>
@@ -151,8 +151,8 @@ const ScalingPart4 = () => {
                 </div>
               </div>
 
-              <p className="text-xl font-bold mb-12 text-center">
-                CONCLUSION LINE: Let us move them to the next round.
+              <p className="mb-12">
+                Let us move them to the next round.
               </p>
 
               <p className="mb-12">
