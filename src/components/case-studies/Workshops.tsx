@@ -48,7 +48,6 @@ const Workshops = () => {
               <h2 className="text-3xl font-bold mb-6">How it works: UX Writing at Angel One</h2>
               
               <div className="bg-white border border-[var(--color-border)] p-8 rounded-2xl mb-12">
-                <h3 className="text-sm font-bold uppercase tracking-widest text-[var(--color-text-muted)] mb-4">Topics and Objective</h3>
                 <p className="mb-4">
                   <strong>Topics:</strong> How UX writing builds emotional connections, establishes brand personality, and eventually drives business outcomes.
                 </p>
@@ -78,7 +77,6 @@ const Workshops = () => {
               <h2 className="text-3xl font-bold mb-6">Think like a UX Writer: Workshop</h2>
               
               <div className="bg-white border border-[var(--color-border)] p-8 rounded-2xl mb-12">
-                <h3 className="text-sm font-bold uppercase tracking-widest text-[var(--color-text-muted)] mb-4">Topics and Objective</h3>
                 <p>
                   <strong>Topics and Objective:</strong> How PMs can collaborate efficiently with UX writers, write better copy for Angel One, learn content design practices and ultimately make a better UX.
                 </p>
