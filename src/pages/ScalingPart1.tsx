@@ -8,6 +8,27 @@ import { motion } from 'framer-motion';
 import { BookOpen } from 'lucide-react';
 
 const ScalingPart1 = () => {
+  const listItems = [
+    { text: "Have a realistic conversation with your PM and manager about your bandwidth." },
+    { text: "Show them your current workload and the time needed to deliver on existing projects." },
+    { 
+      text: "Present two options for managing the new project:",
+      subBullets: [
+        "Delay the newest project until one of your in-progress projects is completed.",
+        "Drop something from your current projects to take on the new project."
+      ]
+    },
+    { text: "Who decides the priority for these projects? It is the product team's job. So, the ball is now in the product team's court to determine the project-level priority." },
+    { 
+      text: "By implementing this strategy, you have:",
+      subBullets: [
+        "Demonstrated to the product team that you are collaborative and receptive to their requirements, rather than dismissive.",
+        "Shown your manager and upper management the clear necessity for more folks on your team, instead of telling them.",
+        "Helped the product team in prioritizing their requirements more effectively."
+      ]
+    }
+  ];
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -104,26 +125,23 @@ const ScalingPart1 = () => {
                 The most important thing to PM#3 is getting their project live; they do not care too much if you're involved in other projects. All they know is that a UX writer is available to help with the content design of their flow.
               </p>
 
-              <div className="bg-[var(--color-tag-bg)] p-8 rounded-2xl mb-12 space-y-4">
-                {[
-                  "Have a realistic conversation with your PM and manager about your bandwidth.",
-                  "Show them your current workload and the time needed to deliver on existing projects.",
-                  "Present two options for managing the new project:\n→ Delay the newest project until one of your in-progress projects is completed.\n→ Drop something from your current projects to take on the new project.",
-                  "Who decides the priority for these projects? It is the product team's job. So, the ball is now in the product team's court to determine the project-level priority.",
-                  "By implementing this strategy, you have:"
-                ].map((step, i) => (
-                  <div key={i}>
-                    <div className="flex items-start gap-4">
-                      <span className="font-bold text-[var(--color-accent)] w-5 shrink-0">{i + 1}.</span>
-                      <p className="whitespace-pre-line m-0">{step}</p>
+              <div className="bg-[var(--color-tag-bg)] p-8 rounded-2xl mb-12 space-y-3">
+                {listItems.map((item, i) => (
+                  <div key={i} className="flex items-start gap-4">
+                    <span className="font-bold text-[var(--color-accent)] w-5 shrink-0 leading-relaxed">{i + 1}.</span>
+                    <div className="flex flex-col">
+                      <p className="m-0 leading-relaxed">{item.text}</p>
+                      {item.subBullets && (
+                        <div className="mt-2 space-y-1.5">
+                          {item.subBullets.map((bullet, j) => (
+                            <div key={j} className="flex items-start gap-2 text-[0.95em] opacity-90">
+                              <span className="text-[var(--color-accent)] shrink-0">→</span>
+                              <p className="m-0 leading-snug">{bullet}</p>
+                            </div>
+                          ))}
+                        </div>
+                      )}
                     </div>
-                    {i === 4 && (
-                      <div className="pl-9 mt-4 space-y-3">
-                        <p className="m-0">→ Demonstrated to the product team that you are collaborative and receptive to their requirements, rather than dismissive.</p>
-                        <p className="m-0">→ Shown your manager and upper management the clear necessity for more folks on your team, instead of telling them.</p>
-                        <p className="m-0">→ Helped the product team in prioritizing their requirements more effectively.</p>
-                      </div>
-                    )}
                   </div>
                 ))}
               </div>
