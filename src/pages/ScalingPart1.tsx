@@ -104,7 +104,7 @@ const ScalingPart1 = () => {
                 The most important thing to PM#3 is getting their project live; they do not care too much if you're involved in other projects. All they know is that a UX writer is available to help with the content design of their flow.
               </p>
 
-              <div className="bg-[var(--color-tag-bg)] p-8 rounded-2xl mb-12 space-y-6">
+              <div className="bg-[var(--color-tag-bg)] p-8 rounded-2xl mb-12 space-y-4">
                 {[
                   "Have a realistic conversation with your PM and manager about your bandwidth.",
                   "Show them your current workload and the time needed to deliver on existing projects.",
@@ -113,12 +113,12 @@ const ScalingPart1 = () => {
                   "By implementing this strategy, you have:"
                 ].map((step, i) => (
                   <div key={i}>
-                    <div className="flex gap-4">
+                    <div className="flex items-start gap-4">
                       <span className="font-bold text-[var(--color-accent)] w-5 shrink-0">{i + 1}.</span>
                       <p className="whitespace-pre-line m-0">{step}</p>
                     </div>
                     {i === 4 && (
-                      <div className="pl-14 mt-4 space-y-3">
+                      <div className="pl-9 mt-4 space-y-3">
                         <p className="m-0">→ Demonstrated to the product team that you are collaborative and receptive to their requirements, rather than dismissive.</p>
                         <p className="m-0">→ Shown your manager and upper management the clear necessity for more folks on your team, instead of telling them.</p>
                         <p className="m-0">→ Helped the product team in prioritizing their requirements more effectively.</p>
