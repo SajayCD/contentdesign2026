@@ -12,11 +12,12 @@ const DictionaryTooltip = ({ children, className = "" }: DictionaryTooltipProps)
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <span 
-      className={`relative inline-block ${className}`}
+    <span
+      className={`relative ${className}`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
+        display: 'inline',
         textDecoration: 'underline',
         textDecorationStyle: 'dotted',
         textDecorationColor: 'rgba(79, 70, 229, 0.4)',
