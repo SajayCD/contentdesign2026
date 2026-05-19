@@ -2,8 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, FileText } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { FileText } from 'lucide-react';
 import CaseStudyHeader from './CaseStudyHeader';
 import CaseStudyFooter from './CaseStudyFooter';
 
@@ -157,16 +156,6 @@ const DesignAudits = () => {
               <p className="mb-8">
                 While we used this process to clear existing design debt, we also implemented more processes to prevent new design debt in our product, namely a content design acceptance testing (CDAT) process.
               </p>
-              
-              <Link to="/work/cdat" className="group block bg-white border border-[var(--color-border)] p-8 rounded-2xl hover:border-[var(--color-accent)] transition-all duration-300">
-                <div className="flex justify-between items-center">
-                  <div>
-                    <div className="text-[10px] uppercase tracking-widest text-[var(--color-text-muted)] mb-2">Read next</div>
-                    <h3 className="text-2xl font-bold group-hover:text-[var(--color-accent)] transition-colors">Content Design Acceptance Testing (CDAT)</h3>
-                  </div>
-                  <ArrowRight size={32} className="text-[var(--color-border)] group-hover:text-[var(--color-accent)] group-hover:translate-x-2 transition-all" />
-                </div>
-              </Link>
             </div>
           </div>
         </div>
