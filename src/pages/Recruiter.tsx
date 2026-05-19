@@ -44,7 +44,7 @@ const Recruiter = () => {
                   <div key={i} className="flex items-start gap-4 text-lg leading-relaxed">
                     <div 
                       className="w-[10px] h-[10px] rounded-full bg-[#4F46E5] shrink-0" 
-                      style={{ marginTop: '5px' }}
+                      style={{ marginTop: '9px' }}
                     />
                     <span>{text}</span>
                   </div>
