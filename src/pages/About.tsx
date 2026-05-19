@@ -5,7 +5,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import { motion } from 'framer-motion';
 import TrackChangesTooltip from '@/components/ui/TrackChangesTooltip';
-import { Globe, FileText, Linkedin, Headphones } from 'lucide-react';
+import { Globe, Linkedin, Headphones } from 'lucide-react';
 import HobbyCard from '@/components/about/HobbyCard';
 import SocialLinkCard from '@/components/about/SocialLinkCard';
 
@@ -61,7 +61,7 @@ const About = () => {
             viewport={{ once: true }}
             className="mb-24"
           >
-            <h2 className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)] font-bold mb-12" style={{ fontFamily: 'var(--font-display)' }}>Sidequests & Hobbies</h2>
+            <h2 className="text-[clamp(24px,3vw,36px)] font-bold text-[var(--color-text)] mb-6" style={{ fontFamily: 'var(--font-display)' }}>Sidequests & Hobbies</h2>
             <div className="flex flex-wrap gap-6">
               <HobbyCard 
                 icon={
@@ -115,7 +115,7 @@ const About = () => {
             viewport={{ once: true }}
             className="mb-24"
           >
-            <h2 className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)] font-bold mb-8" style={{ fontFamily: 'var(--font-display)' }}>Currently researching:</h2>
+            <h2 className="text-[clamp(24px,3vw,36px)] font-bold text-[var(--color-text)] mb-8" style={{ fontFamily: 'var(--font-display)' }}>Currently researching:</h2>
             <ul className="space-y-4" style={{ fontFamily: 'var(--font-body)' }}>
               {[
                 '[PLACEHOLDER — Sajay will add his thesis summary here]',
@@ -137,8 +137,7 @@ const About = () => {
             viewport={{ once: true }}
           >
             <h2 className="text-xs uppercase tracking-[0.2em] text-[var(--color-text-muted)] font-bold mb-8" style={{ fontFamily: 'var(--font-display)' }}>Find me elsewhere</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              <SocialLinkCard icon={FileText} label="Resume" href="/resume" />
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <SocialLinkCard icon={Linkedin} label="LinkedIn" href="https://www.linkedin.com/in/sajaysingh/" isExternal />
               <SocialLinkCard icon={Globe} label="Blog" href="https://sajaysingh.medium.com/" isExternal />
               <SocialLinkCard icon={Headphones} label="Music" href="https://www.instagram.com/sajavibe/" isExternal />
