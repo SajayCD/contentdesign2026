@@ -10,35 +10,40 @@ import {
 
 interface DictionaryTooltipProps {
   children: React.ReactNode;
+  term?: string;
+  definition?: string;
 }
 
-const DictionaryTooltip = ({ children }: DictionaryTooltipProps) => {
+const DictionaryTooltip = ({ children, term, definition }: DictionaryTooltipProps) => {
+  // Default definition for "Content Designer" as it's the primary use case
+  const defaultDefinition = "A design discipline focused on using language to help people get things done. It's about structure, hierarchy, and clarity, not just 'writing'.";
+  
+  const displayTerm = term || (typeof children === 'string' ? children : "Content Design");
+  const displayDefinition = definition || defaultDefinition;
+
   return (
-    <span style={{ display: 'inline' }}>
-      <TooltipProvider delayDuration={200}>
-        <Tooltip>
-          <TooltipTrigger asChild>
-            <span className="cursor-help border-b border-dotted border-[var(--color-text-muted)] hover:text-[var(--color-accent)] hover:border-[var(--color-accent)] transition-colors">
-              {children}
-            </span>
-          </TooltipTrigger>
-          <TooltipContent 
-            side="top" 
-            className="bg-white p-4 rounded-xl border border-[var(--color-border)] shadow-xl max-w-[280px] z-[100]"
-          >
-            <div className="space-y-2">
-              <div className="flex items-center justify-between border-b border-[var(--color-border)] pb-2 mb-2">
-                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--color-accent)]">Dictionary Entry</span>
-                <span className="text-[10px] text-[var(--color-text-muted)] italic">noun</span>
-              </div>
-              <p className="text-sm leading-relaxed text-[var(--color-text)]">
-                <span className="font-bold">Content Designer:</span> A professional who uses words as a design material to solve user problems and make complex systems feel human.
-              </p>
-            </div>
-          </TooltipContent>
-        </Tooltip>
-      </TooltipProvider>
-    </span>
+    <TooltipProvider delayDuration={200}>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <span className="cursor-help border-b border-dotted border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-colors inline-block">
+            {children}
+          </span>
+        </TooltipTrigger>
+        <TooltipContent 
+          side="top" 
+          className="bg-white p-4 rounded-xl border border-[var(--color-border)] shadow-xl max-w-[280px] z-[100]"
+        >
+          <div className="space-y-2">
+            <p className="text-xs font-bold uppercase tracking-widest text-[var(--color-accent)]">
+              {displayTerm}
+            </p>
+            <p className="text-sm leading-relaxed text-[var(--color-text)]">
+              {displayDefinition}
+            </p>
+          </div>
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
   );
 };
 
