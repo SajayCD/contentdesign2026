@@ -145,9 +145,12 @@ const MutualFunds = () => {
               This case study documents our journey of further understanding our user needs, adding more features and optimizing the current journeys to meet our business goals.
             </p>
 
-            <div className="bg-[var(--color-tag-bg)] aspect-video rounded-xl flex items-center justify-center mb-12 border border-[var(--color-border)]">
-              <span className="text-[var(--color-text-muted)] font-medium uppercase tracking-widest text-xs">A (very) simple Mutual Fund order flow</span>
-            </div>
+            <img 
+              src="/mutual-funds-flow.png" 
+              width="100%" 
+              className="rounded-xl mb-12 border border-[var(--color-border)]" 
+              alt="Mutual funds investment user flow diagram" 
+            />
 
             <p className="mb-24">
               After launching v1 of the new app, we were looking at about 50,000 SIPs with a 15-20% mandate success rate.
