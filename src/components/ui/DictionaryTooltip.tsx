@@ -1,4 +1,7 @@
+"use client";
+
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 interface DictionaryTooltipProps {
   children: React.ReactNode;
@@ -23,35 +26,36 @@ const DictionaryTooltip = ({ children, className = "" }: DictionaryTooltipProps)
       }}
     >
       {children}
-      {isHovered && (
-        <span style={{
-          position: 'absolute',
-          top: '100%',
-          left: 0,
-          zIndex: 50,
-          backgroundColor: 'white',
-          border: '2px solid #4F46E5',
-          borderRadius: '12px',
-          padding: '16px 20px',
-          width: '340px',
-          boxShadow: '0 4px 24px rgba(0,0,0,0.10)',
-          display: 'block',
-          marginTop: '8px'
-        }}>
-          <p style={{ fontFamily: 'serif', fontSize: '15px', fontWeight: '600', color: '#1C1C1E', marginBottom: '4px' }}>
-            con·tent de·sign·er
-          </p>
-          <p style={{ fontStyle: 'italic', fontSize: '13px', color: '#6B6B6B', marginBottom: '8px' }}>
-            Also called "UX Writer"
-          </p>
-          <p style={{ fontSize: '11px', fontWeight: '700', color: '#4F46E5', letterSpacing: '0.08em', marginBottom: '6px' }}>
-            NOUN
-          </p>
-          <p style={{ fontSize: '14px', color: '#1C1C1E', lineHeight: '1.5', margin: 0 }}>
-            a design professional who crafts the words that guide users through digital products.
-          </p>
-        </span>
-      )}
+      <AnimatePresence>
+        {isHovered && (
+          <motion.div
+            initial={{ opacity: 0, y: 4 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 4 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="absolute bottom-[calc(100%+12px)] left-0 z-[100] bg-white border-t-[3px] border-t-[#4F46E5] rounded-[10px] shadow-[0_8px_24px_rgba(0,0,0,0.1)] p-[12px_16px] min-w-[240px] pointer-events-none hidden md:block"
+          >
+            <div className="space-y-1">
+              <div className="text-[13px] font-medium text-[#1C1C1E]" style={{ fontFamily: 'var(--font-body)' }}>
+                con·tent de·sign·er
+              </div>
+              <div className="text-[12px] text-[#6B6B6B] italic" style={{ fontFamily: 'var(--font-body)' }}>
+                Also called "UX Writer"
+              </div>
+              <div className="text-[11px] font-semibold uppercase tracking-wider text-[#4F46E5]" style={{ fontFamily: 'var(--font-body)' }}>
+                NOUN
+              </div>
+              <p className="text-[13px] text-[#1C1C1E] leading-[1.6] mt-2" style={{ fontFamily: 'var(--font-body)' }}>
+                a design professional who crafts the words that guide users through digital products.
+              </p>
+            </div>
+            
+            {/* Triangle pointer */}
+            <div className="absolute top-full left-4 border-[6px] border-transparent border-t-[#4F46E5]" />
+            <div className="absolute top-[calc(100%-1px)] left-[17px] border-[5px] border-transparent border-t-white z-[1]" />
+          </motion.div>
+        )}
+      </AnimatePresence>
     </span>
   );
 };
