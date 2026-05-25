@@ -146,10 +146,9 @@ const MutualFunds = () => {
             </p>
 
             <img 
-              src="/mutual-funds-flow.png" 
-              width="100%" 
-              className="rounded-xl mb-12 border border-[var(--color-border)]" 
-              alt="Mutual funds investment user flow diagram" 
+              src="/mutual-funds-flowv2.png" 
+              alt="Mutual funds flow" 
+              style={{ width: '100%', borderRadius: '12px', margin: '32px 0' }} 
             />
 
             <p className="mb-24">
