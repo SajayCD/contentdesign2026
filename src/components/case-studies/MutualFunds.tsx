@@ -346,9 +346,8 @@ const MutualFunds = () => {
 
             <h2 className="text-3xl font-bold mb-8">A Few Humblebrags</h2>
             <p className="mb-12">To put this in context, the mutual funds product has 1.5 million weekly active users.</p>
-            <div className="bg-[var(--color-tag-bg)] aspect-video rounded-xl flex items-center justify-center mb-12 border border-[var(--color-border)]">
-              <span className="text-[var(--color-text-muted)] font-medium uppercase tracking-widest text-xs">500k New SIPs Certificate — Company Recognition</span>
-            </div>
+            <img src="/sip-certificate.png" alt="500k New SIPs Certificate — Company Recognition" style={{ width: '100%', borderRadius: '12px', margin: '16px 0' }} />
+            <a href="/recognition-certificate.pdf" target="_blank" rel="noopener noreferrer" style={{ display: 'inline-block', marginTop: '12px', color: '#4F46E5', fontSize: '14px', textDecoration: 'underline' }}>View recognition certificate (PDF) →</a>
           </div>
         </div>
       </section>
