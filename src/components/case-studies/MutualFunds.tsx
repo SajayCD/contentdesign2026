@@ -243,8 +243,12 @@ const MutualFunds = () => {
 
             <h3 className="text-2xl font-bold mb-4">Making better investors</h3>
             <p className="mb-8">Guiding better investment behaviour through SIP Health.</p>
-            <div className="bg-[var(--color-tag-bg)] aspect-video rounded-xl flex items-center justify-center mb-8 border border-[var(--color-border)]">
-              <span className="text-[var(--color-text-muted)] font-medium uppercase tracking-widest text-xs">SIP Health Feature — Figma</span>
+            <div style={{ position: 'relative', width: '100%', paddingBottom: '62.5%', borderRadius: '12px', overflow: 'hidden', margin: '32px 0', border: '1px solid #E4E3DF' }}>
+              <iframe
+                src="https://embed.figma.com/design/7NG5nb182qAQYxyZUpWkYW/Sajay-s-Portfolio--Case-Study?node-id=7-12741&embed-host=share"
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                allowFullScreen
+              />
             </div>
             <div className="space-y-2 mb-16">
               <p className="font-bold">The following were implemented as part of this initiative:</p>
@@ -255,23 +259,31 @@ const MutualFunds = () => {
 
             <h3 className="text-2xl font-bold mb-4">Comprehensive goal calculators</h3>
             <p className="mb-8">Most investment apps in India offer trivial returns calculators that give an estimation of pure returns based on a specific investment amount and returns percentage. However, most investors start saving for specific goals — and we decided to adapt the calculators to these goals.</p>
-            <div className="bg-[var(--color-tag-bg)] aspect-video rounded-xl flex items-center justify-center mb-16 border border-[var(--color-border)]">
-              <span className="text-[var(--color-text-muted)] font-medium uppercase tracking-widest text-xs">Goal Calculators — Figma</span>
+            <div style={{ position: 'relative', width: '100%', paddingBottom: '62.5%', borderRadius: '12px', overflow: 'hidden', margin: '32px 0', border: '1px solid #E4E3DF' }}>
+              <iframe
+                src="https://embed.figma.com/design/7NG5nb182qAQYxyZUpWkYW/Sajay-s-Portfolio--Case-Study?node-id=19-11164&embed-host=share"
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                allowFullScreen
+              />
             </div>
 
             <h3 className="text-2xl font-bold mb-4">Addressing fears</h3>
             <p className="mb-8">Explaining the flexibility of SIPs to address most common fears.</p>
-            <div className="bg-[var(--color-tag-bg)] aspect-video rounded-xl flex items-center justify-center mb-16 border border-[var(--color-border)]">
-              <span className="text-[var(--color-text-muted)] font-medium uppercase tracking-widest text-xs">Addressing Fears — Copy & UX — Figma</span>
+            <div style={{ position: 'relative', width: '100%', paddingBottom: '62.5%', borderRadius: '12px', overflow: 'hidden', margin: '32px 0', border: '1px solid #E4E3DF' }}>
+              <iframe
+                src="https://embed.figma.com/design/7NG5nb182qAQYxyZUpWkYW/Sajay-s-Portfolio--Case-Study?node-id=4-1579&embed-host=share"
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                allowFullScreen
+              />
             </div>
 
             <p className="mb-8">An elaborate, yet clear enough explanation and flow of how autopay works. Handling emotions correctly when payments/autopay setup fails and making sure the error is not repeated.</p>
-            <div className="bg-[var(--color-tag-bg)] aspect-video rounded-xl flex items-center justify-center mb-16 border border-[var(--color-border)]">
-              <span className="text-[var(--color-text-muted)] font-medium uppercase tracking-widest text-xs">Autopay Flow & Error States — Figma</span>
-            </div>
-
-            <div className="bg-[var(--color-tag-bg)] aspect-video rounded-xl flex items-center justify-center mb-24 border border-[var(--color-border)]">
-              <span className="text-[var(--color-text-muted)] font-medium uppercase tracking-widest text-xs">SIP Growth Dashboard Screenshot</span>
+            <div style={{ position: 'relative', width: '100%', paddingBottom: '62.5%', borderRadius: '12px', overflow: 'hidden', margin: '32px 0', border: '1px solid #E4E3DF' }}>
+              <iframe
+                src="https://embed.figma.com/design/7NG5nb182qAQYxyZUpWkYW/Sajay-s-Portfolio--Case-Study?node-id=7-5307&embed-host=share"
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                allowFullScreen
+              />
             </div>
 
             <h2 className="text-3xl font-bold mb-12">Impact</h2>
