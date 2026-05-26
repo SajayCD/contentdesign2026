@@ -235,7 +235,7 @@ const MutualFunds = () => {
             <p className="mb-8">Educating users about the basics of mutual funds and to answer common questions and concerns.</p>
             <div style={{ position: 'relative', width: '100%', paddingBottom: '62.5%', borderRadius: '12px', overflow: 'hidden', margin: '32px 0', border: '1px solid #E4E3DF' }}>
               <iframe
-                src="https://www.figma.com/design/7NG5nb182qAQYxyZUpWkYW/Sajay-s-Portfolio--Case-Study?node-id=19-11149"
+                src="https://embed.figma.com/design/7NG5nb182qAQYxyZUpWkYW/Sajay-s-Portfolio--Case-Study?node-id=19-11149&embed-host=share"
                 style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
                 allowFullScreen
               />
