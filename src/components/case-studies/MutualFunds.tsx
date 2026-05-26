@@ -233,8 +233,12 @@ const MutualFunds = () => {
 
             <h3 className="text-2xl font-bold mb-4">User education and engagement</h3>
             <p className="mb-8">Educating users about the basics of mutual funds and to answer common questions and concerns.</p>
-            <div className="bg-[var(--color-tag-bg)] aspect-video rounded-xl flex items-center justify-center mb-16 border border-[var(--color-border)]">
-              <span className="text-[var(--color-text-muted)] font-medium uppercase tracking-widest text-xs">User Education & Awareness — Figma</span>
+            <div style={{ position: 'relative', width: '100%', paddingBottom: '62.5%', borderRadius: '12px', overflow: 'hidden', margin: '32px 0', border: '1px solid #E4E3DF' }}>
+              <iframe
+                src="https://www.figma.com/design/7NG5nb182qAQYxyZUpWkYW/Sajay-s-Portfolio--Case-Study?node-id=19-11149"
+                style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
+                allowFullScreen
+              />
             </div>
 
             <h3 className="text-2xl font-bold mb-4">Making better investors</h3>
