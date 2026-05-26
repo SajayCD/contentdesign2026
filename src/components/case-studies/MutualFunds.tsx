@@ -253,7 +253,7 @@ const MutualFunds = () => {
             
             <div className="space-y-12 mb-16">
               <div>
-                <p className="font-bold">Explaining the benefits of compounding on withdrawal</p>
+                <p>Explaining the benefits of compounding on withdrawal</p>
                 <div style={{ position: 'relative', width: '100%', paddingBottom: '62.5%', borderRadius: '12px', overflow: 'hidden', margin: '16px 0 32px 0', border: '1px solid #E4E3DF' }}>
                   <iframe
                     src="https://embed.figma.com/design/7NG5nb182qAQYxyZUpWkYW/Sajay-s-Portfolio--Case-Study?node-id=3-12815&embed-host=share"
@@ -263,7 +263,7 @@ const MutualFunds = () => {
                 </div>
               </div>
               <div>
-                <p className="font-bold">Switching to better plans for same funds</p>
+                <p>Switching to better plans for same funds</p>
                 <div style={{ position: 'relative', width: '100%', paddingBottom: '62.5%', borderRadius: '12px', overflow: 'hidden', margin: '16px 0 32px 0', border: '1px solid #E4E3DF' }}>
                   <iframe
                     src="https://embed.figma.com/design/7NG5nb182qAQYxyZUpWkYW/Sajay-s-Portfolio--Case-Study?node-id=8-5534&embed-host=share"
@@ -273,7 +273,7 @@ const MutualFunds = () => {
                 </div>
               </div>
               <div>
-                <p className="font-bold">Reinforcing investments behaviours as "pending actions"</p>
+                <p>Reinforcing investments behaviours as "pending actions"</p>
                 <div style={{ position: 'relative', width: '100%', paddingBottom: '62.5%', borderRadius: '12px', overflow: 'hidden', margin: '16px 0 32px 0', border: '1px solid #E4E3DF' }}>
                   <iframe
                     src="https://embed.figma.com/design/7NG5nb182qAQYxyZUpWkYW/Sajay-s-Portfolio--Case-Study?node-id=11-11138&embed-host=share"
