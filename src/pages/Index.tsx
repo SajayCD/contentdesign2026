@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -10,6 +10,14 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 import DictionaryTooltip from '@/components/ui/DictionaryTooltip';
 
 const Index = () => {
+  useEffect(() => {
+    if (window.location.hash === '#selected-work') {
+      setTimeout(() => {
+        document.getElementById('selected-work')?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  }, []);
+
   const caseStudies = [
     {
       id: '1',
