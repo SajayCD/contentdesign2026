@@ -125,15 +125,19 @@ const DesignAudits = () => {
                 </p>
 
                 {/* PDF Card */}
-                <div className="bg-white border border-[var(--color-border)] p-6 rounded-2xl flex items-center gap-4 mb-12 group hover:border-[var(--color-accent)] transition-colors">
-                  <div className="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center text-red-500">
+                <a 
+                  href="/UX Content Audit Report.pdf" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-6 bg-white border border-[var(--color-border)] rounded-2xl group hover:border-[var(--color-accent)] hover:opacity-85 transition-all cursor-pointer no-underline mb-0"
+                >
+                  <div className="w-12 h-12 bg-red-50 rounded-lg flex items-center justify-center text-red-500 shrink-0">
                     <FileText size={24} />
                   </div>
                   <div className="flex-grow">
-                    <div className="font-bold text-lg group-hover:text-[var(--color-accent)] transition-colors">UX Content Audit Report — Q2 (PDF, 93KB)</div>
-                    <a href="/UX Content Audit Report — Q2.pdf" target="_blank" rel="noopener noreferrer" style={{ color: '#4F46E5', fontSize: '14px', textDecoration: 'underline' }}>View UX Content Audit Report →</a>
+                    <div className="font-bold text-lg group-hover:text-[var(--color-accent)] transition-colors text-[var(--color-text)]">UX Content Audit Report — Q2 (PDF, 93KB)</div>
                   </div>
-                </div>
+                </a>
               </div>
             </div>
 
