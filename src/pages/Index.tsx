@@ -88,7 +88,7 @@ const Index = () => {
               </div>
               
               <div className="flex flex-wrap gap-4">
-                <a href="#work" className="btn-primary">See my work →</a>
+                <a href="#selected-work" className="btn-primary">See my work →</a>
                 <Link to="/resume" className="btn-secondary">View Resume</Link>
               </div>
             </ScrollReveal>
@@ -96,7 +96,7 @@ const Index = () => {
         </section>
 
         {/* Work Grid */}
-        <section id="work" className="py-32 px-6 md:px-12 bg-white">
+        <section id="selected-work" className="py-32 px-6 md:px-12 bg-white">
           <div className="max-w-[1200px] mx-auto">
             <ScrollReveal className="mb-16">
               <h2 className="text-[clamp(24px,3vw,36px)] font-bold tracking-tighter leading-none">
