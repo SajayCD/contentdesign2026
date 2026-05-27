@@ -203,7 +203,7 @@ const Resume = () => {
               </h1>
               <div className="space-y-2">
                 <p className="text-base text-[#6B6B6B] max-w-xl">
-                  Computer science engineer. Sociology master's student. Both sides of the human-machine equation.
+                  Computer science engineer. Sociology master's student. Both sides of the human-computer interaction equation.
                 </p>
               </div>
             </div>
