@@ -90,10 +90,10 @@ const DesignSystem = () => {
                     className="flex items-center justify-between p-4 bg-white border border-[var(--color-border)] rounded-xl shadow-sm"
                   >
                     <div className="flex items-center gap-6">
-                      <div className="w-8 h-8 rounded-full bg-[#6B6B6B] text-white flex items-center justify-center font-bold text-sm shrink-0">
+                      <div className="w-8 h-8 rounded-full bg-[var(--color-accent)] text-white flex items-center justify-center font-bold text-sm shrink-0">
                         {i + 1}
                       </div>
-                      <span className="font-medium text-[#6B6B6B]">{item.title}</span>
+                      <span className="font-medium text-[var(--color-text)]">{item.title}</span>
                     </div>
                   </div>
                 );
