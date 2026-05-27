@@ -19,7 +19,7 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Work', path: '/' },
+    { name: 'Work', path: '/#selected-work' },
     { name: 'About', path: '/about' },
     { name: 'Recruiter?', path: '/recruiter' },
     { name: 'Resume', path: '/resume' },
