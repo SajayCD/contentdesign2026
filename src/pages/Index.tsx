@@ -80,7 +80,7 @@ const Index = () => {
               
               <div className="space-y-2 mb-12">
                 <p className="text-xl text-[var(--color-text-muted)] max-w-2xl">
-                  <DictionaryTooltip>Content Designer</DictionaryTooltip> · MSc Media and Communications, University College Dublin
+                  <DictionaryTooltip>Content Designer</DictionaryTooltip>. Computer Science Engineer. MSc Media and Communications, UCD.
                 </p>
                 <p className="text-xl text-[var(--color-text-muted)] max-w-2xl">
                   1 billion+ orders placed on the experiences I helped shape.
