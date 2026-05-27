@@ -47,24 +47,27 @@ const DesignAudits = () => {
             </p>
 
             {/* Timeline */}
-            <div className="relative pl-8 border-l-2 border-[var(--color-border)] space-y-16 mb-24">
+            <div className="relative pl-8 space-y-16 mb-24">
               {/* Step 1 */}
-              <div className="relative">
-                <div className="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-[var(--color-accent)] border-4 border-white shadow-sm"></div>
+              <div className="relative pb-16">
+                <div className="absolute left-[-33px] top-2 bottom-0 w-[2px] bg-[var(--color-border)]"></div>
+                <div className="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-[var(--color-accent)] border-4 border-white shadow-sm z-10"></div>
                 <div className="font-bold text-xs uppercase tracking-widest text-[var(--color-accent)] mb-2">Step 1</div>
                 <h3 className="text-xl font-bold mb-4">Go to the build live for customers</h3>
               </div>
 
               {/* Step 2 */}
-              <div className="relative">
-                <div className="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-[var(--color-accent)] border-4 border-white shadow-sm"></div>
+              <div className="relative pb-16">
+                <div className="absolute left-[-33px] top-2 bottom-0 w-[2px] bg-[var(--color-border)]"></div>
+                <div className="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-[var(--color-accent)] border-4 border-white shadow-sm z-10"></div>
                 <div className="font-bold text-xs uppercase tracking-widest text-[var(--color-accent)] mb-2">Step 2</div>
                 <h3 className="text-xl font-bold mb-4">Audit Screens</h3>
               </div>
 
               {/* Step 3 */}
-              <div className="relative">
-                <div className="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-[var(--color-accent)] border-4 border-white shadow-sm"></div>
+              <div className="relative pb-16">
+                <div className="absolute left-[-33px] top-2 bottom-0 w-[2px] bg-[var(--color-border)]"></div>
+                <div className="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-[var(--color-accent)] border-4 border-white shadow-sm z-10"></div>
                 <div className="font-bold text-xs uppercase tracking-widest text-[var(--color-accent)] mb-2">Step 3</div>
                 <h3 className="text-xl font-bold mb-4">Sharing Discrepancies with the Dev team</h3>
                 <p className="mb-8">
@@ -74,57 +77,47 @@ const DesignAudits = () => {
                   Eventually, the changes were shared in Figma with a proper file organisation and an elaborate legend explaining how to use the file.
                 </p>
 
-                <div className="bg-[var(--color-tag-bg)] aspect-video rounded-xl flex items-center justify-center mb-12 border border-[var(--color-border)]">
-                  <span className="text-[var(--color-text-muted)] font-medium uppercase tracking-widest text-xs">File Organization in Figma</span>
-                </div>
-
                 <div className="space-y-12">
                   <div>
-                    <h4 className="text-lg font-bold mb-4">Creating a legend for developers</h4>
-                    <div className="bg-[var(--color-tag-bg)] aspect-video rounded-xl flex items-center justify-center border border-[var(--color-border)]">
-                      <span className="text-[var(--color-text-muted)] font-medium uppercase tracking-widest text-xs">Legend for Developers — Figma Screenshot</span>
-                    </div>
+                    <h4 className="text-lg font-bold mb-4">File Organisation — Changes were sorted according to major modules</h4>
+                    <img src="/File Organisation.png" alt="File Organisation — Changes were sorted according to major modules" style={{ width: '100%', borderRadius: '12px', margin: '16px 0' }} />
                   </div>
 
                   <div>
-                    <h4 className="text-lg font-bold mb-4">File Organisation — Changes were sorted according to major modules</h4>
-                    <div className="bg-[var(--color-tag-bg)] aspect-video rounded-xl flex items-center justify-center border border-[var(--color-border)]">
-                      <span className="text-[var(--color-text-muted)] font-medium uppercase tracking-widest text-xs">File Organisation by Module — Figma Screenshot</span>
-                    </div>
+                    <h4 className="text-lg font-bold mb-4">Creating a legend for developers</h4>
+                    <img src="/Developer Legend.png" alt="Legend for Developers" style={{ width: '100%', borderRadius: '12px', margin: '16px 0' }} />
                   </div>
 
                   <div>
                     <h4 className="text-lg font-bold mb-4">Suggested changes — A few examples</h4>
                     <p className="mb-6">We created detailed instructions for all suggested changes.</p>
                     <div className="space-y-6">
-                      <div className="bg-[var(--color-tag-bg)] aspect-video rounded-xl flex items-center justify-center border border-[var(--color-border)]">
-                        <span className="text-[var(--color-text-muted)] font-medium uppercase tracking-widest text-xs">Example Suggested Changes — Figma Screenshot</span>
-                      </div>
-                      <div className="bg-[var(--color-tag-bg)] aspect-video rounded-xl flex items-center justify-center border border-[var(--color-border)]">
-                        <span className="text-[var(--color-text-muted)] font-medium uppercase tracking-widest text-xs">Detailed UX Flow Representation — Figma Screenshot</span>
-                      </div>
+                      <img src="/Suggestedchanges-1.png" alt="Suggested Changes example 1" style={{ width: '100%', borderRadius: '12px', margin: '16px 0' }} />
+                      <img src="/Suggestedchanges-2.png" alt="Suggested Changes example 2" style={{ width: '100%', borderRadius: '12px', margin: '16px 0' }} />
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Step 4 */}
-              <div className="relative">
-                <div className="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-[var(--color-accent)] border-4 border-white shadow-sm"></div>
+              <div className="relative pb-16">
+                <div className="absolute left-[-33px] top-2 bottom-0 w-[2px] bg-[var(--color-border)]"></div>
+                <div className="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-[var(--color-accent)] border-4 border-white shadow-sm z-10"></div>
                 <div className="font-bold text-xs uppercase tracking-widest text-[var(--color-accent)] mb-2">Step 4</div>
                 <h3 className="text-xl font-bold mb-4">Schedule and Prioritize bandwidth with development team</h3>
               </div>
 
               {/* Step 5 */}
-              <div className="relative">
-                <div className="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-[var(--color-accent)] border-4 border-white shadow-sm"></div>
+              <div className="relative pb-16">
+                <div className="absolute left-[-33px] top-2 bottom-0 w-[2px] bg-[var(--color-border)]"></div>
+                <div className="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-[var(--color-accent)] border-4 border-white shadow-sm z-10"></div>
                 <div className="font-bold text-xs uppercase tracking-widest text-[var(--color-accent)] mb-2">Step 5</div>
                 <h3 className="text-xl font-bold mb-4">Once developers have made the necessary changes, verify on the newest build</h3>
               </div>
 
               {/* Step 6 */}
               <div className="relative">
-                <div className="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-[var(--color-accent)] border-4 border-white shadow-sm"></div>
+                <div className="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-[var(--color-accent)] border-4 border-white shadow-sm z-10"></div>
                 <div className="font-bold text-xs uppercase tracking-widest text-[var(--color-accent)] mb-2">Step 6</div>
                 <h3 className="text-xl font-bold mb-4">Take insights and observations and share report with stakeholders</h3>
                 <p className="mb-8">
@@ -138,15 +131,8 @@ const DesignAudits = () => {
                   </div>
                   <div className="flex-grow">
                     <div className="font-bold text-lg group-hover:text-[var(--color-accent)] transition-colors">UX Content Audit Report — Q2 (PDF, 93KB)</div>
-                    <div className="text-sm text-[var(--color-text-muted)]">Note: I will upload this file and link it here later</div>
+                    <a href="/UX Content Audit Report — Q2.pdf" target="_blank" rel="noopener noreferrer" style={{ color: '#4F46E5', fontSize: '14px', textDecoration: 'underline' }}>View UX Content Audit Report →</a>
                   </div>
-                </div>
-
-                <p className="mb-8">
-                  Some suggestions required detailed instructions and representation of the UX flow.
-                </p>
-                <div className="bg-[var(--color-tag-bg)] aspect-video rounded-xl flex items-center justify-center border border-[var(--color-border)]">
-                  <span className="text-[var(--color-text-muted)] font-medium uppercase tracking-widest text-xs">UX Flow Representation — Audit Example</span>
                 </div>
               </div>
             </div>
