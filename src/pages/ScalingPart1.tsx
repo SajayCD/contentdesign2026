@@ -157,6 +157,8 @@ const ScalingPart1 = () => {
               <p className="mb-8">
                 Steve Jobs may be the most overquoted entrepreneur of all time, but I believe one of the things that made him so unique was his ability to motivate people to prioritize and stay focused. I am a massive fan of his idea of the entire product portfolio fitting on one table. Another one of my favourite ideas of his is about focus and the word 'no'.
               </p>
+              <img src="/Stevejobsquote.png" alt="Steve Jobs on focus and saying no" style={{ width: '100%', borderRadius: '12px', margin: '16px 0' }} />
+
               <p className="mb-8">
                 Here lies the most crucial distinction—saying 'no' is not a result of being unwilling to work on something; it is a result of having something more important on your plate. We have to be able to convince our peers about this distinction.
               </p>
