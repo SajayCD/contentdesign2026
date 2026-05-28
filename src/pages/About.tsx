@@ -16,7 +16,8 @@ const About = () => {
       
       <main className="flex-grow pt-32 px-6 md:px-12 pb-24">
         <div className="max-w-[1200px] mx-auto">
-          <div className="flex flex-col md:flex-row gap-16 items-start mb-8">
+          {/* Hero Section */}
+          <div className="flex flex-col md:flex-row gap-16 items-start mb-16">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -27,9 +28,9 @@ const About = () => {
                 Meow Meow 🐱
               </h1>
               
-              <div className="prose prose-lg max-w-none text-[var(--color-text-muted)] space-y-6" style={{ fontFamily: 'var(--font-body)' }}>
+              <div className="space-y-6 text-[var(--color-text)] text-lg leading-relaxed" style={{ fontFamily: 'var(--font-body)' }}>
                 <p>
-                  Somebody once told me only cats visit 'about' pages on websites, welcome to my little corner on the internet! I'm Sajay, a <TrackChangesTooltip text="also: the person who stopped that error message from ruining your day">Content Designer</TrackChangesTooltip> based in Bengaluru. I specialize in taking complex, high-stakes product language and making it feel intuitive, human, and trustworthy.
+                  Somebody once told me only cats visit 'about' pages on websites, welcome to my little corner on the internet! I'm Sajay, a <TrackChangesTooltip text="also: the person who stopped that error message from ruining your day">Content Designer</TrackChangesTooltip> based in Dublin, Ireland. I specialize in taking complex, high-stakes product language and making it feel intuitive, human, and trustworthy.
                 </p>
                 <p>
                   Personally, the most fascinating things to me are artistic expression, the creative process, the importance of storytelling and creating beautiful things. I practice being an artist in as many different mediums as possible. I am obsessed with pop culture; I believe it is our medium for telling stories and connecting with other humans. I am also curious about different cultures: the way we set up societies, what stories we tell ourselves, <a href="https://youtu.be/zen-m0rMp4I?si=GHGcifLt1GwZRezM" target="_blank" rel="noopener noreferrer" className="text-[#4F46E5] underline">our imagined realities</a>, and how the core tenets of human behaviour drive every culture.
@@ -41,14 +42,13 @@ const About = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="md:w-[40%] flex justify-center md:justify-end"
+              className="md:w-[40%] flex justify-end"
             >
-              <div className="w-[240px] h-[240px] md:w-[300px] md:h-[300px] rounded-full overflow-hidden shadow-none border-none outline-none ring-0 ring-offset-0">
+              <div className="w-[240px] h-[240px] md:w-[300px] md:h-[300px] rounded-full overflow-hidden">
                 <img 
                   src="/sajay-photo.jpg" 
                   alt="Sajay Jai Singh" 
-                  className="w-full h-full object-cover object-[center_top] border-none outline-none shadow-none ring-0"
-                  style={{ border: 'none', outline: 'none', boxShadow: 'none' }}
+                  className="w-full h-full object-cover object-[center_top]"
                 />
               </div>
             </motion.div>
@@ -59,25 +59,25 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-8"
+            className="mb-16"
           >
             <h2 className="text-[clamp(24px,3vw,36px)] font-bold text-[var(--color-text)] mb-4" style={{ fontFamily: 'var(--font-display)' }}>Currently Researching:</h2>
-            <ul className="space-y-4" style={{ fontFamily: 'var(--font-body)' }}>
+            <ul className="space-y-4 text-[var(--color-text)]" style={{ fontFamily: 'var(--font-body)' }}>
               <li className="flex items-start gap-3">
                 <span className="text-[var(--color-accent)] mt-1">↳</span>
-                <span className="text-lg">
+                <span className="text-lg leading-relaxed">
                   As a part of my MSc in Communications and Media at UCD, I am researching how the language on various financial platforms (for investing, trading, gambling, prediction markets) can steer and shape user agency. This ties in a UX and sociology perspective to produce original academic research on the effect of language in the apps we use.
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[var(--color-accent)] mt-1">↳</span>
-                <span className="text-lg">
+                <span className="text-lg leading-relaxed">
                   Can the presence of bots on social media change how likely you are to voice your opinion? Can they tip the scales in terms of a public debate? <a href="https://docs.google.com/document/d/1tt4SyVgq12U6E9OCuar8R1eaZLTHZg9DFrNImyT4gwU/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-[#4F46E5] underline">Read more →</a>
                 </span>
               </li>
               <li className="flex items-start gap-3">
                 <span className="text-[var(--color-accent)] mt-1">↳</span>
-                <span className="text-lg">
+                <span className="text-lg leading-relaxed">
                   How does YouTube rank a heavily discussed term like "Prediction Markets" during a regulatory event? What factors play into it and what voices are privileged? <a href="https://docs.google.com/document/d/1aw1y0BIDyu6mgmu2WcHmI7XhGarfhQPWz51oR0c-wF4/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-[#4F46E5] underline">Read more →</a>
                 </span>
               </li>
@@ -89,7 +89,7 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="mb-24"
+            className="mb-16"
           >
             <h2 className="text-[clamp(24px,3vw,36px)] font-bold text-[var(--color-text)] mb-6" style={{ fontFamily: 'var(--font-display)' }}>Sidequests & Hobbies</h2>
             <div className="flex flex-wrap gap-6">
