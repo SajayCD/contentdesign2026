@@ -17,7 +17,7 @@ const About = () => {
       <main className="flex-grow pt-32 px-6 md:px-12 pb-24">
         <div className="max-w-[1200px] mx-auto">
           {/* Hero Section */}
-          <div className="flex flex-col md:flex-row gap-16 items-start mb-16">
+          <div className="flex flex-col md:flex-row gap-16 items-center mb-16">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
