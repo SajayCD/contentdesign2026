@@ -1,92 +1,43 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 interface DictionaryTooltipProps {
   children: React.ReactNode;
-  className?: string;
 }
 
-const DictionaryTooltip = ({ children, className = "" }: DictionaryTooltipProps) => {
-  const [isHovered, setIsHovered] = useState(false);
-  const containerRef = useRef<HTMLSpanElement>(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
-      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
-        setIsHovered(false);
-      }
-    };
-
-    document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('touchstart', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('touchstart', handleClickOutside);
-    };
-  }, []);
-
-  const handleToggle = () => {
-    if (window.matchMedia("(max-width: 768px)").matches) {
-      setIsHovered(!isHovered);
-    }
-  };
-
+const DictionaryTooltip = ({ children }: DictionaryTooltipProps) => {
   return (
-    <span
-      ref={containerRef}
-      className={`relative ${className}`}
-      onMouseEnter={() => {
-        if (!window.matchMedia("(max-width: 768px)").matches) {
-          setIsHovered(true);
-        }
-      }}
-      onMouseLeave={() => {
-        if (!window.matchMedia("(max-width: 768px)").matches) {
-          setIsHovered(false);
-        }
-      }}
-      onClick={handleToggle}
-      style={{
-        display: 'inline',
-        textDecoration: 'underline',
-        textDecorationStyle: 'dotted',
-        textDecorationColor: 'rgba(79, 70, 229, 0.4)',
-        textUnderlineOffset: '3px',
-        cursor: 'default'
-      }}
-    >
-      {children}
-      <AnimatePresence>
-        {isHovered && (
-          <motion.div
-            initial={{ opacity: 0, y: 4 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 4 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute top-full mt-2 right-0 w-[calc(100vw-48px)] md:bottom-[calc(100%+12px)] md:top-auto md:mt-0 md:left-0 md:right-auto md:w-auto z-[100] bg-white border-t-[3px] border-t-[#4F46E5] rounded-[10px] shadow-[0_8px_24px_rgba(0,0,0,0.1)] p-[12px_16px] min-w-[240px] max-w-[calc(100vw-48px)] md:max-w-none pointer-events-none"
+    <span style={{ display: 'inline' }}>
+      <TooltipProvider delayDuration={200}>
+        <Tooltip>
+          <TooltipTrigger asChild>
+            <span className="cursor-help border-b border-dotted border-[var(--color-text-muted)] hover:text-[var(--color-accent)] hover:border-[var(--color-accent)] transition-colors">
+              {children}
+            </span>
+          </TooltipTrigger>
+          <TooltipContent 
+            side="top" 
+            className="bg-white p-4 rounded-xl border border-[var(--color-border)] shadow-xl max-w-[280px] z-[100]"
           >
-            <div className="space-y-1">
-              <div className="text-[13px] font-medium text-[#1C1C1E]" style={{ fontFamily: 'var(--font-body)' }}>
-                con·tent de·sign·er
+            <div className="space-y-2">
+              <div className="flex items-center justify-between border-b border-[var(--color-border)] pb-2 mb-2">
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-[var(--color-accent)]">Dictionary Entry</span>
+                <span className="text-[10px] text-[var(--color-text-muted)] italic">noun</span>
               </div>
-              <div className="text-[12px] text-[#6B6B6B] italic" style={{ fontFamily: 'var(--font-body)' }}>
-                Also called "UX Writer"
-              </div>
-              <div className="text-[11px] font-semibold uppercase tracking-wider text-[#4F46E5]" style={{ fontFamily: 'var(--font-body)' }}>
-                NOUN
-              </div>
-              <p className="text-[13px] text-[#1C1C1E] leading-[1.6] mt-2" style={{ fontFamily: 'var(--font-body)' }}>
-                a design professional who crafts the words that guide users through digital products.
+              <p className="text-sm leading-relaxed text-[var(--color-text)]">
+                <span className="font-bold">Content Designer:</span> A professional who uses words as a design material to solve user problems and make complex systems feel human.
               </p>
             </div>
-            {/* Arrow adjusted for right-anchoring on mobile */}
-            <div className="absolute bottom-full right-4 md:left-4 md:right-auto md:top-full md:bottom-auto border-[6px] border-transparent border-b-[#4F46E5] md:border-t-[#4F46E5] md:border-b-transparent" />
-            <div className="absolute bottom-[calc(100%-1px)] right-[17px] md:left-[17px] md:right-auto md:top-[calc(100%-1px)] md:bottom-auto border-[5px] border-transparent border-b-white md:border-t-white md:border-b-transparent z-[1]" />
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </TooltipContent>
+        </Tooltip>
+      </TooltipProvider>
     </span>
   );
 };
