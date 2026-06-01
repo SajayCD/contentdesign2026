@@ -5,64 +5,88 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 interface DictionaryTooltipProps {
   children: React.ReactNode;
+  className?: string;
 }
 
-const DictionaryTooltip = ({ children }: DictionaryTooltipProps) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
+const DictionaryTooltip = ({ children, className = "" }: DictionaryTooltipProps) => {
+  const [isHovered, setIsHovered] = useState(false);
+  const containerRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
       if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
+        setIsHovered(false);
       }
     };
 
-    if (isOpen) {
-      document.addEventListener('mousedown', handleClickOutside);
-    }
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [isOpen]);
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, []);
 
-  const toggleTooltip = (e: React.MouseEvent) => {
-    // Only toggle on mobile/touch devices or if explicitly clicked
-    if (window.matchMedia('(max-width: 768px)').matches) {
-      e.preventDefault();
-      setIsOpen(!isOpen);
+  const handleToggle = () => {
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      setIsHovered(!isHovered);
     }
   };
 
   return (
-    <div 
+    <span
       ref={containerRef}
-      className="relative inline-block"
-      onMouseEnter={() => !window.matchMedia('(max-width: 768px)').matches && setIsOpen(true)}
-      onMouseLeave={() => !window.matchMedia('(max-width: 768px)').matches && setIsOpen(false)}
-      onClick={toggleTooltip}
+      className={`relative ${className}`}
+      onMouseEnter={() => {
+        if (!window.matchMedia("(max-width: 768px)").matches) {
+          setIsHovered(true);
+        }
+      }}
+      onMouseLeave={() => {
+        if (!window.matchMedia("(max-width: 768px)").matches) {
+          setIsHovered(false);
+        }
+      }}
+      onClick={handleToggle}
+      style={{
+        display: 'inline',
+        textDecoration: 'underline',
+        textDecorationStyle: 'dotted',
+        textDecorationColor: 'rgba(79, 70, 229, 0.4)',
+        textUnderlineOffset: '3px',
+        cursor: 'default'
+      }}
     >
-      <span className="cursor-help border-b border-dotted border-[var(--color-accent)] hover:text-[var(--color-accent)] transition-colors">
-        {children}
-      </span>
-
+      {children}
       <AnimatePresence>
-        {isOpen && (
+        {isHovered && (
           <motion.div
-            initial={{ opacity: 0, y: 10 }}
+            initial={{ opacity: 0, y: 4 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 10 }}
-            className="absolute z-[100] bottom-full left-1/2 -translate-x-1/2 mb-3 w-72 p-5 bg-[#1C1C1E] text-[#F9F8F5] rounded-xl shadow-xl md:max-w-none max-md:max-w-[calc(100vw-48px)] max-md:left-auto max-md:right-0 max-md:translate-x-0"
+            exit={{ opacity: 0, y: 4 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="absolute bottom-[calc(100%+12px)] left-0 z-[100] bg-white border-t-[3px] border-t-[#4F46E5] rounded-[10px] shadow-[0_8px_24px_rgba(0,0,0,0.1)] p-[12px_16px] min-w-[240px] pointer-events-none"
           >
-            <div className="text-[10px] uppercase tracking-[0.2em] text-[var(--color-accent)] font-bold mb-2">Definition</div>
-            <div className="text-lg font-bold mb-2" style={{ fontFamily: 'var(--font-display)' }}>Content Designer</div>
-            <p className="text-sm leading-relaxed opacity-80">
-              A design professional who uses words as a primary tool to build intuitive, human-centered product experiences.
-            </p>
-            {/* Arrow */}
-            <div className="absolute top-full left-1/2 -translate-x-1/2 border-8 border-transparent border-t-[#1C1C1E] max-md:left-auto max-md:right-4 max-md:translate-x-0" />
+            <div className="space-y-1">
+              <div className="text-[13px] font-medium text-[#1C1C1E]" style={{ fontFamily: 'var(--font-body)' }}>
+                con·tent de·sign·er
+              </div>
+              <div className="text-[12px] text-[#6B6B6B] italic" style={{ fontFamily: 'var(--font-body)' }}>
+                Also called "UX Writer"
+              </div>
+              <div className="text-[11px] font-semibold uppercase tracking-wider text-[#4F46E5]" style={{ fontFamily: 'var(--font-body)' }}>
+                NOUN
+              </div>
+              <p className="text-[13px] text-[#1C1C1E] leading-[1.6] mt-2" style={{ fontFamily: 'var(--font-body)' }}>
+                a design professional who crafts the words that guide users through digital products.
+              </p>
+            </div>
+            <div className="absolute top-full left-4 border-[6px] border-transparent border-t-[#4F46E5]" />
+            <div className="absolute top-[calc(100%-1px)] left-[17px] border-[5px] border-transparent border-t-white z-[1]" />
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </span>
   );
 };
 
