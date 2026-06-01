@@ -65,7 +65,7 @@ const DictionaryTooltip = ({ children, className = "" }: DictionaryTooltipProps)
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 4 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="fixed md:absolute bottom-6 md:bottom-[calc(100%+12px)] left-6 right-6 md:left-0 md:right-auto z-[100] bg-white border-t-[3px] border-t-[#4F46E5] rounded-[10px] shadow-[0_8px_24px_rgba(0,0,0,0.1)] p-[12px_16px] w-auto md:min-w-[240px] max-w-none md:max-w-none pointer-events-none"
+            className="absolute bottom-[calc(100%+12px)] left-auto right-0 md:left-0 md:right-auto z-[100] bg-white border-t-[3px] border-t-[#4F46E5] rounded-[10px] shadow-[0_8px_24px_rgba(0,0,0,0.1)] p-[12px_16px] min-w-[240px] max-w-[calc(100vw-48px)] md:max-w-none pointer-events-none"
           >
             <div className="space-y-1">
               <div className="text-[13px] font-medium text-[#1C1C1E]" style={{ fontFamily: 'var(--font-body)' }}>
@@ -81,9 +81,8 @@ const DictionaryTooltip = ({ children, className = "" }: DictionaryTooltipProps)
                 a design professional who crafts the words that guide users through digital products.
               </p>
             </div>
-            {/* Arrow - Hidden on mobile fixed positioning */}
-            <div className="hidden md:block absolute top-full left-4 border-[6px] border-transparent border-t-[#4F46E5]" />
-            <div className="hidden md:block absolute top-[calc(100%-1px)] left-[17px] border-[5px] border-transparent border-t-white z-[1]" />
+            <div className="absolute top-full right-4 md:right-auto md:left-4 border-[6px] border-transparent border-t-[#4F46E5]" />
+            <div className="absolute top-[calc(100%-1px)] right-[17px] md:right-auto md:left-[17px] border-[5px] border-transparent border-t-white z-[1]" />
           </motion.div>
         )}
       </AnimatePresence>
