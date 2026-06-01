@@ -63,7 +63,7 @@ const TrackChangesTooltip = ({ children, text }: TrackChangesTooltipProps) => {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute bottom-[calc(100%+16px)] left-0 z-[50] w-[280px] max-w-[calc(100vw-48px)] pointer-events-none"
+            className="absolute bottom-[calc(100%+16px)] left-0 right-0 md:right-auto z-[50] w-[calc(100vw-48px)] md:w-[280px] pointer-events-none"
           >
             <div className="bg-[#F2FBF6] border border-[#C6E9D5] rounded-lg shadow-lg overflow-hidden">
               {/* Header */}
