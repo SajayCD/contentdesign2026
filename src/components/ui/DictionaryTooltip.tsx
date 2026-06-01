@@ -2,79 +2,88 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useIsMobile } from '@/hooks/use-mobile';
 
 interface DictionaryTooltipProps {
   children: React.ReactNode;
+  className?: string;
 }
 
-const DictionaryTooltip = ({ children }: DictionaryTooltipProps) => {
+const DictionaryTooltip = ({ children, className = "" }: DictionaryTooltipProps) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-  const isMobile = useIsMobile();
   const containerRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    if (!isMobile) return;
-
-    const handleClickOutside = (event: MouseEvent) => {
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
       if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
-        setIsOpen(false);
+        setIsHovered(false);
       }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
-  }, [isMobile]);
+    document.addEventListener('touchstart', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, []);
 
   const handleToggle = () => {
-    if (isMobile) {
-      setIsOpen(!isOpen);
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      setIsHovered(!isHovered);
     }
   };
 
-  const showTooltip = isMobile ? isOpen : isHovered;
-
   return (
-    <span 
+    <span
       ref={containerRef}
-      className="relative inline-block cursor-help group"
-      onMouseEnter={() => !isMobile && setIsHovered(true)}
-      onMouseLeave={() => !isMobile && setIsHovered(false)}
+      className={`relative ${className}`}
+      onMouseEnter={() => {
+        if (!window.matchMedia("(max-width: 768px)").matches) {
+          setIsHovered(true);
+        }
+      }}
+      onMouseLeave={() => {
+        if (!window.matchMedia("(max-width: 768px)").matches) {
+          setIsHovered(false);
+        }
+      }}
       onClick={handleToggle}
+      style={{
+        display: 'inline',
+        textDecoration: 'underline',
+        textDecorationStyle: 'dotted',
+        textDecorationColor: 'rgba(79, 70, 229, 0.4)',
+        textUnderlineOffset: '3px',
+        cursor: 'default'
+      }}
     >
-      <span className="border-b border-dotted border-[var(--color-text-muted)] hover:border-[var(--color-accent)] transition-colors">
-        {children}
-      </span>
-      
+      {children}
       <AnimatePresence>
-        {showTooltip && (
-          <motion.span
-            initial={{ opacity: 0, y: 10, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 5, scale: 0.95 }}
-            className={`absolute bottom-full mb-3 z-50 w-72 pointer-events-none ${
-              isMobile ? 'left-auto right-0 translate-x-0' : 'left-1/2 -translate-x-1/2'
-            }`}
-            style={isMobile ? { maxWidth: 'calc(100vw - 48px)' } : {}}
+        {isHovered && (
+          <motion.div
+            initial={{ opacity: 0, y: 4 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 4 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="absolute bottom-[calc(100%+12px)] left-0 z-[100] bg-white border-t-[3px] border-t-[#4F46E5] rounded-[10px] shadow-[0_8px_24px_rgba(0,0,0,0.1)] p-[12px_16px] min-w-[240px] pointer-events-none"
           >
-            <span className="block bg-white border border-[var(--color-border)] rounded-xl p-5 shadow-xl relative">
-              <span className="block text-[10px] font-bold text-[var(--color-accent)] uppercase tracking-[0.2em] mb-2">
-                Noun / Definition
-              </span>
-              <span className="block text-sm text-[var(--color-text)] leading-relaxed italic mb-2">
-                "A designer who uses words as a design material to build intuitive, human-centered product experiences."
-              </span>
-              <span className="block text-[11px] text-[var(--color-text-muted)]">
-                Synonyms: UX Writer, Content Strategist, Product Writer.
-              </span>
-
-              {/* Tooltip Arrow */}
-              <span className={`absolute top-full w-3 h-3 bg-white border-r border-b border-[var(--color-border)] rotate-45 -mt-[6px] ${
-                isMobile ? 'right-4' : 'left-1/2 -translate-x-1/2'
-              }`}></span>
-            </span>
-          </motion.span>
+            <div className="space-y-1">
+              <div className="text-[13px] font-medium text-[#1C1C1E]" style={{ fontFamily: 'var(--font-body)' }}>
+                con·tent de·sign·er
+              </div>
+              <div className="text-[12px] text-[#6B6B6B] italic" style={{ fontFamily: 'var(--font-body)' }}>
+                Also called "UX Writer"
+              </div>
+              <div className="text-[11px] font-semibold uppercase tracking-wider text-[#4F46E5]" style={{ fontFamily: 'var(--font-body)' }}>
+                NOUN
+              </div>
+              <p className="text-[13px] text-[#1C1C1E] leading-[1.6] mt-2" style={{ fontFamily: 'var(--font-body)' }}>
+                a design professional who crafts the words that guide users through digital products.
+              </p>
+            </div>
+            <div className="absolute top-full left-4 border-[6px] border-transparent border-t-[#4F46E5]" />
+            <div className="absolute top-[calc(100%-1px)] left-[17px] border-[5px] border-transparent border-t-white z-[1]" />
+          </motion.div>
         )}
       </AnimatePresence>
     </span>
