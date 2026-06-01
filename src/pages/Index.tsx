@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -10,6 +10,14 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 import DictionaryTooltip from '@/components/ui/DictionaryTooltip';
 
 const Index = () => {
+  useEffect(() => {
+    if (window.location.hash === '#selected-work') {
+      setTimeout(() => {
+        document.getElementById('selected-work')?.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  }, []);
+
   const caseStudies = [
     {
       id: '1',
@@ -74,21 +82,21 @@ const Index = () => {
                 Sajay Jai Singh
               </h1>
               
-              <div className="text-[clamp(24px,4vw,48px)] font-medium mb-8 min-h-[1.2em]">
+              <div className="text-[clamp(24px,4vw,48px)] font-medium mb-8 min-h-[1.2em] max-w-full block w-fit md:max-w-none md:block md:w-full">
                 <Typewriter text="Helping software speak and sound human." />
               </div>
               
               <div className="space-y-2 mb-12">
                 <p className="text-xl text-[var(--color-text-muted)] max-w-2xl">
-                  <DictionaryTooltip>Content Designer</DictionaryTooltip> · MSc Media and Communications, University College Dublin
+                  <DictionaryTooltip>Content Designer</DictionaryTooltip>. Computer Science Engineer. MSc Media and Communications, UCD.
                 </p>
-                <p className="text-xl text-[var(--color-text-muted)] max-w-2xl">
+                <p className="text-xl text-[var(--color-text-muted)] max-w-2xl hidden md:block">
                   1 billion+ orders placed on the experiences I helped shape.
                 </p>
               </div>
               
               <div className="flex flex-wrap gap-4">
-                <a href="#work" className="btn-primary">See my work →</a>
+                <a href="#selected-work" className="btn-primary">See my work →</a>
                 <Link to="/resume" className="btn-secondary">View Resume</Link>
               </div>
             </ScrollReveal>
@@ -96,7 +104,7 @@ const Index = () => {
         </section>
 
         {/* Work Grid */}
-        <section id="work" className="py-32 px-6 md:px-12 bg-white">
+        <section id="selected-work" className="py-32 px-6 md:px-12 bg-white">
           <div className="max-w-[1200px] mx-auto">
             <ScrollReveal className="mb-16">
               <h2 className="text-[clamp(24px,3vw,36px)] font-bold tracking-tighter leading-none">

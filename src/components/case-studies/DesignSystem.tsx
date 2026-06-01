@@ -7,6 +7,20 @@ import CaseStudyHeader from './CaseStudyHeader';
 import CaseStudyFooter from './CaseStudyFooter';
 
 const DesignSystem = () => {
+  const docLinks = [
+    { title: "Writing Amounts", href: "https://drive.google.com/file/d/1yt2CfCePQm6CNo9II6jb2nPafxr1yAZA/view?usp=sharing" },
+    { title: "Writing Action Words", href: "https://drive.google.com/file/d/1wjGnSS8qtDAotyA9HbfHuLA4jb2BZKRz/view?usp=sharing" },
+    { title: "Writing Dates, Months and Years", href: "https://drive.google.com/file/d/1sV6PsRM57e8pR-gAiREwZtFvinajjJ2q/view?usp=sharing" },
+    { title: "Writing Time", href: "https://drive.google.com/file/d/1Hlll9zCJGCQfufSc02m30NM5r0taLnjL/view?usp=sharing" },
+    { title: "Writing for System feedback", href: "https://drive.google.com/file/d/1WYUFWiRJxq5ILfYU9Omxklfhsbt6s4Px/view?usp=sharing" },
+    { title: "Writing Tooltips", href: "https://drive.google.com/file/d/196-gh3gywDZ6Lp99o8BgBbscEpaACZK-/view?usp=sharing" },
+    { title: "Writing Toast Notifications", href: "https://drive.google.com/file/d/1yEli0XSf6fDBiWJAcSWiBamLwQxn5tm8/view?usp=sharing" },
+    { title: "Writing Push Notifications", href: "https://drive.google.com/file/d/1tQ2k3n_b_QtmlJADC-fVwVEWzEH_c1F2/view?usp=sharing" },
+    { title: "Writing Call to Actions", href: "https://drive.google.com/file/d/1wXyiJWC9dWPafySPQuVLnoqm0pxQ7C4M/view?usp=sharing" },
+    { title: "Standard dictionary of finance terms", href: "https://drive.google.com/file/d/1l8jOIkwm9-FJNl0Mc-QcuGpXj4fI7qhz/view?usp=sharing" },
+    { title: "A safe list of acceptable synonyms to use", href: null }
+  ];
+
   return (
     <motion.article
       initial={{ opacity: 0, y: 20 }}
@@ -35,16 +49,12 @@ const DesignSystem = () => {
         <div className="max-w-[720px] mx-auto">
           <div className="prose prose-lg max-w-none">
             <p className="mb-12 text-xl leading-relaxed">
-              I find Torrey Podmajersky's process the most comprehensive for building a voice and tone guide. Many organisations use it, and her process has become the gold standard in most UX content organizations. Here is a brief look into how we set up a Voice and Tone chart for a finance product.
+              I find <a href="https://uxwriting.vtex.com/docs/principles/voice-chart/" target="_blank" rel="noopener noreferrer" style={{ color: '#4F46E5', textDecoration: 'underline' }}>Torrey Podmajersky's process</a> the most comprehensive for building a voice and tone guide. Many organisations use it, and her process has become the gold standard in most UX content organizations. Here is a brief look into how we set up a <a href="https://drive.google.com/file/d/1hDA4PkJXeHBYodqOrGUuAco1qpjumXY-/view?usp=sharing" target="_blank" rel="noopener noreferrer" style={{ color: '#4F46E5', textDecoration: 'underline' }}>Voice and Tone chart for a finance product</a>.
             </p>
 
             <blockquote className="pull-quote">
               Opinion: The work begins once we have the voice and tone chart in place. Guidelines are only as good as how well they're used.
             </blockquote>
-
-            <div className="bg-[var(--color-tag-bg)] aspect-video rounded-xl flex items-center justify-center mb-16 border border-[var(--color-border)]">
-              <span className="text-[var(--color-text-muted)] font-medium uppercase tracking-widest text-xs">Voice and Tone Chart — Angel One</span>
-            </div>
 
             <p className="mb-8">
               When people are using flows that involve their money, emotions are high. Further, many screens are information-heavy and involve serious investing and trading decisions.
@@ -54,33 +64,40 @@ const DesignSystem = () => {
             </p>
 
             <div className="space-y-4 mb-16">
-              {[
-                "Writing Amounts",
-                "Writing Action Words",
-                "Writing Dates, Months and Years",
-                "Writing Time",
-                "Writing for System feedback",
-                "Writing Tooltips",
-                "Writing Toast Notifications",
-                "Writing Push Notifications",
-                "Writing Call to Actions",
-                "Standard dictionary of finance terms",
-                "A safe list of acceptable synonyms to use"
-              ].map((item, i) => (
-                <a 
-                  key={i} 
-                  href="#"
-                  className="flex items-center justify-between p-4 bg-white border border-[var(--color-border)] rounded-xl shadow-sm transition-all duration-200 ease-in-out hover:bg-[#FAFAFA] hover:border-l-2 hover:border-l-[var(--color-accent)] cursor-pointer group no-underline"
-                >
-                  <div className="flex items-center gap-6">
-                    <div className="w-8 h-8 rounded-full bg-[var(--color-accent)] text-white flex items-center justify-center font-bold text-sm shrink-0">
-                      {i + 1}
+              {docLinks.map((item, i) => {
+                if (item.href) {
+                  return (
+                    <a 
+                      key={i} 
+                      href={item.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-between p-4 bg-white border border-[var(--color-border)] rounded-xl shadow-sm transition-all duration-200 ease-in-out hover:bg-[#FAFAFA] hover:border-l-2 hover:border-l-[var(--color-accent)] cursor-pointer group no-underline"
+                    >
+                      <div className="flex items-center gap-6">
+                        <div className="w-8 h-8 rounded-full bg-[var(--color-accent)] text-white flex items-center justify-center font-bold text-sm shrink-0">
+                          {i + 1}
+                        </div>
+                        <span className="font-medium text-[var(--color-text)]">{item.title}</span>
+                      </div>
+                      <ArrowRight size={20} className="text-[var(--color-text-muted)] group-hover:text-[var(--color-accent)] group-hover:translate-x-1 transition-all duration-200" />
+                    </a>
+                  );
+                }
+                return (
+                  <div 
+                    key={i} 
+                    className="flex items-center justify-between p-4 bg-white border border-[var(--color-border)] rounded-xl shadow-sm"
+                  >
+                    <div className="flex items-center gap-6">
+                      <div className="w-8 h-8 rounded-full bg-[var(--color-accent)] text-white flex items-center justify-center font-bold text-sm shrink-0">
+                        {i + 1}
+                      </div>
+                      <span className="font-medium text-[var(--color-text)]">{item.title}</span>
                     </div>
-                    <span className="font-medium text-[var(--color-text)]">{item}</span>
                   </div>
-                  <ArrowRight size={20} className="text-[var(--color-text-muted)] group-hover:text-[var(--color-accent)] group-hover:translate-x-1 transition-all duration-200" />
-                </a>
-              ))}
+                );
+              })}
             </div>
 
             <h2 className="text-3xl font-bold mb-6">Build it, and they will use it?</h2>
@@ -102,11 +119,16 @@ const DesignSystem = () => {
             </p>
 
             <div className="space-y-8 mb-16">
-              <div className="bg-[var(--color-tag-bg)] aspect-video rounded-xl flex items-center justify-center border border-[var(--color-border)]">
-                <span className="text-[var(--color-text-muted)] font-medium uppercase tracking-widest text-xs">Design System Screenshot — Content Variables</span>
+              <img src="/Cid1.png" alt="Design System Screenshot — Content Variables" style={{ width: '100%', borderRadius: '12px', margin: '16px 0' }} />
+              
+              <div>
+                <img src="/Cid2.png" alt="All variables for a component type (time)" style={{ width: '100%', borderRadius: '12px', margin: '16px 0 8px 0' }} />
+                <p style={{ textAlign: 'center', color: '#6B6B6B', fontSize: '13px', margin: '0 0 32px 0' }}>All variables for a component type (time)</p>
               </div>
-              <div className="bg-[var(--color-tag-bg)] aspect-video rounded-xl flex items-center justify-center border border-[var(--color-border)]">
-                <span className="text-[var(--color-text-muted)] font-medium uppercase tracking-widest text-xs">All variables for a component type (time)</span>
+
+              <div>
+                <img src="/Cid3.png" alt="Working implementation in design system" style={{ width: '100%', borderRadius: '12px', margin: '16px 0 8px 0' }} />
+                <p style={{ textAlign: 'center', color: '#6B6B6B', fontSize: '13px', margin: '0 0 32px 0' }}>Working implementation in design system</p>
               </div>
             </div>
 
@@ -114,9 +136,7 @@ const DesignSystem = () => {
               At the next stage, we added the component, instances as well as the usage guidelines within the Design system in Figma.
             </p>
 
-            <div className="bg-[var(--color-tag-bg)] aspect-video rounded-xl flex items-center justify-center mb-12 border border-[var(--color-border)]">
-              <span className="text-[var(--color-text-muted)] font-medium uppercase tracking-widest text-xs">Component with instances and usage guidelines in Figma</span>
-            </div>
+            <img src="/Cid4.png" alt="Usage guidelines in Design System" style={{ width: '100%', borderRadius: '12px', margin: '16px 0' }} />
 
             <p className="text-xl font-bold mb-16 text-center">
               This practice brought both our content and design systems in one place.

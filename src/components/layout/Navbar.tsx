@@ -19,7 +19,7 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Work', path: '/' },
+    { name: 'Work', path: '/#selected-work' },
     { name: 'About', path: '/about' },
     { name: 'Recruiter?', path: '/recruiter' },
     { name: 'Resume', path: '/resume' },
@@ -58,6 +58,12 @@ const Navbar = () => {
             <Link
               key={link.name}
               to={link.path}
+              onClick={(e) => {
+                if (link.name === 'Work' && window.location.pathname === '/') {
+                  e.preventDefault();
+                  document.getElementById('selected-work')?.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
               className={`text-sm font-medium transition-colors hover:text-[var(--color-accent)] ${
                 location.pathname === link.path ? 'text-[var(--color-accent)]' : 'text-[var(--color-text)]'
               }`}
@@ -85,7 +91,13 @@ const Navbar = () => {
               to={link.path}
               className="text-3xl font-bold"
               style={{ fontFamily: 'var(--font-display)' }}
-              onClick={() => setIsMenuOpen(false)}
+              onClick={(e) => {
+                if (link.name === 'Work' && window.location.pathname === '/') {
+                  e.preventDefault();
+                  document.getElementById('selected-work')?.scrollIntoView({ behavior: 'smooth' });
+                }
+                setIsMenuOpen(false);
+              }}
             >
               {link.name}
             </Link>

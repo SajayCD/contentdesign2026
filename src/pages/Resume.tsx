@@ -183,7 +183,7 @@ const Resume = () => {
           {/* Hero */}
           <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-8">
             <div>
-              <h1 className="text-6xl font-bold mb-4 flex gap-[0.3em]" style={{ fontFamily: 'var(--font-display)' }}>
+              <h1 className="text-[clamp(2rem,10vw,4rem)] md:text-6xl font-bold mb-4 flex flex-wrap gap-[0.3em] break-words" style={{ fontFamily: 'var(--font-display)' }}>
                 {nameWords.map((word, i) => (
                   <motion.span
                     key={i}
@@ -203,7 +203,7 @@ const Resume = () => {
               </h1>
               <div className="space-y-2">
                 <p className="text-base text-[#6B6B6B] max-w-xl">
-                  Computer science engineer. Sociology master's student. Both sides of the human-machine equation.
+                  Computer science engineer. Sociology master's student. Both sides of the human-computer interaction equation.
                 </p>
               </div>
             </div>
