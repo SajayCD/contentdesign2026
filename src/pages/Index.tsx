@@ -82,7 +82,7 @@ const Index = () => {
                 Sajay Jai Singh
               </h1>
               
-              <div className="text-[clamp(24px,4vw,48px)] font-medium mb-8 min-h-[1.2em]">
+              <div className="text-[clamp(24px,4vw,48px)] font-medium mb-8 min-h-[1.2em] max-w-full block w-fit md:max-w-none md:block md:w-full">
                 <Typewriter text="Helping software speak and sound human." />
               </div>
               
@@ -90,7 +90,7 @@ const Index = () => {
                 <p className="text-xl text-[var(--color-text-muted)] max-w-2xl">
                   <DictionaryTooltip>Content Designer</DictionaryTooltip>. Computer Science Engineer. MSc Media and Communications, UCD.
                 </p>
-                <p className="text-xl text-[var(--color-text-muted)] max-w-2xl">
+                <p className="text-xl text-[var(--color-text-muted)] max-w-2xl hidden md:block">
                   1 billion+ orders placed on the experiences I helped shape.
                 </p>
               </div>

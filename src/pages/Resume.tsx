@@ -183,7 +183,7 @@ const Resume = () => {
           {/* Hero */}
           <div className="flex flex-col md:flex-row justify-between items-start gap-8 mb-8">
             <div>
-              <h1 className="text-6xl font-bold mb-4 flex gap-[0.3em]" style={{ fontFamily: 'var(--font-display)' }}>
+              <h1 className="text-[clamp(2rem,10vw,4rem)] md:text-6xl font-bold mb-4 flex flex-wrap gap-[0.3em] break-words" style={{ fontFamily: 'var(--font-display)' }}>
                 {nameWords.map((word, i) => (
                   <motion.span
                     key={i}

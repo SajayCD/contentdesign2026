@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface DictionaryTooltipProps {
@@ -10,12 +10,44 @@ interface DictionaryTooltipProps {
 
 const DictionaryTooltip = ({ children, className = "" }: DictionaryTooltipProps) => {
   const [isHovered, setIsHovered] = useState(false);
+  const containerRef = useRef<HTMLSpanElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+      if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
+        setIsHovered(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('touchstart', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('touchstart', handleClickOutside);
+    };
+  }, []);
+
+  const handleToggle = () => {
+    if (window.matchMedia("(max-width: 768px)").matches) {
+      setIsHovered(!isHovered);
+    }
+  };
 
   return (
     <span
+      ref={containerRef}
       className={`relative ${className}`}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      onMouseEnter={() => {
+        if (!window.matchMedia("(max-width: 768px)").matches) {
+          setIsHovered(true);
+        }
+      }}
+      onMouseLeave={() => {
+        if (!window.matchMedia("(max-width: 768px)").matches) {
+          setIsHovered(false);
+        }
+      }}
+      onClick={handleToggle}
       style={{
         display: 'inline',
         textDecoration: 'underline',
@@ -33,7 +65,7 @@ const DictionaryTooltip = ({ children, className = "" }: DictionaryTooltipProps)
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 4 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute bottom-[calc(100%+12px)] left-0 z-[100] bg-white border-t-[3px] border-t-[#4F46E5] rounded-[10px] shadow-[0_8px_24px_rgba(0,0,0,0.1)] p-[12px_16px] min-w-[240px] pointer-events-none hidden md:block"
+            className="absolute bottom-[calc(100%+12px)] left-0 z-[100] bg-white border-t-[3px] border-t-[#4F46E5] rounded-[10px] shadow-[0_8px_24px_rgba(0,0,0,0.1)] p-[12px_16px] min-w-[240px] pointer-events-none"
           >
             <div className="space-y-1">
               <div className="text-[13px] font-medium text-[#1C1C1E]" style={{ fontFamily: 'var(--font-body)' }}>
