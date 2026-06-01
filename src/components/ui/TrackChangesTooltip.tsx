@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 interface TrackChangesTooltipProps {
   children: React.ReactNode;
@@ -9,85 +10,71 @@ interface TrackChangesTooltipProps {
 }
 
 const TrackChangesTooltip = ({ children, text }: TrackChangesTooltipProps) => {
+  const [isHovered, setIsHovered] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const isMobile = useIsMobile();
   const containerRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
+    if (!isMobile) return;
+
+    const handleClickOutside = (event: MouseEvent) => {
       if (containerRef.current && !containerRef.current.contains(event.target as Node)) {
         setIsOpen(false);
       }
     };
 
     document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('touchstart', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('touchstart', handleClickOutside);
-    };
-  }, []);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [isMobile]);
 
   const handleToggle = () => {
-    if (window.matchMedia("(max-width: 768px)").matches) {
+    if (isMobile) {
       setIsOpen(!isOpen);
     }
   };
 
+  const showTooltip = isMobile ? isOpen : isHovered;
+
   return (
-    <span
+    <span 
       ref={containerRef}
-      className="relative inline cursor-default"
-      onMouseEnter={() => {
-        if (!window.matchMedia("(max-width: 768px)").matches) {
-          setIsOpen(true);
-        }
-      }}
-      onMouseLeave={() => {
-        if (!window.matchMedia("(max-width: 768px)").matches) {
-          setIsOpen(false);
-        }
-      }}
+      className="relative inline-block cursor-help group"
+      onMouseEnter={() => !isMobile && setIsHovered(true)}
+      onMouseLeave={() => !isMobile && setIsHovered(false)}
       onClick={handleToggle}
-      style={{
-        textDecoration: 'underline',
-        textDecorationStyle: 'dotted',
-        textDecorationColor: 'rgba(34, 197, 94, 0.5)',
-        textUnderlineOffset: '4px',
-      }}
     >
-      {children}
+      <span className="border-b-2 border-green-500/30 hover:border-green-500 transition-colors">
+        {children}
+      </span>
+      
       <AnimatePresence>
-        {isOpen && (
-          <motion.div
+        {showTooltip && (
+          <motion.span
             initial={{ opacity: 0, y: 10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 10, scale: 0.95 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute bottom-[calc(100%+16px)] left-0 z-[50] w-[280px] max-w-[calc(100vw-48px)] pointer-events-none"
+            exit={{ opacity: 0, y: 5, scale: 0.95 }}
+            className="absolute bottom-full right-0 md:right-auto md:left-1/2 md:-translate-x-1/2 mb-3 z-50 w-[calc(100vw-48px)] md:w-64 pointer-events-none"
           >
-            <div className="bg-[#F2FBF6] border border-[#C6E9D5] rounded-lg shadow-lg overflow-hidden">
-              {/* Header */}
-              <div className="bg-[#E6F4EA] px-3 py-1.5 border-b border-[#C6E9D5]">
-                <span className="text-[10px] font-bold text-[#137333] uppercase tracking-wider">
+            <span className="block bg-[#E7F3EF] border border-[#B2D4C9] rounded-sm p-3 shadow-lg relative">
+              {/* Track Changes Header */}
+              <span className="flex items-center gap-2 mb-2 pb-2 border-b border-[#B2D4C9]/50">
+                <span className="w-5 h-5 rounded-full bg-green-600 flex items-center justify-center text-[10px] text-white font-bold">
+                  S
+                </span>
+                <span className="text-[10px] font-bold text-green-800 uppercase tracking-wider">
                   Suggested Change
                 </span>
-              </div>
+              </span>
               
-              {/* Content */}
-              <div className="p-3 flex gap-3 items-start">
-                <div className="w-6 h-6 rounded-full bg-[#137333] flex items-center justify-center text-white text-[10px] font-bold shrink-0 mt-0.5">
-                  S
-                </div>
-                <p className="text-[13px] text-[#137333] leading-relaxed font-medium">
-                  {text}
-                </p>
-              </div>
-            </div>
-            
-            {/* Arrow */}
-            <div className="absolute top-full left-4 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[6px] border-t-[#C6E9D5]" />
-            <div className="absolute top-[calc(100%-1px)] left-[4px] w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[6px] border-t-[#F2FBF6]" />
-          </motion.div>
+              <span className="text-sm text-green-900 leading-relaxed block">
+                {text}
+              </span>
+
+              {/* Tooltip Arrow */}
+              <span className="absolute top-full left-1/2 -translate-x-1/2 w-3 h-3 bg-[#E7F3EF] border-r border-b border-[#B2D4C9] rotate-45 -mt-[6px]"></span>
+            </span>
+          </motion.span>
         )}
       </AnimatePresence>
     </span>
