@@ -95,7 +95,9 @@ const ScalingPart3 = () => {
                 To decide on the interview stages, the best way is to have a skill check at each level of UX writing functions—core UX Writing, Design, and Product. Our process worked something like this:
               </p>
 
-              <img src="/hiring-process-flow.png" alt="Interview Process Flow Diagram" style={{ width: '100%', borderRadius: '12px', margin: '16px 0' }} />
+              <div className="bg-white border border-[var(--color-border)] aspect-[16/9] rounded-2xl flex items-center justify-center mb-16">
+                <span className="text-[var(--color-text-muted)] font-medium uppercase tracking-widest text-xs">Interview Process Flow Diagram</span>
+              </div>
 
               <h2 className="text-3xl font-bold mb-6 mt-16">To Assignment or Not to Assignment — The eternal question</h2>
               <p className="mb-8">

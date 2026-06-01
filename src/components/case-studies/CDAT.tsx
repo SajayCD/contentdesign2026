@@ -151,7 +151,7 @@ const CDAT = () => {
 
             <h2 className="text-3xl font-bold mb-12">Steps and Stakeholders</h2>
             
-            <div className="relative pl-8 mb-16">
+            <div className="relative pl-8 border-l-2 border-[var(--color-border)] space-y-12 mb-16">
               {[
                 "UX Writers to gain access to the UAT and PAT (test builds) to conduct CDAT. (One time step)",
                 "Align PMs on the process and get sign-off.",
@@ -161,17 +161,16 @@ const CDAT = () => {
                 "Update results for successful / flag issues for unsuccessful implementations. Go back to step 4 till successful.",
                 "Track all statuses across sprints."
               ].map((step, i) => (
-                <div key={i} className="relative pb-12 last:pb-0">
-                  {/* Vertical Line */}
-                  {i !== 6 && (
-                    <div className="absolute left-[-33px] top-2 bottom-0 w-[2px] bg-[var(--color-border)]"></div>
-                  )}
-                  {/* Bullet Point */}
-                  <div className="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-[var(--color-accent)] border-4 border-white shadow-sm z-10"></div>
+                <div key={i} className="relative">
+                  <div className="absolute -left-[41px] top-0 w-4 h-4 rounded-full bg-[var(--color-accent)] border-4 border-white shadow-sm"></div>
                   <div className="font-bold text-xs uppercase tracking-widest text-[var(--color-accent)] mb-2">Step {i + 1}</div>
                   <p className="text-lg whitespace-pre-line">{step}</p>
                 </div>
               ))}
+            </div>
+
+            <div className="bg-[var(--color-tag-bg)] aspect-video rounded-xl flex items-center justify-center mb-16 border border-[var(--color-border)]">
+              <span className="text-[var(--color-text-muted)] font-medium uppercase tracking-widest text-xs">CDAT Process Flowchart — upload Figma export here</span>
             </div>
 
             <h2 className="text-3xl font-bold mb-8">Challenges</h2>

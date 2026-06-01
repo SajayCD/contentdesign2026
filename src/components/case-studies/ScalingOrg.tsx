@@ -36,10 +36,10 @@ const ScalingOrg = () => {
       <section className="px-6 md:px-12 mb-24">
         <div className="max-w-[720px] mx-auto">
           <div className="prose prose-lg max-w-none">
-            <p className="mb-4">
+            <p className="mb-8">
               UX Writing is having its heyday in the whole product development space. Specifically in India, where I have worked for most of my professional career, UX writing is today where UX design was a decade ago. The most competent product teams realise and give importance to Content Design; but many teams are still playing catch up - teams that do not yet have the clarity, the right people to convince them, or the right people at the top guiding organisational decisions.
             </p>
-            <p className="mb-4">
+            <p className="mb-12">
               In the coming (and current) years, I imagine many teams building out solid content design organizations and experiencing the growing pains that come with this process.
             </p>
             <p className="mb-8">
@@ -64,11 +64,6 @@ const ScalingOrg = () => {
             </div>
 
             <p className="mb-8">
-              Where we are today is a result of solid efforts over the last 3 years. When I joined AngelOne (as the first UX writer) - this was all we had as a UX Writing process (if you can call it one).
-            </p>
-            <img src="/UXW Initial Process.png" alt="Initial UX Writing Process at Angel One" style={{ width: '100%', borderRadius: '12px', margin: '16px 0' }} />
-
-            <p className="mb-8">
               So, how did we go from something trivial to a sophisticated, well-managed, transparent process with checks and balances? This article will guide you through a step-by-step process, whether you have just started building out your content org or are somewhere along the way.
             </p>
             <p className="mb-8 font-bold">But first,</p>
@@ -86,7 +81,7 @@ const ScalingOrg = () => {
             </div>
 
             <p className="mb-8">
-              Answering these questions is critical to the progress of your content design org and will set you up for success in the long term, and the answer is a <strong>content maturity model</strong>.
+              Answering these questions is critical to the progress of your content design org and will set you up for success in the long term, and the answer is a content maturity model.
             </p>
             <p className="mb-8">
               A CMM (Content Maturity Model), put simply - is a framework defining all processes, tools, outputs, people, collaborators, and impact and ways to measure it.
@@ -100,7 +95,9 @@ const ScalingOrg = () => {
                 Based on the state of these factors, every org is assigned a maturity level. To assess the content maturity level of your organisation, you can ask some direct questions. These questions fall under 4 pillars:
               </p>
               
-              <img src="/CMM.png" alt="Content Maturity Model — 4 Pillars" style={{ width: '100%', borderRadius: '12px', margin: '16px 0' }} />
+              <div className="bg-white/50 aspect-video rounded-xl flex items-center justify-center mb-8 border border-indigo-200">
+                <span className="text-indigo-400 font-medium uppercase tracking-widest text-xs">CMM 4 Pillars Diagram</span>
+              </div>
 
               <p className="mb-8 text-indigo-900">
                 The next thing to do is answer these questions for every strategy pillar for your current situation. This will be different for every company - depending on the product goals, business goals, product roadmap and your managers/your goal for the content org.
@@ -109,13 +106,19 @@ const ScalingOrg = () => {
                 These answers can help you understand where you are in terms of content design maturity into one of 5 levels:
               </p>
 
-              <img src="/CMM2.jpeg" alt="5 Content Maturity Levels" style={{ width: '100%', borderRadius: '12px', margin: '16px 0' }} />
+              <div className="bg-white/50 aspect-video rounded-xl flex items-center justify-center mb-4 border border-indigo-200">
+                <span className="text-indigo-400 font-medium uppercase tracking-widest text-xs">5 Content Maturity Levels Diagram</span>
+              </div>
               <p className="text-xs text-indigo-400 text-center italic">Adapted for UX Content in a software product</p>
             </div>
 
             <p className="mb-8">
-              In case you need a reference, this is the <a href="https://docs.google.com/spreadsheets/d/1YdaaS4U8ldo705_HAoo8RReGgr5MxM0WMVuUSLKUx_U/edit?usp=sharing" target="_blank" rel="noopener noreferrer" style={{ color: '#4F46E5', textDecoration: 'underline' }}>maturity assessment we did for our organization</a>. The confidential/sensitive details have been removed. Feel free to use this as a starting point, but remember that every product will have its own unique maturity assessment.
+              In case you need a reference, this is the maturity assessment we did for our organization. The confidential/sensitive details have been removed. Feel free to use this as a starting point, but remember that every product will have its own unique maturity assessment.
             </p>
+
+            <div className="bg-[var(--color-tag-bg)] aspect-video rounded-xl flex items-center justify-center mb-12 border border-[var(--color-border)]">
+              <span className="text-[var(--color-text-muted)] font-medium uppercase tracking-widest text-xs">Maturity Assessment Example</span>
+            </div>
 
             <p className="mb-12">
               You may not have the answer to every question and some pillars may not even apply at every stage - and that's okay. For example, when we conducted the maturity assessment for our product, we realised there was no "evangelism strategy" for our team in work on account of our bandwidth being so limited. We did not answer those questions for the first 2 stages - our evangelism strategy only comes in from the third stage.

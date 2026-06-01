@@ -56,12 +56,15 @@ const Workshops = () => {
                 </p>
               </div>
 
-              <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', borderRadius: '12px', overflow: 'hidden', margin: '32px 0', border: '1px solid #E4E3DF' }}>
-                <iframe
-                  src="https://embed.figma.com/proto/rhcFDoeSqOKTaZ6IYZMvuK/Sajay-s-Content-Design-Talks?page-id=50%3A2&node-id=50-5&node-type=FRAME&viewport=1165%2C5790%2C0.18&scaling=contain&content-scaling=fixed&starting-point-node-id=50%3A5&desktop-link-click-timestamp=1779804979168&desktop-ul-exp-bucket=po&embed-host=share"
-                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                  allowFullScreen
-                />
+              <div className="mb-12">
+                <div className="bg-white border-2 border-[var(--color-border)] rounded-2xl overflow-hidden h-[700px] flex flex-col items-center justify-center relative group">
+                  <div className="absolute inset-0 bg-[var(--color-tag-bg)] opacity-50"></div>
+                  <div className="z-10 text-center p-8">
+                    <Presentation size={48} className="mx-auto mb-4 text-[var(--color-text-muted)]" />
+                    <h3 className="text-xl font-bold mb-2">Figma Presentation — How it works: UX Writing at Angel One</h3>
+                    <p className="text-sm text-[var(--color-text-muted)]">Interactive Figma embed — click to explore</p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -79,12 +82,15 @@ const Workshops = () => {
                 </p>
               </div>
 
-              <div style={{ position: 'relative', width: '100%', paddingBottom: '56.25%', borderRadius: '12px', overflow: 'hidden', margin: '32px 0', border: '1px solid #E4E3DF' }}>
-                <iframe
-                  src="https://embed.figma.com/proto/rhcFDoeSqOKTaZ6IYZMvuK/Sajay-s-Content-Design-Talks?page-id=50%3A2&node-id=123-32&node-type=FRAME&viewport=-4084%2C1449%2C0.17&scaling=contain&content-scaling=fixed&starting-point-node-id=123%3A32&desktop-link-click-timestamp=1779805316295&desktop-ul-exp-bucket=po&embed-host=share"
-                  style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%' }}
-                  allowFullScreen
-                />
+              <div className="mb-12">
+                <div className="bg-white border-2 border-[var(--color-border)] rounded-2xl overflow-hidden h-[700px] flex flex-col items-center justify-center relative group">
+                  <div className="absolute inset-0 bg-[var(--color-tag-bg)] opacity-50"></div>
+                  <div className="z-10 text-center p-8">
+                    <Presentation size={48} className="mx-auto mb-4 text-[var(--color-text-muted)]" />
+                    <h3 className="text-xl font-bold mb-2">Figma Presentation — Think like a UX Writer: Workshop</h3>
+                    <p className="text-sm text-[var(--color-text-muted)]">Interactive Figma embed — click to explore</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

@@ -20,7 +20,7 @@ const Recruiter = () => {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-5xl font-bold mb-12" style={{ fontFamily: 'var(--font-display)' }}>
-              Hi there, you look nice today!
+              Hi there, future colleague. You look nice today.
             </h1>
             
             {/* I AM Section */}
@@ -38,7 +38,7 @@ const Recruiter = () => {
                 {[
                   "A Senior Content Designer with 5+ years of experience in high-growth tech.",
                   "Specialised in FinTech, Design Systems, and scaling content organisations.",
-                  "Someone with a proven track record: 1,160% growth in SIPs at Angel One through content strategy.",
+                  "Someone with a proven track record — 1,160% growth in SIPs at Angel One through content strategy.",
                   "Based out of (sometimes) sunny Dublin, Ireland 🌦️."
                 ].map((text, i) => (
                   <div key={i} className="flex items-start gap-4 text-lg leading-relaxed">

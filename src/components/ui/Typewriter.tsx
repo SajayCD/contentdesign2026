@@ -10,31 +10,34 @@ interface TypewriterProps {
 
 const Typewriter = ({ text, speed = 50 }: TypewriterProps) => {
   const [displayedText, setDisplayedText] = useState("");
+  const [isComplete, setIsComplete] = useState(false);
 
   useEffect(() => {
     let i = 0;
-    const interval = setInterval(() => {
-      setDisplayedText(text.slice(0, i + 1));
-      i++;
-      if (i === text.length) {
-        clearInterval(interval);
+    const timer = setInterval(() => {
+      if (i < text.length) {
+        setDisplayedText(text.substring(0, i + 1));
+        i++;
+      } else {
+        setIsComplete(true);
+        clearInterval(timer);
       }
     }, speed);
 
-    return () => clearInterval(interval);
+    return () => clearInterval(timer);
   }, [text, speed]);
 
   return (
-    <div className="inline w-auto whitespace-normal md:block md:w-full md:whitespace-nowrap">
+    <div className="inline-flex items-center">
       <span>{displayedText}</span>
       <motion.span
         animate={{ opacity: [1, 0] }}
         transition={{ 
           duration: 0.8, 
-          repeat: Infinity,
-          ease: "linear"
+          repeat: Infinity, 
+          ease: "linear" 
         }}
-        className="relative inline md:inline-block w-[3px] h-[0.9em] bg-[var(--color-accent)] ml-1 align-middle"
+        className="inline-block w-[3px] h-[1em] bg-[var(--color-accent)] ml-1"
       />
     </div>
   );
