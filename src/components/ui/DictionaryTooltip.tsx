@@ -65,7 +65,7 @@ const DictionaryTooltip = ({ children, className = "" }: DictionaryTooltipProps)
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 4 }}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="absolute top-full mt-2 left-0 md:bottom-[calc(100%+12px)] md:top-auto md:mt-0 md:left-0 z-[100] bg-white border-t-[3px] border-t-[#4F46E5] rounded-[10px] shadow-[0_8px_24px_rgba(0,0,0,0.1)] p-[12px_16px] min-w-[240px] max-w-[calc(100vw-48px)] md:max-w-none pointer-events-none"
+            className="absolute top-full mt-2 right-0 w-[calc(100vw-48px)] md:bottom-[calc(100%+12px)] md:top-auto md:mt-0 md:left-0 md:right-auto md:w-auto z-[100] bg-white border-t-[3px] border-t-[#4F46E5] rounded-[10px] shadow-[0_8px_24px_rgba(0,0,0,0.1)] p-[12px_16px] min-w-[240px] md:max-w-none pointer-events-none"
           >
             <div className="space-y-1">
               <div className="text-[13px] font-medium text-[#1C1C1E]" style={{ fontFamily: 'var(--font-body)' }}>
@@ -81,9 +81,9 @@ const DictionaryTooltip = ({ children, className = "" }: DictionaryTooltipProps)
                 a design professional who crafts the words that guide users through digital products.
               </p>
             </div>
-            {/* Arrow adjusted for top/bottom positioning */}
-            <div className="absolute bottom-full left-4 md:top-full md:bottom-auto md:left-4 border-[6px] border-transparent border-b-[#4F46E5] md:border-t-[#4F46E5] md:border-b-transparent" />
-            <div className="absolute bottom-[calc(100%-1px)] left-[17px] md:top-[calc(100%-1px)] md:bottom-auto md:left-[17px] border-[5px] border-transparent border-b-white md:border-t-white md:border-b-transparent z-[1]" />
+            {/* Arrow adjusted for right-anchoring on mobile */}
+            <div className="absolute bottom-full right-4 md:top-full md:bottom-auto md:left-4 md:right-auto border-[6px] border-transparent border-b-[#4F46E5] md:border-t-[#4F46E5] md:border-b-transparent" />
+            <div className="absolute bottom-[calc(100%-1px)] right-[17px] md:top-[calc(100%-1px)] md:bottom-auto md:left-[17px] md:right-auto border-[5px] border-transparent border-b-white md:border-t-white md:border-b-transparent z-[1]" />
           </motion.div>
         )}
       </AnimatePresence>
