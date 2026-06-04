@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
+import { Analytics } from "@vercel/analytics/react";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Recruiter from "./pages/Recruiter";
@@ -50,6 +51,7 @@ const App = () => (
   <BrowserRouter>
     <ScrollToTop />
     <AnimatedRoutes />
+    <Analytics />
   </BrowserRouter>
 );
 
