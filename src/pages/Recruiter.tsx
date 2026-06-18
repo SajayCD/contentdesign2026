@@ -36,9 +36,9 @@ const Recruiter = () => {
               </h2>
               <div className="flex flex-col" style={{ gap: '12px' }}>
                 {[
-                  "A Senior Content Designer with 5+ years of experience in high-growth tech.",
-                  "Specialised in FinTech, Design Systems, and scaling content organisations.",
-                  "Someone with a proven track record: 1,160% growth in SIPs at Angel One through content strategy.",
+                  "A Senior UX Writer with 6+ years of work experience at the intersection of tech and language.",
+                  "A multidisciplinary content professional who has worked across formats as a UX Writer, Technical Writer, and more.",
+                  "Someone with a proven track record: 1,160% growth in SIPs in 12 months at Angel One through content strategy.",
                   "Based out of (sometimes) sunny Dublin, Ireland 🌦️."
                 ].map((text, i) => (
                   <div key={i} className="flex items-start gap-4 text-lg leading-relaxed">
