@@ -39,7 +39,7 @@ const DesignSystem = () => {
           </div>
           
           <h1 className="text-[clamp(36px,5vw,56px)] font-bold mb-6 max-w-4xl">
-            Content in Design System
+            Writing the Rules: Voice & Tone Guidelines at Scale
           </h1>
         </div>
       </header>

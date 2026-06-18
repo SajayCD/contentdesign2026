@@ -38,7 +38,7 @@ const Index = () => {
     {
       id: '3',
       number: '03',
-      title: 'Content in Design System',
+      title: 'Writing the Rules: Voice & Tone Guidelines at Scale',
       impact: 'Voice & Tone at scale',
       tags: ['Systems', 'Standards'],
       slug: 'design-system'
