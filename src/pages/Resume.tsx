@@ -105,8 +105,9 @@ const Resume = () => {
           title: "Technical Writer",
           date: "Jan 2021 – Jan 2022",
           bullets: [
-            "Collaborated with UX designers to prototype and design content for 3 products: UI labels, notifications, empty states, pop-ups, error states, and more.",
-            "Revamped UX for product support flows, decreasing support tickets by 30% & accelerating user onboarding by 2 weeks."
+            "Worked with the engineering team and CTO to develop technical documentation (APIs, SDKs, developer tools), product guides, help center content and release notes. All work was in docs-as-a-code environments (git, markdown, versioning).",
+            "Developed style guides and worked across product, marketing and engineering to ensure organisational consistency.",
+            "Collaborated with UX designers to prototype and design content product support flows: UI labels, notifications, empty states, popups, error states, and more, decreasing support tickets by 30% & accelerating user onboarding by 2 weeks."
           ]
         }
       ]
@@ -203,7 +204,7 @@ const Resume = () => {
               </h1>
               <div className="space-y-2">
                 <p className="text-base text-[#6B6B6B] max-w-xl">
-                  Computer science engineer. Sociology master's student. Both sides of the human-computer interaction equation.
+                  Computer science engineer with a masters in Communication and an eternal curiosity for language.
                 </p>
               </div>
             </div>
