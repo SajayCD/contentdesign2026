@@ -7,6 +7,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Download, ChevronDown, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
+import Highlighter from '@/components/ui/Highlighter';
 
 const ExperienceCard = ({ company, date, roles, defaultExpanded = false }: any) => {
   const [isExpanded, setIsExpanded] = useState(defaultExpanded);
@@ -276,11 +277,13 @@ const Resume = () => {
                   <h3 className="text-xl font-bold mb-2">
                     MSc Communication and Media
                     <span className="inline-block text-[11px] font-semibold text-[#4F46E5] bg-[#EEF2FF] px-2 py-0.5 rounded-full ml-2 align-middle">
-                      EQF Level 8
+                      NFQ Level 9
                     </span>
                   </h3>
                   <p className="text-[var(--color-text-muted)] mb-1">University College Dublin, Ireland</p>
-                  <p className="text-sm font-medium text-[var(--color-accent)]">Sep 2025 – Present</p>
+                  <p className="text-sm font-medium text-[var(--color-accent)]">Sep 2025 – Jan 2026</p>
+                  <p className="mt-3 mb-1 font-medium text-[var(--color-text)]"><Highlighter>First Class Honours · GPA 3.96</Highlighter></p>
+                  <p className="text-sm text-[var(--color-text-muted)]">Thesis: <Link to="/research" className="text-[var(--color-accent)] hover:underline">Who is the crowd?</Link> (A+)</p>
                 </div>
                 <div className="bg-white border border-[var(--color-border)] px-8 py-4 rounded-2xl">
                   <h3 className="text-xl font-bold mb-2">Bachelor of Engineering in Computer Engineering</h3>
