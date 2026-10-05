@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Analytics } from "@vercel/analytics/react";
 import Index from "./pages/Index";
 import About from "./pages/About";
+import Research from "./pages/Research";
 import Recruiter from "./pages/Recruiter";
 import Resume from "./pages/Resume";
 import CaseStudyDetail from "./pages/CaseStudyDetail";
@@ -32,6 +33,7 @@ const AnimatedRoutes = () => {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<PageWrapper><Index /></PageWrapper>} />
         <Route path="/about" element={<PageWrapper><About /></PageWrapper>} />
+        <Route path="/research" element={<PageWrapper><Research /></PageWrapper>} />
         <Route path="/recruiter" element={<PageWrapper><Recruiter /></PageWrapper>} />
         <Route path="/resume" element={<PageWrapper><Resume /></PageWrapper>} />
         <Route path="/work/:slug" element={<PageWrapper><CaseStudyDetail /></PageWrapper>} />
