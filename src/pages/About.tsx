@@ -54,36 +54,6 @@ const About = () => {
             </motion.div>
           </div>
 
-          {/* Currently Researching Section */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-16"
-          >
-            <h2 className="text-[clamp(24px,3vw,36px)] font-bold text-[var(--color-text)] mb-4" style={{ fontFamily: 'var(--font-display)' }}>Currently Researching:</h2>
-            <ul className="space-y-4 text-[var(--color-text)]" style={{ fontFamily: 'var(--font-body)' }}>
-              <li className="flex items-start gap-3">
-                <span className="text-[var(--color-accent)] mt-1">↳</span>
-                <span className="text-lg leading-relaxed">
-                  As a part of my MSc in Communications and Media at UCD, I am researching how the language on various financial platforms (for investing, trading, gambling, prediction markets) can steer and shape user agency. This ties in a UX and sociology perspective to produce original academic research on the effect of language in the apps we use.
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-[var(--color-accent)] mt-1">↳</span>
-                <span className="text-lg leading-relaxed">
-                  Can the presence of bots on social media change how likely you are to voice your opinion? Can they tip the scales in terms of a public debate? <a href="https://docs.google.com/document/d/1tt4SyVgq12U6E9OCuar8R1eaZLTHZg9DFrNImyT4gwU/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-[#4F46E5] underline">Read more →</a>
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-[var(--color-accent)] mt-1">↳</span>
-                <span className="text-lg leading-relaxed">
-                  How does YouTube rank a heavily discussed term like "Prediction Markets" during a regulatory event? What factors play into it and what voices are privileged? <a href="https://docs.google.com/document/d/1aw1y0BIDyu6mgmu2WcHmI7XhGarfhQPWz51oR0c-wF4/edit?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-[#4F46E5] underline">Read more →</a>
-                </span>
-              </li>
-            </ul>
-          </motion.div>
-
           {/* Sidequests Section */}
           <motion.section 
             initial={{ opacity: 0, y: 20 }}
