@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 
+const TECH_WRITING_URL = "https://drive.google.com/drive/folders/1dv1jh2s_yMtZHDZ7x0IqqIvBeYQXTjG3?usp=sharing";
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,10 +21,11 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: 'Work', path: '/#selected-work' },
-    { name: 'About', path: '/about' },
-    { name: 'Recruiter?', path: '/recruiter' },
-    { name: 'Resume', path: '/resume' },
+    { name: 'Content Design', path: '/#selected-work', external: false },
+    { name: 'Technical Writing', path: TECH_WRITING_URL, external: true },
+    { name: 'Research', path: '/research', external: false },
+    { name: 'About', path: '/about', external: false },
+    { name: 'Recruiter?', path: '/recruiter', external: false },
   ];
 
   return (
@@ -55,21 +58,33 @@ const Navbar = () => {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              onClick={(e) => {
-                if (link.name === 'Work' && window.location.pathname === '/') {
-                  e.preventDefault();
-                  document.getElementById('selected-work')?.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-              className={`text-sm font-medium transition-colors hover:text-[var(--color-accent)] ${
-                location.pathname === link.path ? 'text-[var(--color-accent)]' : 'text-[var(--color-text)]'
-              }`}
-            >
-              {link.name}
-            </Link>
+            link.external ? (
+              <a
+                key={link.name}
+                href={link.path}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium transition-colors hover:text-[var(--color-accent)]"
+              >
+                {link.name}<span aria-hidden="true"> ↗</span><span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            ) : (
+              <Link
+                key={link.name}
+                to={link.path}
+                onClick={(e) => {
+                  if (link.path === '/#selected-work' && window.location.pathname === '/') {
+                    e.preventDefault();
+                    document.getElementById('selected-work')?.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className={`text-sm font-medium transition-colors hover:text-[var(--color-accent)] ${
+                  location.pathname === link.path ? 'text-[var(--color-accent)]' : 'text-[var(--color-text)]'
+                }`}
+              >
+                {link.name}
+              </Link>
+            )
           ))}
         </div>
 
@@ -86,21 +101,35 @@ const Navbar = () => {
       {isMenuOpen && (
         <div className="fixed inset-0 bg-white z-40 flex flex-col items-center justify-center gap-8 md:hidden">
           {navLinks.map((link) => (
-            <Link
-              key={link.name}
-              to={link.path}
-              className="text-3xl font-bold"
-              style={{ fontFamily: 'var(--font-display)' }}
-              onClick={(e) => {
-                if (link.name === 'Work' && window.location.pathname === '/') {
-                  e.preventDefault();
-                  document.getElementById('selected-work')?.scrollIntoView({ behavior: 'smooth' });
-                }
-                setIsMenuOpen(false);
-              }}
-            >
-              {link.name}
-            </Link>
+            link.external ? (
+              <a
+                key={link.name}
+                href={link.path}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-3xl font-bold"
+                style={{ fontFamily: 'var(--font-display)' }}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {link.name}<span aria-hidden="true"> ↗</span><span className="sr-only"> (opens in a new tab)</span>
+              </a>
+            ) : (
+              <Link
+                key={link.name}
+                to={link.path}
+                className="text-3xl font-bold"
+                style={{ fontFamily: 'var(--font-display)' }}
+                onClick={(e) => {
+                  if (link.path === '/#selected-work' && window.location.pathname === '/') {
+                    e.preventDefault();
+                    document.getElementById('selected-work')?.scrollIntoView({ behavior: 'smooth' });
+                  }
+                  setIsMenuOpen(false);
+                }}
+              >
+                {link.name}
+              </Link>
+            )
           ))}
           <button 
             className="absolute top-6 right-6"
